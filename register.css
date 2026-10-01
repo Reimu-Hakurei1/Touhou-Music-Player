@@ -1,0 +1,324 @@
+:root {
+  --primary-color: #667eea;
+  --primary-dark: #5a6fd8;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.register-container {
+  max-width: 450px;
+  width: 100%;
+}
+
+.register-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  color: var(--text-light);
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Profile Picture Upload */
+.profile-upload {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border: 3px solid var(--card-border);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-preview:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+}
+
+.profile-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.upload-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px dashed var(--card-border);
+  border-radius: 12px;
+  padding: 10px 16px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-color);
+  color: var(--text-light);
+}
+
+#profilePicInput {
+  display: none;
+}
+
+/* Form Styling */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-light);
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+  color: var(--text-light);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-text {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+/* Form validation styles */
+.form-control.is-valid {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.form-control.is-invalid {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+/* Password Requirements */
+.password-requirements {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.requirement-item {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.requirement-item.text-success {
+  color: #4CAF50 !important;
+}
+
+.requirement-item.text-danger {
+  color: #ff6b6b !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-google {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--text-light);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-google:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Links */
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.login-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Alert */
+.alert {
+  border-radius: 12px;
+  border: none;
+  backdrop-filter: blur(10px);
+}
+
+.alert-success {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+}
+
+/* Custom Alert Styles */
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 10000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease;
+}
+
+.custom-alert.alert-error {
+  background: #ff6b6b;
+  color: white;
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .register-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .profile-preview {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-placeholder {
+    font-size: 2.5rem;
+  }
+}

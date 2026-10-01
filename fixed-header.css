@@ -1,0 +1,96 @@
+/* ===== Fixed Header Styles ===== */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.fixed-header.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 5px 0;
+}
+
+.fixed-header .page-title {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.fixed-header .filter-section {
+    margin: 5px auto;
+    padding: 8px;
+    max-width: 1100px;
+}
+
+.fixed-header .filter-section.two-columns {
+    max-width: 800px;
+    padding: 6px;
+}
+
+.fixed-header .search-container {
+    margin: 8px auto 12px;
+    max-width: 760px;
+}
+
+/* Content spacer to prevent content from being hidden behind fixed header */
+.content-spacer {
+    height: 280px; /* Adjust based on your header height */
+}
+
+/* Adjust profile container position for fixed header */
+.profile-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fixed-header {
+        padding: 8px 0;
+    }
+    
+    .fixed-header.scrolled {
+        padding: 4px 0;
+    }
+    
+    .fixed-header .page-title {
+        font-size: 1.3rem;
+        margin: 8px 0;
+    }
+    
+    .content-spacer {
+        height: 320px; /* More space on mobile */
+    }
+    
+    .profile-container {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .fixed-header .filter-section {
+        padding: 6px;
+    }
+    
+    .fixed-header .search-container {
+        margin: 6px auto 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-spacer {
+        height: 350px; /* Even more space on very small screens */
+    }
+    
+    .fixed-header .page-title {
+        font-size: 1.2rem;
+    }
+}

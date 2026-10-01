@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Touhou Music</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="login.css">
+  
+  <!-- Firebase COMPAT Version -->
+  <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore-compat.js"></script>
+  <!-- Removed firebase-storage-compat.js since it's not needed for login -->
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <!-- Logo & Title -->
+      <div class="logo-section">
+        <div class="logo">
+          <i class="fas fa-music"></i>
+        </div>
+        <h1 class="title">Welcome Back</h1>
+        <p class="subtitle">Sign in to your account</p>
+      </div>
+
+      <form id="loginForm">
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+        </div>
+        
+        <!-- Remember + Forgot -->
+        <div class="d-flex-between mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember">
+            <label class="form-check-label" for="remember">
+              Remember me
+            </label>
+          </div>
+          <a href="ForgotPassword.html" class="forgot-password">
+            Forgot password?
+          </a>
+        </div>
+
+        <!-- Login Button -->
+        <button id="loginBtn" type="submit" class="btn btn-primary w-100">
+          <i class="fas fa-sign-in-alt me-2"></i>Sign In
+        </button>
+
+        <!-- Google Login -->
+        <button id="googleLogin" type="button" class="btn btn-google w-100 mt-3">
+          <i class="fab fa-google me-2"></i>Continue with Google
+        </button>
+
+        <!-- Register Link -->
+        <div class="register-link">
+          <p>Don't have an account? <a href="Register.html">Create one here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Firebase Config -->
+  <script src="firebase-config.js"></script>
+  
+  <!-- Login Script -->
+  <script src="login.js"></script>
+</body>
+</html>
