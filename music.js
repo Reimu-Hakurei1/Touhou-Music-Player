@@ -19,7 +19,7 @@ const playlists = {
   {title:"Swordsman of a Distant Star - The Alice-in-Wonderland Angel", artist:"Zun", file:"songs/Touhou 1/13 - The 'Alice in Wonderland' Angel.opus", cover:"covers/Touhou 1.jpg"},
   {title:"Iris", artist:"Zun", file:"songs/Touhou 1/14 - アイリス.opus", cover:"covers/Touhou 1.jpg"},
   {title:"Shrine of the Wind", artist:"Zun", file:"songs/Touhou 1/15 - Shrine of the Wind.mp3", cover:"covers/Touhou 1.jpg"}
-	]
+    ]
   },
   "Touhou 2": {
     "Original": [
@@ -41,7 +41,7 @@ const playlists = {
   {title:"Hakurei Shrine Grounds", artist:"Zun", file:"songs/Touhou 2/Original/16 - 博麗神社境内.opus", cover:"covers/Touhou 2.jpg"},
   {title:"Sunfall", artist:"Zun", file:"songs/Touhou 2/Original/17 - 陽落ちて.opus", cover:"covers/Touhou 2.jpg"},
   {title:"Sealed Demon's Finale", artist:"Zun", file:"songs/Touhou 2/Original/18 - 封魔終宴.opus", cover:"covers/Touhou 2.jpg"}
-	],
+    ],
     "Arrange": [
       {title:"Record of the Sealing of an Oriental Demon ~ Pure Land Mandala (SC-88Pro)", artist:"Zun", file:"songs/Touhou 2/Arrange/01. Record of the Sealing of an Oriental Demon ~ Pure Land Mandala (SC-88Pro).mp3", cover:"covers/Touhou 2.jpg"},
       {title:"Hakurei ~ Eastern Wind (SC-88Pro)", artist:"Zun", file:"songs/Touhou 2/Arrange/02. Hakurei ~ Eastern Wind (SC-88Pro).mp3", cover:"covers/Touhou 2.jpg"},
@@ -86,7 +86,7 @@ const playlists = {
   {title:"Winds of Time", artist:"Zun", file:"songs/Touhou 3/22 - 時の風.opus", cover:"covers/Touhou 3.jpg"},
   {title:"Starbow Dream", artist:"Zun", file:"songs/Touhou 3/23 - スターボウ　ドリーム.opus", cover:"covers/Touhou 3.jpg"},
   {title:"Phantasmagoria", artist:"Zun", file:"songs/Touhou 3/24 - Phantasmagoria　～ はたらきもので日が暮れて.opus", cover:"covers/Touhou 3.jpg"}
-	]
+    ]
   },
   "Touhou 4": {
     "Original": [
@@ -143,7 +143,7 @@ const playlists = {
       {title:"Endless", artist:"Zun", file:"songs/Touhou 5/19 - Endless.opus", cover:"covers/Touhou 5.jpg"},
       {title:"Eternal Paradise", artist:"Zun", file:"songs/Touhou 5/20 - 久遠の楽園.opus", cover:"covers/Touhou 5.jpg"},
       {title:"Mystic Dream", artist:"Zun", file:"songs/Touhou 5/21 - Mystic Dream.opus", cover:"covers/Touhou 5.jpg"},
-	  {title:"Peaceful Romancer", artist:"Zun", file:"songs/Touhou 5/22 - Peaceful Romancer.opus", cover:"covers/Touhou 5.jpg"},
+      {title:"Peaceful Romancer", artist:"Zun", file:"songs/Touhou 5/22 - Peaceful Romancer.opus", cover:"covers/Touhou 5.jpg"},
       {title:"Soul's Resting Place", artist:"Zun", file:"songs/Touhou 5/23 - 魂の安らむ所.opus", cover:"covers/Touhou 5.jpg"}
     ]
   },
@@ -165,7 +165,7 @@ const playlists = {
       {title:"The Centennial Festival for Magical Girls", artist:"Zun", file:"songs/Touhou 6/Original/14 - 魔法少女達の百年祭.opus", cover:"covers/Touhou 6.png"},
       {title:"U.N. Owen was Her", artist:"Zun", file:"songs/Touhou 6/Original/15 - U.N.オーエンは彼女なのか？.opus", cover:"covers/Touhou 6.png"},
       {title:"An Eternity that is More Transient than Scarlet", artist:"Zun", file:"songs/Touhou 6/Original/16 - 紅より儚い永遠.opus", cover:"covers/Touhou 6.png"},
-      {title:"Crimson Tower ~ Eastern Dream...", artist:"Zun", file:"songs/Touhou 6/Original/17 - 紅楼　～ Eastern Dream....opus", cover:"covers/Touhou 6.png"},
+      {title:"Crimson Tower ~ Eastern Dream...", artist:"Zun", file:"songs/Touhou 6/Original/17 - 紅楼　～ Eastern Dream....opus", cover:"covers/Touhou 6.png"}
     ],
     "Arrange": [
       {title:"A Dream that is more Scarlet than Red (SC-88Pro)", artist:"Zun", file:"songs/Touhou 6/Arrange/01. A Dream that is more Scarlet than Red (SC-88Pro).mp3", cover:"covers/Touhou 6.png"},
@@ -184,7 +184,7 @@ const playlists = {
       {title:"The Centennial Festival for Magical Girls (SC-88Pro)", artist:"Zun", file:"songs/Touhou 6/Arrange/14. The Centennial Festival for Magical Girls (SC-88Pro).mp3", cover:"covers/Touhou 6.png"},
       {title:"U.N. Owen was Her (SC-88Pro)", artist:"Zun", file:"songs/Touhou 6/Arrange/15. U.N. Owen was Her (SC-88Pro).mp3", cover:"covers/Touhou 6.png"},
       {title:"An Eternity that is More Transient than Scarlet (SC-88Pro)", artist:"Zun", file:"songs/Touhou 6/Arrange/16. An Eternity that is More Transient than Scarlet (SC-88Pro).mp3", cover:"covers/Touhou 6.png"},
-      {title:"Crimson Tower ~ Eastern Dream... (SC-88Pro)", artist:"Zun", file:"songs/Touhou 6/Arrange/17. Crimson Tower ~ Eastern Dream... (SC-88Pro).mp3", cover:"covers/Touhou 6.png"},
+      {title:"Crimson Tower ~ Eastern Dream... (SC-88Pro)", artist:"Zun", file:"songs/Touhou 6/Arrange/17. Crimson Tower ~ Eastern Dream... (SC-88Pro).mp3", cover:"covers/Touhou 6.png"}
     ],
     "New Classic": [
       {title:"A Dream that is more Scarlet than Red", artist:"Zun", file:"songs/the Embodiment of Scarlet Devil - New Classic/01. A Dream More Scarlet than Red (Title screen theme).opus", cover:"covers/New Classic.png"},
@@ -543,7 +543,7 @@ const playlists = {
         {title:"Player's Score", artist:"ZUN", file:"songs/Touhou 12.8/10 - プレイヤーズスコア.opus", cover:"covers/Touhou 12.8.jpg"}
       ]
     },
-	"Touhou 13": {
+    "Touhou 13": {
       "Original": [
     {title:"Spirit of Avarice", artist:"ZUN", file:"songs/Touhou 13/1 - 欲深き霊魂.opus", cover:"covers/Touhou 13.jpg"},
     {title:"Night Sakura of Dead Spirits", artist:"ZUN", file:"songs/Touhou 13/2 - 死霊の夜桜.opus", cover:"covers/Touhou 13.jpg"},
@@ -576,7 +576,7 @@ const playlists = {
     {title:"Futatsuiwa from Sado", artist:"ZUN", file:"songs/Touhou 13/29 - 佐渡の二ッ岩.opus", cover:"covers/Touhou 13.jpg"},
     {title:"Futatsuiwa from Sado (Spirit Trance)", artist:"ZUN", file:"songs/Touhou 13/30 - 佐渡の二ッ岩（霊界トランス）.opus", cover:"covers/Touhou 13.jpg"},
     {title:"Player's Score", artist:"ZUN", file:"songs/Touhou 13/31 - プレイヤーズスコア.opus", cover:"covers/Touhou 13.jpg"}
-	  ]
+      ]
     },
  "Touhou 13.5": {
   "Original": [
@@ -616,7 +616,7 @@ const playlists = {
     {title:"Officially-Sanctioned Tasogare Newspaper", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 13.5/2.15 - 官板黄昏新聞.opus", cover:"covers/Touhou 13.5.jpg"},
     {title:"The Lost Emotion (Arrange Version)", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 13.5/2.16 - 亡失のエモーション (Arrange Version).opus", cover:"covers/Touhou 13.5.jpg"},
     {title:"Akutagawa Ryuunosuke's Kappa ~ Candid Friend (8bit)", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 13.5/2.17 - 芥川龍之介の河童 ～ Candid Friend (8bit).opus", cover:"covers/Touhou 13.5.jpg"}
-	]
+    ]
 },
 "Touhou 14": {
   "Original": [
@@ -638,7 +638,7 @@ const playlists = {
     {title:"Strange, Strange Instruments", artist:"ZUN", file:"songs/Touhou 14/16 - 不思議な不思議な道具達.opus", cover:"covers/Touhou 14.jpg"},
     {title:"Primordial Beat ~ Pristine Beat", artist:"ZUN", file:"songs/Touhou 14/17 - 始原のビート　～ Pristine Beat.opus", cover:"covers/Touhou 14.jpg"},
     {title:"Player's Score", artist:"ZUN", file:"songs/Touhou 14/18 - プレイヤーズスコア.opus", cover:"covers/Touhou 14.jpg"}
-	]
+    ]
 },
 "Touhou 14.3": {
   "Original": [
@@ -685,15 +685,15 @@ const playlists = {
     {title:"The Lost Emotion", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.10 - 亡失のエモーション.opus", cover:"covers/Touhou 14.5.jpg"},
     {title:"Reach for the Moon, Immortal Smoke", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.11 - 月まで届け、不死の煙.opus", cover:"covers/Touhou 14.5.jpg"},
     {title:"Kobito of the Shining Needle ~ Little Princess", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.12 - 輝く針の小人族～ Little Princess.opus", cover:"covers/Touhou 14.5.jpg"},
-	{title:"Akasareru Shinpi", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.15 - 明かされる深秘.opus", cover:"covers/Touhou 14.5.jpg"},
-	{title:"Lunatic Eyes ~ Invisible Full Moon", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Lunatic Eyes ~ Invisible Full Moon.mp3", cover:"covers/Touhou14.5(1).jpg"},
-	{title:"Neo Bamboo Forest in Flames", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Neo Bamboo Forest in Flames.mp3", cover:"covers/Touhou14.5(1).jpg"},
-	{title:"Bell of Aeons", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Bell of Aeons.mp3", cover:"covers/Touhou14.5(1).jpg"},
-	{title:"Occult Attract", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Occult Attract.mp3", cover:"covers/Touhou14.5(1).jpg"},
-	{title:"Boundary Folklore", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Boundary Folklore.mp3", cover:"covers/Touhou14.5(1).jpg"},
-	{title:"Unknown X ~ Occultly Madness", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Unknown X ~ Occultly Madness.mp3", cover:"covers/Touhou14.5(1).jpg"},
-	{title:"Madness of Lunatic Visages ~ Horrible Night", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Madness of Lunatic Visages ~ Horrible Night.mp3", cover:"covers/Touhou14.5(1).jpg"}
-	  ],
+    {title:"Akasareru Shinpi", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.15 - 明かされる深秘.opus", cover:"covers/Touhou 14.5.jpg"},
+    {title:"Lunatic Eyes ~ Invisible Full Moon", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Lunatic Eyes ~ Invisible Full Moon.mp3", cover:"covers/Touhou14.5(1).jpg"},
+    {title:"Neo Bamboo Forest in Flames", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Neo Bamboo Forest in Flames.mp3", cover:"covers/Touhou14.5(1).jpg"},
+    {title:"Bell of Aeons", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Bell of Aeons.mp3", cover:"covers/Touhou14.5(1).jpg"},
+    {title:"Occult Attract", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Occult Attract.mp3", cover:"covers/Touhou14.5(1).jpg"},
+    {title:"Boundary Folklore", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Boundary Folklore.mp3", cover:"covers/Touhou14.5(1).jpg"},
+    {title:"Unknown X ~ Occultly Madness", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Unknown X ~ Occultly Madness.mp3", cover:"covers/Touhou14.5(1).jpg"},
+    {title:"Madness of Lunatic Visages ~ Horrible Night", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Original/Madness of Lunatic Visages ~ Horrible Night.mp3", cover:"covers/Touhou14.5(1).jpg"}
+      ],
   "Arrange": [
     {title:"Battlefield of the Hanahazama (Arrange Version)", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.13 - 華狭間のバトルフィールド.opus", cover:"covers/Touhou 14.5.jpg"},
     {title:"Last Occultism ~ Esotericist of the Present World (Arrange Version)", artist:"ZUN/Uni Akiyama", file:"songs/Touhou 14.5/Arrange/2.14 - ラストオカルティズム～ 現し世の秘術師.opus", cover:"covers/Touhou 14.5.jpg"}
@@ -718,7 +718,7 @@ const playlists = {
     {title:"Pandemonic Planet", artist:"ZUN", file:"songs/Touhou 15/15 - パンデモニックプラネット.opus", cover:"covers/Touhou 15.jpg"},
     {title:"The Moon as Seen from the Shrine", artist:"ZUN", file:"songs/Touhou 15/16 - 神社から見える月.opus", cover:"covers/Touhou 15.jpg"},
     {title:"The Space Shrine Maiden Returns Home", artist:"ZUN", file:"songs/Touhou 15/17 - 宇宙巫女帰還する.opus", cover:"covers/Touhou 15.jpg"},
-	{title:"Player's Score", artist:"ZUN", file:"songs/Touhou 15/18 - プレイヤーズスコア.opus", cover:"covers/Touhou 15.jpg"}
+    {title:"Player's Score", artist:"ZUN", file:"songs/Touhou 15/18 - プレイヤーズスコア.opus", cover:"covers/Touhou 15.jpg"}
   ]
 },
 "Touhou 15.5": {
@@ -825,7 +825,7 @@ const playlists = {
     {title:"Joutoujin of Ceramics", artist:"ZUN", file:"songs/Touhou 17/11 - セラミックスの杖刀人.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Electric Heritage", artist:"ZUN", file:"songs/Touhou 17/12 - エレクトリックヘリテージ.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Entrust this World to Idols ~ Idolatrize World", artist:"ZUN", file:"songs/Touhou 17/13 - 偶像に世界を委ねて　～ Idoratrize World.opus", cover:"covers/Touhou 17.jpg"},
-    {title:"The Shining Law of the Strong Eating the Weak", artist:"ZUN", file:"songs/Touhou 17/14 - 輝かしき弱肉強食の掟.opus", cover:"covers/Touhou 17.jpg"},
+    {title:"The Shining Law of the Strong Eating the Weak", artist:"ZUN", file:"songs/Touhou 17/14 - 輝かちき弱肉強食の掟.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Prince Shoutoku's Pegasus ~ Dark Pegasus", artist:"ZUN", file:"songs/Touhou 17/15 - 聖徳太子のペガサス　～ Dark Pegasus.opus", cover:"covers/Touhou 17.jpg"},
     {title:"The Animals' Rest", artist:"ZUN", file:"songs/Touhou 17/16 - 畜生達の休息.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Returning Home from the Underground", artist:"ZUN", file:"songs/Touhou 17/17 - 地下からの帰還.opus", cover:"covers/Touhou 17.jpg"},
@@ -858,7 +858,7 @@ const playlists = {
     {title:"Memento of All Organisms ~ Memory of Fossil Energy", artist:"ZUN / ziki_7", file:"songs/Touhou 17.5/2.08 - 有機体全てのメメント ~Memory of Fossil Energy..opus", cover:"covers/Touhou 17.5.jpg"},
     {title:"Laws of Heaven, Desires of Man", artist:"ZUN / ziki_7", file:"songs/Touhou 17.5/2.09 - 天理人欲.opus", cover:"covers/Touhou 17.5.jpg"},
     {title:"Eastern Strange Tale of Avarice", artist:"ZUN / ziki_7", file:"songs/Touhou 17.5/2.10 - 東方剛欲異聞.opus", cover:"covers/Touhou 17.5.jpg"}
-	  ],
+      ],
   "Arrange": [
     {title:"Memento of the Avaricious Beast (Arrange Version)", artist:"ZUN / ziki_7", file:"songs/Touhou 17.5/2.11 - 強欲な獣のメメント.opus", cover:"covers/Touhou 17.5.jpg"},
     {title:"Submerged Hell of Sunken Sorrow (Arrange Version)", artist:"ZUN / ziki_7", file:"songs/Touhou 17.5/2.12 - 水没した沈愁地獄.opus", cover:"covers/Touhou 17.5.jpg"}
@@ -882,7 +882,7 @@ const playlists = {
     {title:"A Fantastic Giant Underground Railway Network", artist:"ZUN", file:"songs/Touhou 18/14 - 幻想の地下大線路網.opus", cover:"covers/Touhou 18.jpg"},
     {title:"Dragon-King-Slaying Princess", artist:"ZUN", file:"songs/Touhou 18/15 - 龍王殺しのプリンセス.opus", cover:"covers/Touhou 18.jpg"},
     {title:"The Sunday After the Storm", artist:"ZUN", file:"songs/Touhou 18/16 - 嵐の後の日曜日.opus", cover:"covers/Touhou 18.jpg"},
-	{title:"Rainbow-Coloured World", artist:"ZUN", file:"songs/Touhou 18/17 - 虹色の世界.opus", cover:"covers/Touhou 18.jpg"},
+    {title:"Rainbow-Coloured World", artist:"ZUN", file:"songs/Touhou 18/17 - 虹色の世界.opus", cover:"covers/Touhou 18.jpg"},
     {title:"Player's Score", artist:"ZUN", file:"songs/Touhou 18/18 - プレイヤーズスコア.opus", cover:"covers/Touhou 18.jpg"}
   ]
 },
@@ -1241,10 +1241,10 @@ const playlists = {
     {title:"The Great Fantastic Underground Railway Network", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/03. 幻想の地下大線路網.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
     {title:"Unlocated Hell", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/04. アンロケイテッドヘル.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
     {title:"Planned City of Culture, Primate Spirit Aramashi-kyō", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/05. 文化計画都市　霊長新益京.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
-	{title:"Reminiscence of Deer Hunting", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/06. 鹿狩りのレミニセンス.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
-	{title:"Kitten of Great Fortune", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/07. 大吉キトゥン.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
-	{title:"Beast Metropolis", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/08. ビーストメトロポリス.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
-	{title:"Archaeological Remains of Vairocana Buddha", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/09. 盧舎那仏遺構.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
+    {title:"Reminiscence of Deer Hunting", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/06. 鹿狩りのレミニセンス.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
+    {title:"Kitten of Great Fortune", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/07. 大吉キトゥン.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
+    {title:"Beast Metropolis", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/08. ビーストメトロポリス.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
+    {title:"Archaeological Remains of Vairocana Buddha", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/09. 盧舎那仏遺構.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
     {title:"Entrust the World to Idols ~ Idolatrize World", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/10. 偶像に世界を委ねて　～ Idoratrize World.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"},
     {title:"To a Humanity That Reveres Failure, The Next 2000 Years", artist:"ZUN", file:"songs/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins/11. 失敗を尊ぶ人類に、次の二千年を.mp3", cover:"covers/Primate Spirit Aramashi-kyō ~ Artificial Utopia in Ruins.jpg"}
     ] 
@@ -1264,8 +1264,8 @@ const playlists = {
     {title:"Alice Maestra", artist:"ビートまりお (beatMARIO)", file:"songs/Seasonal Dream Vision/Alice Maestra.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"},
     {title:"Mystic Oriental Dream ~ Ancient Temple", artist:"椎名治美 (Harumi Shiina)", file:"songs/Seasonal Dream Vision/Mystic Oriental Dream ~ Ancient Temple.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"},
     {title:"Onigashima in the Fairyland ~ Missing Power", artist:"どぶウサギ (Dobu Usagi)", file:"songs/Seasonal Dream Vision/Onigashima in the Fairyland ~ Missing Power.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"},
-	{title:"Warrior Maiden ~ Heart of Valkyrie", artist:"九十九百太郎 (Hyakutaro Tsukumo)", file:"songs/Seasonal Dream Vision/Warrior Maiden ~ Heart of Valkyrie.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"},
-	{title:"Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years", artist:"ZUN", file:"songs/Seasonal Dream Vision/Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"}
+    {title:"Warrior Maiden ~ Heart of Valkyrie", artist:"九十九百太郎 (Hyakutaro Tsukumo)", file:"songs/Seasonal Dream Vision/Warrior Maiden ~ Heart of Valkyrie.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"},
+    {title:"Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years", artist:"ZUN", file:"songs/Seasonal Dream Vision/Eastern Judgement in the Sixtieth Year ~ Fate of Sixty Years.mp3", cover:"covers/Seasonal Dream Vision Cover.jpg"}
     ] 
    },
    "Bohemian Archive in Japanese Red": {
@@ -1304,8 +1304,8 @@ const playlists = {
         {title:"Sunny Rutile Flection", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/Sunny Rutile Flection.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
         {title:"Sleepless Due to the Night", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/Sleepless Due to the Night.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
         {title:"In Regards to Fairy Brilliance", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/In Regards to Fairy Brilliance.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
-		{title:"The Fairy's Adventurous Tale", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/1 - フェアリーの冒険譚.opus", cover:"covers/Strange and Bright Nature Deity3.jpg"},
-		{title:"Two Worlds", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/2 - 二つの世界.opus", cover:"covers/Strange and Bright Nature Deity3.jpg"}
+        {title:"The Fairy's Adventurous Tale", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/1 - フェアリーの冒険譚.opus", cover:"covers/Strange and Bright Nature Deity3.jpg"},
+        {title:"Two Worlds", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/2 - 二つの世界.opus", cover:"covers/Strange and Bright Nature Deity3.jpg"}
     ]
    },
   "Oriental Sacred Place": {
@@ -1347,6 +1347,15 @@ const playlists = {
   }
  };
 
+// ================== R2 BASE URL ==================
+const R2_BASE = "https://pub-ce8938dd87f442ef8827efc2a61b6976.r2.dev/";
+
+function resolveMediaUrl(path) {
+  if (!path) return "";
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  return R2_BASE.replace(/\/$/, "") + "/" + path.replace(/^\//, "");
+}
+
 // ================== STATE ==================
 let currentType = "Games";
 let currentPlaylist = "All";
@@ -1357,15 +1366,13 @@ let currentTrack = null;
 let isMuted = false;
 let isShuffle = false;
 let isLoop = false;
-let lastVolume = 1.0; // Store volume before mute
+let lastVolume = 1.0;
 let playlistManager = null;
 
 const audio = document.getElementById('audioEl');
-
-// Enable streaming by setting preload to metadata
 audio.preload = "metadata";
 
-// refs (including download buttons)
+// refs
 const miniCover = document.getElementById('miniCover');
 const songTitleInner = document.getElementById('songTitleInner');
 const songArtist = document.getElementById('songArtist');
@@ -1408,13 +1415,11 @@ const bigLoopBtn = document.getElementById("bigLoop");
 const volumeSlider = document.getElementById('volumeSlider');
 const bigVolumeSlider = document.getElementById('bigVolumeSlider');
 
-// Safety: if any ref missing, stop early (helps debugging)
 if (!audio || !trackList) {
   console.error("Essential player elements missing from DOM.");
 }
 
 // ================== PLAYLIST MANAGER ==================
-
 class PlaylistManager {
     constructor() {
         this.db = null;
@@ -1463,7 +1468,6 @@ class PlaylistManager {
         }
     }
 
-    // Check if user is authenticated (works even if Firestore is offline)
     isUserAuthenticated() {
         return !!(this.initialized && this.currentUser && window.firebaseAuth && window.firebaseAuth.currentUser);
     }
@@ -1487,12 +1491,10 @@ class PlaylistManager {
             const playlist = playlistDoc.data();
             const tracks = playlist.tracks || [];
 
-            // Check if track already exists in playlist
             if (tracks.some(t => t.file === track.file)) {
                 return { success: false, message: 'Track already in playlist' };
             }
 
-            // Add track to playlist
             tracks.push({
                 title: track.title,
                 artist: track.artist,
@@ -1544,7 +1546,6 @@ class PlaylistManager {
 
         } catch (error) {
             console.error('Error getting playlists for track:', error);
-            // Return empty array instead of failing
             return [];
         }
     }
@@ -1571,7 +1572,6 @@ class PlaylistManager {
         }
     }
 
-    // Download all tracks from a playlist
     downloadPlaylistTracks(playlistTracks) {
         if (!playlistTracks || playlistTracks.length === 0) {
             alert('No tracks in playlist to download');
@@ -1579,18 +1579,14 @@ class PlaylistManager {
         }
 
         console.log(`Starting download of ${playlistTracks.length} tracks`);
-
-        // Show downloading notification
         showPlaylistMessage(`Downloading ${playlistTracks.length} tracks...`, 'success');
 
-        // Download each track with a small delay
         playlistTracks.forEach((track, index) => {
             setTimeout(() => {
                 this.downloadSingleTrack(track);
-            }, index * 500); // 500ms delay between downloads
+            }, index * 500);
         });
 
-        // Show completion message
         setTimeout(() => {
             showPlaylistMessage(`Started download of ${playlistTracks.length} tracks`, 'success');
         }, 100);
@@ -1604,22 +1600,16 @@ class PlaylistManager {
 
         console.log('Downloading:', track.file);
         
-        // Create a temporary anchor element to trigger download
         const a = document.createElement('a');
-        a.href = track.file;
+        a.href = resolveMediaUrl(track.file);
         
-        // Extract filename from the file path
         const filename = track.file.split('/').pop() || 
                         `${track.title} - ${track.artist}.${track.file.split('.').pop()}`;
         
         a.download = filename;
         a.style.display = 'none';
         document.body.appendChild(a);
-        
-        // Trigger the download
         a.click();
-        
-        // Clean up
         document.body.removeChild(a);
         
         console.log('Download initiated for:', filename);
@@ -1630,46 +1620,36 @@ class PlaylistManager {
 function initializeVolumeControls() {
     const volumeSliders = document.querySelectorAll('.volume-slider');
     
-    // Load saved volume or default to 100%
     let savedVolume = localStorage.getItem('volume');
     let initialVolume = savedVolume ? parseFloat(savedVolume) : 1.0;
     
-    // Set initial volume
     audio.volume = initialVolume;
     lastVolume = initialVolume;
     
-    // Initialize all volume sliders
     volumeSliders.forEach(slider => {
         const sliderValue = initialVolume * 100;
         slider.value = sliderValue;
         updateVolumeSliderProgress(slider, sliderValue);
         
-        // Volume slider change event
         slider.addEventListener('input', function() {
             const volume = this.value / 100;
             audio.volume = volume;
             lastVolume = volume;
             
-            // Update all volume sliders
             volumeSliders.forEach(s => {
                 s.value = this.value;
                 updateVolumeSliderProgress(s, this.value);
             });
             
-            // Auto-unmute if adjusting volume while muted
             if (volume > 0 && isMuted) {
                 setMuted(false);
             }
             
-            // Update mute button state based on volume
             updateMuteButtonState(volume);
-            
-            // Save volume preference
             localStorage.setItem('volume', volume);
         });
     });
     
-    // Initialize mute button state
     updateMuteButtonState(initialVolume);
 }
 
@@ -1717,13 +1697,10 @@ function checkAudioSupport() {
 function getTracks() {
   console.log("Getting tracks for:", currentType, currentPlaylist, currentVersion);
   
-  // Check if we're in playlist mode
   if (currentType === "MyPlaylists" && currentPlaylist !== "All") {
     console.log("Loading tracks from playlist:", currentPlaylist);
     const playlistTracks = window.currentPlaylistTracks || [];
     
-    // FIX: When in playlist mode and Arrange version is selected but no arrange tracks exist,
-    // automatically fall back to showing all versions
     if (currentVersion === "Arrange" && playlistTracks.length > 0) {
       const hasArrangeTracks = playlistTracks.some(track => 
         track.file && track.file.toLowerCase().includes('arrange')
@@ -1731,7 +1708,7 @@ function getTracks() {
       
       if (!hasArrangeTracks) {
         console.log("No arrange tracks found in playlist, showing all versions instead");
-        return playlistTracks; // Return all tracks instead of empty array
+        return playlistTracks;
       }
     }
     
@@ -1773,8 +1750,6 @@ function getTracks() {
   else if (currentVersion === "Arrange") {
     tracks = album.Arrange || [];
     
-    // FIX: If Arrange version is selected but no arrange tracks exist,
-    // automatically fall back to showing all versions
     if (tracks.length === 0 && (album.Original && album.Original.length > 0)) {
       console.log("No arrange tracks found, showing all versions instead");
       tracks = [...(album.Original || []), ...(album.Arrange || []), ...(album["New Classic"] || [])];
@@ -1783,8 +1758,6 @@ function getTracks() {
   else if (currentVersion === "New Classic") {
     tracks = album["New Classic"] || [];
     
-    // FIX: If New Classic version is selected but no tracks exist,
-    // automatically fall back to showing all versions
     if (tracks.length === 0 && (album.Original && album.Original.length > 0)) {
       console.log("No New Classic tracks found, showing all versions instead");
       tracks = [...(album.Original || []), ...(album.Arrange || []), ...(album["New Classic"] || [])];
@@ -1812,22 +1785,16 @@ function downloadTrack(track) {
   
   console.log("Attempting to download:", track.file);
   
-  // Create a temporary anchor element to trigger download
   const a = document.createElement('a');
-  a.href = track.file;
+  a.href = resolveMediaUrl(track.file);
   
-  // Extract filename from the file path
   const filename = track.file.split('/').pop() || 
                   `${track.title} - ${track.artist}.${track.file.split('.').pop()}`;
   
   a.download = filename;
   a.style.display = 'none';
   document.body.appendChild(a);
-  
-  // Trigger the download
   a.click();
-  
-  // Clean up
   document.body.removeChild(a);
   
   console.log("Download initiated for:", filename);
@@ -1837,59 +1804,46 @@ function downloadTrack(track) {
 function loadTrack(i) {
   const pool = getTracks();
   if (!pool.length) {
-    // no tracks available
     currentIndex = 0;
     currentTrack = null;
     audio.removeAttribute('src');
-    audio.load(); // Important: reset the audio element
+    audio.load();
     updateSmallPlayerUI(null);
     updateBigPlayerUI(null);
     updateTrackHighlighting();
     return;
   }
 
-  // clamp i
   if (i < 0) i = 0;
   if (i >= pool.length) i = 0;
 
   currentIndex = i;
   currentTrack = pool[i];
 
-  // Pause current playback and reset audio
   audio.pause();
   audio.currentTime = 0;
 
-  // try format fallback (opus/flac -> mp3)
   const fileExt = (currentTrack.file || "").split('.').pop().toLowerCase();
   const supportedFormats = checkAudioSupport();
   
   let audioSrc = currentTrack.file;
   if (fileExt && supportedFormats && !supportedFormats[fileExt]) {
-    // attempt to use an mp3 if exists (best-effort)
     const mp3Candidate = currentTrack.file.replace(/\.(flac|opus)$/i, '.mp3');
     audioSrc = mp3Candidate || currentTrack.file;
   }
 
-  // Configure audio for streaming
-  audio.preload = "metadata"; // Only load metadata initially
-  audio.src = audioSrc;
-  
-  // Load just enough to get duration and enable seeking
+  audio.preload = "metadata";
+  audio.src = resolveMediaUrl(audioSrc);
   audio.load();
 
-  // update UIs
   updateSmallPlayerUI(currentTrack);
   updateBigPlayerUI(currentTrack);
 
-  // ensure scroll-on-overflow for small title
   requestAnimationFrame(() => adjustSmallTitleScrolling());
-
-  // update highlight
   updateTrackHighlighting();
 }
 
 function playTrack() {
-  // If no track is loaded, load and play the first track
   if (!currentTrack) {
     const pool = getTracks();
     if (pool.length === 0) {
@@ -1897,10 +1851,8 @@ function playTrack() {
       return;
     }
     
-    // Load the first track
     loadTrack(0);
     
-    // Play immediately after loading
     const playWhenReady = () => {
       audio.removeEventListener('canplay', playWhenReady);
       audio.play().catch((error) => {
@@ -1914,12 +1866,10 @@ function playTrack() {
     return;
   }
 
-  // For streaming: set preload to auto when playing to allow progressive download
   audio.preload = "auto";
   
   audio.play().catch((error) => {
     console.error("Playback failed:", error);
-    // Fallback: try to reload the audio source
     const currentTime = audio.currentTime;
     audio.load();
     audio.currentTime = currentTime;
@@ -1928,8 +1878,6 @@ function playTrack() {
   
   isPlaying = true;
   updatePlayButtons();
-
-  // ensure current track highlighted
   updateTrackHighlighting(true);
 }
 
@@ -1944,7 +1892,6 @@ function updatePlayButtons() {
   if (bigPlay) bigPlay.textContent = isPlaying ? '❚❚' : '▶';
 }
 
-// update small player elements (cover/title/artist)
 function updateSmallPlayerUI(track) {
   if (!track) {
     if (miniCover) miniCover.src = "";
@@ -1953,13 +1900,12 @@ function updateSmallPlayerUI(track) {
     if (downloadBtn) downloadBtn.style.display = 'none';
     return;
   }
-  if (miniCover) miniCover.src = track.cover || "";
+  if (miniCover) miniCover.src = resolveMediaUrl(track.cover || "");
   if (songTitleInner) songTitleInner.textContent = track.title || "—";
   if (songArtist) songArtist.textContent = track.artist || "";
   if (downloadBtn) downloadBtn.style.display = 'inline-block';
 }
 
-// update big player elements (cover/title/artist)
 function updateBigPlayerUI(track) {
   if (!track) {
     if (bigPlayerCover) bigPlayerCover.src = "";
@@ -1968,7 +1914,7 @@ function updateBigPlayerUI(track) {
     if (bigDownloadBtn) bigDownloadBtn.style.display = 'none';
     return;
   }
-  if (bigPlayerCover) bigPlayerCover.src = track.cover || "";
+  if (bigPlayerCover) bigPlayerCover.src = resolveMediaUrl(track.cover || "");
   if (bigPlayerTitle) bigPlayerTitle.textContent = track.title || "—";
   if (bigPlayerArtist) bigPlayerArtist.textContent = track.artist || "";
   if (bigDownloadBtn) bigDownloadBtn.style.display = 'inline-block';
@@ -2007,7 +1953,6 @@ function updateTrackHighlighting(shouldScroll = false) {
 function playNext() {
   const pool = getTracks();
   if (!pool.length) {
-    // FIX: If no tracks in current version, try switching to AllVersions
     if (currentVersion !== "AllVersions") {
       console.log("No tracks in current version, switching to AllVersions");
       currentVersion = "AllVersions";
@@ -2026,12 +1971,10 @@ function playNext() {
   
   let nextIndex;
   if (isShuffle) {
-    // Shuffle mode: pick random track (avoid playing same track)
     do {
       nextIndex = Math.floor(Math.random() * pool.length);
     } while (nextIndex === currentIndex && pool.length > 1);
   } else {
-    // Normal mode: play next track
     nextIndex = (currentIndex + 1) % pool.length;
   }
   
@@ -2042,7 +1985,6 @@ function playNext() {
 function playPrev() {
   const pool = getTracks();
   if (!pool.length) {
-    // FIX: If no tracks in current version, try switching to AllVersions
     if (currentVersion !== "AllVersions") {
       console.log("No tracks in current version, switching to AllVersions");
       currentVersion = "AllVersions";
@@ -2061,12 +2003,10 @@ function playPrev() {
   
   let prevIndex;
   if (isShuffle) {
-    // Shuffle mode: pick random track (avoid playing same track)
     do {
       prevIndex = Math.floor(Math.random() * pool.length);
     } while (prevIndex === currentIndex && pool.length > 1);
   } else {
-    // Normal mode: play previous track
     prevIndex = (currentIndex - 1 + pool.length) % pool.length;
   }
   
@@ -2075,27 +2015,22 @@ function playPrev() {
 }
 
 // ================== AUDIO CONTROL FUNCTIONS ==================
-// === Mute Toggle ===
 function setMuted(muted) {
   isMuted = muted;
   audio.muted = muted;
 
   if (muted) {
-    // Store current volume before muting
     lastVolume = audio.volume;
     audio.volume = 0;
     
-    // Update volume sliders to show 0
     const volumeSliders = document.querySelectorAll('.volume-slider');
     volumeSliders.forEach(slider => {
       slider.value = 0;
       updateVolumeSliderProgress(slider, 0);
     });
   } else {
-    // Restore previous volume
     audio.volume = lastVolume;
     
-    // Update volume sliders to show restored volume
     const volumeSliders = document.querySelectorAll('.volume-slider');
     volumeSliders.forEach(slider => {
       const sliderValue = lastVolume * 100;
@@ -2104,7 +2039,6 @@ function setMuted(muted) {
     });
   }
 
-  // Update mute button appearance
   updateMuteButtonState(audio.volume);
 }
 
@@ -2112,55 +2046,45 @@ function toggleMute() {
   setMuted(!isMuted);
 }
 
-// === Shuffle Functionality ===
 function shuffleTracks() {
   isShuffle = !isShuffle;
   
-  // Update both shuffle buttons
   if (shuffleBtn) shuffleBtn.classList.toggle("active", isShuffle);
   if (bigShuffleBtn) bigShuffleBtn.classList.toggle("active", isShuffle);
   
   console.log("Shuffle:", isShuffle ? "ON" : "OFF");
 }
 
-// === Loop Functionality ===
 function toggleLoop() {
   isLoop = !isLoop;
   audio.loop = isLoop;
   
-  // Update both loop buttons
   if (loopBtn) loopBtn.classList.toggle("active", isLoop);
   if (bigLoopBtn) bigLoopBtn.classList.toggle("active", isLoop);
   
   console.log("Loop:", isLoop ? "ON" : "OFF");
 }
 
-// Initialize button states on page load
 function initializeControlStates() {
-  // Set initial audio properties
   if (audio) {
     audio.loop = isLoop;
   }
   
-  // Set initial states
   setMuted(false);
   
-  // Update button appearances
   if (shuffleBtn) shuffleBtn.classList.toggle("active", isShuffle);
   if (bigShuffleBtn) bigShuffleBtn.classList.toggle("active", isShuffle);
   
   if (loopBtn) loopBtn.classList.toggle("active", isLoop);
   if (bigLoopBtn) bigLoopBtn.classList.toggle("active", isLoop);
 
-  // Initialize volume controls
   initializeVolumeControls();
 }
 
 // ================== KEYBOARD CONTROLS ==================
 document.addEventListener('keydown', (e) => {
-  // Space bar to play/pause (only if not focused on input elements)
   if (e.code === 'Space' && !isInputElement(e.target)) {
-    e.preventDefault(); // Prevent scrolling when space is pressed
+    e.preventDefault();
     if (isPlaying) {
       pauseTrack();
     } else {
@@ -2169,7 +2093,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Helper function to check if element is an input field
 function isInputElement(element) {
   const inputTypes = ['input', 'textarea', 'select'];
   return inputTypes.includes(element.tagName.toLowerCase()) || 
@@ -2201,7 +2124,6 @@ if (bigPrev) {
   bigPrev.addEventListener('click', playPrev);
 }
 
-// Download button events
 if (downloadBtn) {
   downloadBtn.addEventListener('click', () => {
     if (currentTrack) {
@@ -2220,7 +2142,6 @@ if (bigDownloadBtn) {
   });
 }
 
-// Big player open/close
 if (openBig) {
   openBig.addEventListener('click', () => {
     if (bigPlayer) bigPlayer.classList.add('active');
@@ -2233,7 +2154,6 @@ if (closeBigPlayer) {
   });
 }
 
-// Mute button event listeners
 if (muteBtn) {
   muteBtn.addEventListener('click', toggleMute);
 }
@@ -2242,7 +2162,6 @@ if (bigMuteBtn) {
   bigMuteBtn.addEventListener('click', toggleMute);
 }
 
-// Shuffle button event listeners
 if (shuffleBtn) {
   shuffleBtn.addEventListener("click", shuffleTracks);
 }
@@ -2251,7 +2170,6 @@ if (bigShuffleBtn) {
   bigShuffleBtn.addEventListener("click", shuffleTracks);
 }
 
-// Loop button event listeners
 if (loopBtn) {
   loopBtn.addEventListener("click", toggleLoop);
 }
@@ -2275,7 +2193,6 @@ audio.addEventListener('timeupdate', () => {
 });
 
 audio.addEventListener('loadedmetadata', () => {
-  // Update duration display when metadata is loaded
   if (durTime) durTime.textContent = audio.duration ? formatTime(audio.duration) : "0:00";
   if (bigDurTime) bigDurTime.textContent = audio.duration ? formatTime(audio.duration) : "0:00";
 });
@@ -2290,18 +2207,15 @@ audio.addEventListener('pause', () => {
   updatePlayButtons();
 });
 
-// when a track ends, auto next
 audio.addEventListener('ended', () => {
   if (!isLoop) {
     playNext();
   } else {
-    // If loop is enabled, restart the same track
     audio.currentTime = 0;
     audio.play();
   }
 });
 
-// Handle buffering for better streaming experience
 audio.addEventListener('waiting', () => {
   console.log("Audio buffering...");
 });
@@ -2314,7 +2228,6 @@ audio.addEventListener('canplaythrough', () => {
   console.log("Audio can play through without stopping");
 });
 
-// click to seek (small & big progress bars)
 function seekFromClick(e, barEl) {
   if (!audio.duration || !isFinite(audio.duration)) return;
   const rect = barEl.getBoundingClientRect();
@@ -2330,20 +2243,15 @@ if (bigProgress) {
 }
 
 // ================== PLAYLIST FUNCTIONALITY ==================
-
-// Initialize playlist manager
 async function initializePlaylistManager() {
     playlistManager = new PlaylistManager();
     await playlistManager.init();
     console.log('Playlist manager initialized');
 }
 
-// Show add to playlist menu
 async function showAddToPlaylistMenu(track, buttonElement) {
-    // Wait a moment for auth state to propagate if needed
     await new Promise(resolve => setTimeout(resolve, 100));
     
-    // Check if user is logged in using the playlist manager
     if (!playlistManager || !playlistManager.isUserAuthenticated()) {
         alert('Please log in to use playlists');
         return;
@@ -2351,7 +2259,6 @@ async function showAddToPlaylistMenu(track, buttonElement) {
 
     const playlists = await playlistManager.getPlaylistsForTrack(track);
     
-    // Create menu HTML
     const menuHTML = `
         <div class="playlist-menu">
             <div class="playlist-menu-header">
@@ -2379,20 +2286,17 @@ async function showAddToPlaylistMenu(track, buttonElement) {
         </div>
     `;
 
-    // Create and show menu
     const menu = document.createElement('div');
     menu.className = 'playlist-menu-container';
     menu.innerHTML = menuHTML;
     document.body.appendChild(menu);
 
-    // Position menu near the button
     const rect = buttonElement.getBoundingClientRect();
     menu.style.position = 'fixed';
     menu.style.top = (rect.bottom + 5) + 'px';
     menu.style.left = (rect.left) + 'px';
     menu.style.zIndex = '1000';
 
-    // Add event listeners
     menu.querySelector('.playlist-menu-close').addEventListener('click', () => {
         menu.remove();
     });
@@ -2413,7 +2317,6 @@ async function showAddToPlaylistMenu(track, buttonElement) {
         });
     });
 
-    // Close menu when clicking outside
     setTimeout(() => {
         const closeMenu = (e) => {
             if (!menu.contains(e.target) && e.target !== buttonElement) {
@@ -2426,19 +2329,16 @@ async function showAddToPlaylistMenu(track, buttonElement) {
 }
 
 function showPlaylistMessage(message, type) {
-    // Remove existing message
     const existingMessage = document.querySelector('.playlist-message');
     if (existingMessage) {
         existingMessage.remove();
     }
 
-    // Create new message
     const messageEl = document.createElement('div');
     messageEl.className = `playlist-message playlist-message-${type}`;
     messageEl.textContent = message;
     document.body.appendChild(messageEl);
 
-    // Remove message after 3 seconds
     setTimeout(() => {
         messageEl.remove();
     }, 3000);
@@ -2464,13 +2364,11 @@ function buildTrackList() {
     }
     if (noResults) noResults.style.display = "none";
 
-    // If a currentTrack is playing, try to find its index in the new pool so we can keep highlighting consistent
     if (currentTrack) {
         const found = pool.findIndex(t => t.file === currentTrack.file);
         if (found >= 0) {
             currentIndex = found;
         } else {
-            // if currently playing track isn't in this pool, don't change currentTrack but reset currentIndex if out-of-bounds
             if (currentIndex >= pool.length) currentIndex = 0;
         }
     } else {
@@ -2481,11 +2379,10 @@ function buildTrackList() {
         const col = document.createElement('div');
         col.className = "col-md-6 mb-3";
 
-        // create track element with data attributes (index + file) — file is used for robust matching
         col.innerHTML = `
             <div class="track card h-100 d-flex flex-row align-items-center p-2 position-relative" 
                  data-index="${i}" data-file="${t.file}">
-                <img src="${t.cover}" class="track-cover me-3" alt="cover">
+                <img src="${resolveMediaUrl(t.cover)}" class="track-cover me-3" alt="cover">
                 <div class="flex-grow-1">
                     <div class="track-title fw-bold">${t.title}</div>
                     <div class="track-artist">${t.artist}</div>
@@ -2505,29 +2402,24 @@ function buildTrackList() {
         const downloadButton = trackEl.querySelector('.track-download-btn');
         const playlistButton = trackEl.querySelector('.track-playlist-btn');
 
-        // click -> load that track and play
         trackEl.addEventListener('click', () => {
             loadTrack(i);
             playTrack();
-            // highlight and make sure it's visible
             updateTrackHighlighting(true);
         });
 
-        // download button click
         downloadButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent triggering the track click
+            e.stopPropagation();
             console.log("Track download button clicked for:", t.title);
             downloadTrack(t);
         });
 
-        // playlist button click
         playlistButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent triggering the track click
+            e.stopPropagation();
             console.log("Playlist button clicked for:", t.title);
             showAddToPlaylistMenu(t, playlistButton);
         });
 
-        // if this track is the currently playing file, mark it now
         if (currentTrack && t.file === currentTrack.file) {
             trackEl.classList.add('playing');
         }
@@ -2535,10 +2427,7 @@ function buildTrackList() {
         trackList.appendChild(col);
     });
 
-    // update highlight to ensure only the actual playing track is highlighted
     updateTrackHighlighting(false);
-
-    // apply any active search filter
     applySearchFilter();
 }
 
@@ -2579,13 +2468,11 @@ function updatePlaylistOptions() {
         });
     }
     
-    // Reset currentPlaylist to "All" when type changes
     currentPlaylist = "All";
     if (playlistSelect) {
         playlistSelect.value = "All";
     }
     
-    // Also reset currentVersion to "AllVersions" when type changes
     currentVersion = "AllVersions";
     if (versionSelect) {
         versionSelect.value = "AllVersions";
@@ -2593,27 +2480,19 @@ function updatePlaylistOptions() {
     
     console.log("Reset playlist and version after type change:", { currentPlaylist, currentVersion });
     
-    // Rebuild version dropdown to match new selection
     updateVersionOptions();
-    
-    // Check if we should hide version dropdown
     checkVersionVisibility();
 }
 
-// Dynamically build the version dropdown based on what the current
-// playlist/album actually contains. "New Classic" only shows up when
-// the selected album has New Classic tracks (currently only Touhou 6).
 function updateVersionOptions() {
     if (!versionSelect) return;
 
-    // Determine which versions are available for the current selection
     let hasOriginal = false;
     let hasArrange = false;
     let hasNewClassic = false;
 
     const typeData = playlists[currentType];
     if (typeData) {
-        // Collect all albums we care about
         const albumsToCheck = currentPlaylist === "All"
             ? Object.values(typeData)
             : [typeData[currentPlaylist]].filter(Boolean);
@@ -2626,10 +2505,8 @@ function updateVersionOptions() {
         });
     }
 
-    // Preserve the current selection if it's still valid
     const previousValue = currentVersion;
 
-    // Rebuild the dropdown
     versionSelect.innerHTML = "";
 
     const addOption = (value, label) => {
@@ -2644,7 +2521,6 @@ function updateVersionOptions() {
     if (hasArrange)    addOption("Arrange", "Arrange");
     if (hasNewClassic) addOption("New Classic", "New Classic");
 
-    // Restore previous selection if it's still present, otherwise fall back
     const stillValid = Array.from(versionSelect.options)
         .some(o => o.value === previousValue);
 
@@ -2666,16 +2542,13 @@ function checkVersionVisibility() {
     const versionLabel = document.querySelector('.col-md-4:nth-child(3) .filter-label');
     const filterSection = document.querySelector('.filter-section');
     
-    // Hide version for specific music types
     const hideVersionTypes = ["Akyuu's Untouched Score", "ZUN Music Collection", "Print Work OST"];
     
-    // Check if current playlist has only one version (Original only)
     let hasOnlyOriginal = false;
     if (currentPlaylist !== "All") {
         const typeData = playlists[currentType];
         if (typeData && typeData[currentPlaylist]) {
             const album = typeData[currentPlaylist];
-            // Check if there's only Original version and no Arrange or New Classic version
             hasOnlyOriginal = (album.Original && album.Original.length > 0) && 
                            (!album.Arrange || album.Arrange.length === 0) &&
                            (!album["New Classic"] || album["New Classic"].length === 0);
@@ -2685,11 +2558,9 @@ function checkVersionVisibility() {
     const shouldHideVersion = hideVersionTypes.includes(currentType) || hasOnlyOriginal;
     
     if (shouldHideVersion) {
-        // Hide version dropdown and label
         if (versionContainer) versionContainer.style.display = 'none';
         if (versionLabel) versionLabel.style.display = 'none';
         
-        // Center the other two columns and shrink the container
         const filterRow = document.querySelector('.filter-section .row');
         if (filterRow) {
             filterRow.classList.add('justify-content-center');
@@ -2698,11 +2569,9 @@ function checkVersionVisibility() {
             filterSection.classList.add('two-columns');
         }
     } else {
-        // Show version dropdown and label
         if (versionContainer) versionContainer.style.display = 'block';
         if (versionLabel) versionLabel.style.display = 'block';
         
-        // Reset centering and container size
         const filterRow = document.querySelector('.filter-section .row');
         if (filterRow) {
             filterRow.classList.remove('justify-content-center');
@@ -2713,12 +2582,11 @@ function checkVersionVisibility() {
     }
 }
 
-// Event listeners for dropdown changes
 if (typeSelect) {
     typeSelect.addEventListener('change', (e) => {
         currentType = e.target.value;
         console.log("Type changed to:", currentType);
-        updatePlaylistOptions();   // resets playlist + version, then rebuilds version dropdown
+        updatePlaylistOptions();
         checkVersionVisibility();
         buildTrackList();
     });
@@ -2728,7 +2596,7 @@ if (playlistSelect) {
     playlistSelect.addEventListener('change', (e) => {
         currentPlaylist = e.target.value;
         console.log("Playlist changed to:", currentPlaylist);
-        updateVersionOptions();    // rebuild version dropdown for the newly selected album
+        updateVersionOptions();
         checkVersionVisibility();
         buildTrackList();
     });
@@ -2743,8 +2611,6 @@ if (versionSelect) {
 }
 
 // ================== PLAYLIST PLAYBACK FUNCTIONS ==================
-
-// Function to load and play a playlist
 window.loadPlaylist = async function(playlistId, playlistName) {
     if (!playlistManager) {
         console.error('Playlist manager not initialized');
@@ -2753,23 +2619,17 @@ window.loadPlaylist = async function(playlistId, playlistName) {
 
     console.log('Loading playlist:', playlistName, playlistId);
     
-    // Set current type to MyPlaylists to indicate we're in playlist mode
     currentType = "MyPlaylists";
     currentPlaylist = playlistName;
     
-    // Load tracks from the playlist
     const tracks = await playlistManager.loadPlaylistTracks(playlistId);
     window.currentPlaylistTracks = tracks;
     
     console.log('Loaded playlist tracks:', tracks.length);
     
-    // Update the UI to show we're in playlist mode
     updatePlaylistModeUI(playlistName);
-    
-    // Build the track list with playlist tracks
     buildTrackList();
     
-    // If there are tracks, load and play the first one
     if (tracks.length > 0) {
         loadTrack(0);
         playTrack();
@@ -2777,27 +2637,23 @@ window.loadPlaylist = async function(playlistId, playlistName) {
 }
 
 function updatePlaylistModeUI(playlistName) {
-    // Update page title to show we're in playlist mode
     const pageTitle = document.querySelector('.page-title');
     if (pageTitle) {
         pageTitle.textContent = `Playlist: ${playlistName}`;
     }
     
-    // You could also update the filter section to show playlist info
     const filterSection = document.querySelector('.filter-section');
     if (filterSection) {
-        filterSection.style.display = 'none'; // Hide filters in playlist mode
+        filterSection.style.display = 'none';
     }
 }
 
-// Function to return to main library
 window.returnToLibrary = function() {
     currentType = "Games";
     currentPlaylist = "All";
     currentVersion = "AllVersions";
     window.currentPlaylistTracks = null;
     
-    // Restore UI
     const pageTitle = document.querySelector('.page-title');
     if (pageTitle) {
         pageTitle.textContent = "Touhou Music Player";
@@ -2812,7 +2668,6 @@ window.returnToLibrary = function() {
     buildTrackList();
 }
 
-// Function to download all tracks from a playlist
 window.downloadPlaylist = function(playlistTracks) {
     if (playlistManager) {
         playlistManager.downloadPlaylistTracks(playlistTracks);
@@ -2822,18 +2677,12 @@ window.downloadPlaylist = function(playlistTracks) {
 }
 
 // ================== INIT ==================
-// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Initializing music player...");
     
-    // Initialize control states
     initializeControlStates();
-    
-    // Initialize playlist manager
     initializePlaylistManager();
-    
-    // Build initial track list
-    updatePlaylistOptions();   // populates playlist dropdown AND calls updateVersionOptions()
+    updatePlaylistOptions();
     buildTrackList();
     
     console.log("Music player initialized successfully");
