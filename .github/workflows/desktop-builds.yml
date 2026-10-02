@@ -13,7 +13,6 @@ on:
       - 'index.html'
       - 'music.js'
       - 'profile.css'
-      - 'downloads.js'
       - '.github/workflows/desktop-builds.yml'
 
 permissions:
@@ -97,10 +96,7 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: |
-            ndk;27.2.12479018
-            platforms;android-35
-            build-tools;35.0.0
+          packages: 'ndk;27.2.12479018 platforms;android-35 build-tools;35.0.0'
 
       - name: Select Android NDK
         shell: bash

@@ -103,8 +103,7 @@ button.primary, .btn-primary, .download-platform-link:not(.secondary):not(.unava
 }
 button.primary:hover, .btn-primary:hover, .download-platform-link:not(.secondary):not(.unavailable):hover,
 #profileSettingsView .profile-action-link.primary:hover { color: var(--app-on-accent); background: var(--app-accent-hover); }
-.library-shortcut:hover, .library-shortcut.active, .player-action-item:hover, .player-action-item:focus,
-.downloads-release-link:hover { color: var(--app-gold); }
+.library-shortcut:hover, .library-shortcut.active, .player-action-item:hover, .player-action-item:focus { color: var(--app-gold); }
 .download-platform-icon { color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 12%, transparent); }
 .downloads-eyebrow, .settings-kicker, .settings-label { color: var(--app-gold); }
 
@@ -162,7 +161,7 @@ button.primary:hover, .btn-primary:hover, .download-platform-link:not(.secondary
 .playlist-info, .playlist-card-spotify h2, .playlist-card-spotify h3 { color: var(--app-text); }
 .playlist-hero-title { color: var(--app-text); }
 .download-platform-link.secondary { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
-.download-platform-note, .downloads-release-status { color: var(--app-muted); }
+.download-platform-note { color: var(--app-muted); }
 
 /* Auth pages share the selected palette and provide a quick switch. */
 .auth-page { color: var(--app-text); background: var(--app-bg); }

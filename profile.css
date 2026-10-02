@@ -128,9 +128,6 @@ body.app-secondary-view .player-bar { z-index: 9999; }
 .download-platform-link.secondary:hover { color: #fff; background: #353535; }
 .download-platform-link.unavailable,
 .download-platform-link[aria-disabled="true"] { pointer-events: none; color: #888; border-color: #363636; background: #202020; }
-.downloads-release-status { margin: 20px 0 6px; color: #888; font-size: .85rem; text-align: center; }
-.downloads-release-link { display: block; width: fit-content; margin: 0 auto; color: #bbb; font-size: .85rem; text-decoration: none; }
-.downloads-release-link:hover { color: #1ed760; }
 
 @media (max-width: 680px) {
   .profile-settings-shell, .downloads-shell { width: min(100% - 24px, 560px); padding-top: 18px; }
