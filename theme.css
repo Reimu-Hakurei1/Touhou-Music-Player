@@ -199,6 +199,64 @@ html[data-theme="light"] .auth-page .auth-disc-one { background: repeating-radia
 html[data-theme="light"] .auth-page .auth-disc-two { background: repeating-radial-gradient(circle, #daccc1 0 1px, #eee5dc 2px 4px); }
 html[data-theme="light"] .auth-page .auth-disc-three { border-color: #e6d9cd; color: var(--app-on-accent); }
 
+/* Older page styles used fixed white text, including !important declarations.
+   Explicitly reset those elements when their surfaces switch to parchment. */
+html[data-theme="light"] body { color: var(--app-text); }
+html[data-theme="light"] #fixedHeader .page-title,
+html[data-theme="light"] #fixedHeader .filter-label,
+html[data-theme="light"] #trackList .track-title,
+html[data-theme="light"] #trackList .track-artist,
+html[data-theme="light"] #trackList .track-secondary,
+html[data-theme="light"] .playlist-main,
+html[data-theme="light"] .current-playlist-head h3,
+html[data-theme="light"] .playlist-card .card-title,
+html[data-theme="light"] .playlist-card .card-text,
+html[data-theme="light"] .playlist-card small,
+html[data-theme="light"] .playlist-card .text-muted,
+html[data-theme="light"] .card-body,
+html[data-theme="light"] .card-body *,
+html[data-theme="light"] .modal-title,
+html[data-theme="light"] .modal-body,
+html[data-theme="light"] .modal-footer,
+html[data-theme="light"] .text-muted,
+html[data-theme="light"] .song-comment p,
+html[data-theme="light"] .song-comment time,
+html[data-theme="light"] .comment-edited-label,
+html[data-theme="light"] .song-comment-actions button,
+html[data-theme="light"] .queue-panel,
+html[data-theme="light"] .queue-panel button,
+html[data-theme="light"] .queue-item-artist,
+html[data-theme="light"] .queue-empty,
+html[data-theme="light"] .player-action-menu,
+html[data-theme="light"] .track-actions-menu,
+html[data-theme="light"] .track-actions-menu .track-menu-item,
+html[data-theme="light"] .profile-dropdown .dropdown-content button,
+html[data-theme="light"] .dropdown-content button {
+  color: var(--app-text) !important;
+}
+html[data-theme="light"] #newPlaylistName,
+html[data-theme="light"] .comment-edit-form textarea,
+html[data-theme="light"] .comment-form textarea,
+html[data-theme="light"] .comment-form textarea::placeholder,
+html[data-theme="light"] .comment-edit-form textarea::placeholder {
+  color: var(--app-text) !important;
+  border-color: var(--app-border);
+  background: var(--app-raised);
+}
+html[data-theme="light"] #newPlaylistName::placeholder { color: var(--app-muted) !important; }
+html[data-theme="light"] .playlist-card .card-text,
+html[data-theme="light"] .playlist-card small,
+html[data-theme="light"] .playlist-card .text-muted,
+html[data-theme="light"] .text-muted,
+html[data-theme="light"] .track-like-count,
+html[data-theme="light"] .track-comment-count,
+html[data-theme="light"] .song-comment time,
+html[data-theme="light"] .comment-edited-label,
+html[data-theme="light"] .queue-item-artist,
+html[data-theme="light"] .queue-empty { color: var(--app-muted) !important; }
+html[data-theme="light"] .btn-close { filter: none !important; }
+html[data-theme="light"] .playlist-card-spotify .playlist-overlay { color: #fff; }
+
 @media (max-width: 760px) {
   .settings-layout { grid-template-columns: 1fr; gap: 12px; }
   .settings-intro { position: relative; top: auto; min-height: 0; padding: 8px 2px 12px; }
