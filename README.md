@@ -27,9 +27,32 @@ This is a static HTML, CSS, and JavaScript website; it does not require a build 
 
 Song and cover media are served from Cloudflare R2; their base URL is configured in `media-url-helper.js`.
 
+## Windows desktop app
+
+The Electron desktop app opens the live player in a dedicated app window. It includes a Windows system-tray menu and desktop playback controls. An internet connection is required because the player website, Firebase services, and music media are hosted online.
+
+```powershell
+npm install
+npm run desktop
+```
+
+Build the Windows installer and portable app with:
+
+```powershell
+npm run dist:win
+npm run dist:win:portable
+```
+
+The Windows installer is created in `dist/`.
+
+## Linux and macOS desktop builds
+
+Linux builds are packaged as an AppImage and a Debian/Ubuntu `.deb`. macOS builds are packaged as a universal `.dmg` and `.zip` for Intel and Apple Silicon Macs. The macOS packages are unsigned; macOS may require you to approve the app before opening it.
+
+GitHub Actions builds Windows, Linux, and macOS packages when desktop app files are pushed to `main`. Build artifacts are available from the repository's [Actions page](https://github.com/Reimu-Hakurei1/Touhou-Music-Player/actions) for 30 days. You can also start a build manually from the **Build desktop apps** workflow.
+
 ## Built with
 
 - HTML, CSS, and vanilla JavaScript
 - Firebase Authentication and Cloud Firestore
 - Bootstrap, Font Awesome, and Google Fonts
-

@@ -1,0 +1,57 @@
+{
+  "name": "touhou-music-player-desktop",
+  "version": "1.0.0",
+  "description": "Desktop app for the Touhou Music Player website",
+  "author": "Touhou Music Player contributors",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "desktop": "electron .",
+    "desktop:devtools": "electron . --devtools",
+    "dist:win": "electron-builder --win nsis",
+    "dist:linux": "electron-builder --linux AppImage deb",
+    "dist:mac": "electron-builder --mac dmg zip --universal"
+  },
+  "build": {
+    "appId": "com.reimuhakurei.touhoumusicplayer",
+    "productName": "Touhou Music Player",
+    "files": [
+      "electron/**/*",
+      "package.json",
+      "TH Reimu NOBG.ico",
+      "assets/icon.png"
+    ],
+    "win": {
+      "icon": "TH Reimu NOBG.ico",
+      "target": ["nsis"]
+    },
+    "linux": {
+      "icon": "assets/icon.png",
+      "target": ["AppImage", "deb"],
+      "category": "AudioVideo",
+      "synopsis": "Listen to Touhou music"
+    },
+    "deb": {
+      "recommends": ["libayatana-appindicator3-1"]
+    },
+    "mac": {
+      "icon": "assets/icon.png",
+      "target": [
+        { "target": "dmg", "arch": ["universal"] },
+        { "target": "zip", "arch": ["universal"] }
+      ],
+      "category": "public.app-category.music",
+      "identity": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^42.0.0",
+    "electron-builder": "^26.0.12"
+  }
+}
