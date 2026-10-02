@@ -13,11 +13,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Update spacer on load and resize
-    updateContentSpacer();
-    window.addEventListener('resize', updateContentSpacer);
-    fixedHeader.querySelectorAll('.mobile-filter-disclosure').forEach(function(disclosure) {
+    const filterDisclosures = fixedHeader.querySelectorAll('.mobile-filter-disclosure');
+    const mobileFilters = window.matchMedia('(max-width: 768px)');
+    let isMobile = mobileFilters.matches;
+
+    // Keep filters expanded on desktops, but start compact on phones.
+    filterDisclosures.forEach(function(disclosure) {
+        disclosure.open = !isMobile;
         disclosure.addEventListener('toggle', updateContentSpacer);
+    });
+
+    updateContentSpacer();
+    window.addEventListener('resize', function() {
+        updateContentSpacer();
+        if (mobileFilters.matches !== isMobile) {
+            isMobile = mobileFilters.matches;
+            filterDisclosures.forEach(function(disclosure) {
+                disclosure.open = !isMobile;
+            });
+            updateContentSpacer();
+        }
     });
     
     // Scroll event listener for header effects
