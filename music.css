@@ -30,6 +30,12 @@ body {
   filter: blur(.4px);
 }
 
+/* Ensure playlist section is above background */
+.music-section {
+  position: relative;
+  z-index: 5;
+}
+
 /* ===== Profile Dropdown Styles ===== */
 .profile-container {
   position: fixed;

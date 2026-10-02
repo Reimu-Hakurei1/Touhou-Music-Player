@@ -3,11 +3,15 @@
 
 /* Spotify Style Playlist Grid */
 .playlist-grid {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 24px;
   margin-top: 20px;
   min-height: 300px;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 1;
 }
 
 /* Spotify Style Playlist Cards */
@@ -20,6 +24,9 @@
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
   background: linear-gradient(145deg, #404040, #2a2a2a);
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
 }
 
 .playlist-card-spotify:hover {
@@ -312,13 +319,15 @@
   aspect-ratio: 1;
   border-radius: 8px;
   background: rgba(255,255,255,0.05);
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px dashed rgba(255,255,255,0.2);
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .create-playlist-card:hover {
@@ -346,6 +355,28 @@
 
 .playlist-card {
   display: none !important;
+}
+
+/* Ensure playlist grid is visible */
+#playlistsGrid {
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  min-height: 400px !important;
+  width: 100% !important;
+  padding: 20px !important;
+  background: transparent !important;
+}
+
+/* Make sure playlist cards are visible */
+.create-playlist-card,
+.playlist-card-spotify,
+.empty-state-container {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
 }
 
 /* Ensure create playlist section remains visible */

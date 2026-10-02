@@ -51,6 +51,15 @@ class PlaylistManagerFixed {
                     }, 500);
                 }
             });
+
+            // Also check current auth state immediately (in case auth state already changed)
+            const currentUser = window.firebaseAuth.currentUser;
+            if (currentUser && !this.currentUser) {
+                console.log('PlaylistManager: User already authenticated on init', currentUser.email);
+                this.currentUser = currentUser;
+                this.initialized = true;
+                this.loadPlaylists();
+            }
         }
     }
 
@@ -251,11 +260,22 @@ class PlaylistManagerFixed {
                 });
             });
 
+            console.log('📋 Raw playlists loaded:', this.playlists.length);
+
             // Ensure all playlists have their tracks loaded
             await this.ensurePlaylistsHaveTracks();
-            
+
+            console.log('📋 Playlists with tracks:', this.playlists.length);
+            this.playlists.forEach(p => {
+                console.log(`  - ${p.name}: ${p.tracks?.length || 0} tracks`);
+            });
+
             this.renderPlaylists();
             console.log('Loaded playlists with tracks:', this.playlists.length);
+
+            // Notify Spotify enhancer that playlists have been updated
+            window.dispatchEvent(new Event('playlistsUpdated'));
+            console.log('📢 Dispatched playlistsUpdated event');
 
         } catch (error) {
             console.error('Error loading playlists:', error);
@@ -470,6 +490,7 @@ class PlaylistManagerFixed {
                         <div class="track-title fw-bold">${track.title}</div>
                         <div class="track-artist">${track.artist}</div>
                     </div>
+                    <div class="track-duration text-muted small me-3">${this.formatTime(track.duration) || '--:--'}</div>
                     <div class="track-actions">
                         <button class="track-play-btn" title="Play ${track.title}">
                             <i class="fas fa-play"></i>
@@ -626,12 +647,13 @@ class PlaylistManagerFixed {
                         <div class="track-title fw-bold">${this.escapeHtml(track.title)}</div>
                         <div class="track-artist text-muted">${this.escapeHtml(track.artist)}</div>
                     </div>
+                    <div class="track-duration text-muted small me-3">${this.formatTime(track.duration) || '--:--'}</div>
                     <div class="track-actions">
-                        <button class="btn btn-outline-success btn-sm play-track" 
+                        <button class="btn btn-outline-success btn-sm play-track"
                                 data-track-index="${index}">
                             <i class="fas fa-play"></i>
                         </button>
-                        <button class="btn btn-outline-danger btn-sm ms-2 remove-track" 
+                        <button class="btn btn-outline-danger btn-sm ms-2 remove-track"
                                 data-track-index="${index}">
                             <i class="fas fa-times"></i>
                         </button>
@@ -939,6 +961,7 @@ class PlaylistManagerFixed {
                 artist: track.artist,
                 file: track.file,
                 cover: track.cover,
+                duration: track.duration || 0,
                 addedAt: new Date()
             });
 
@@ -1024,10 +1047,19 @@ class PlaylistManagerFixed {
 
     formatDate(date) {
         if (!date) return 'Unknown';
-        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { 
-            hour: '2-digit', 
-            minute: '2-digit' 
+        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit'
         });
+    }
+
+    formatTime(seconds) {
+        if (!seconds || isNaN(seconds)) return "0:00";
+        const m = Math.floor(seconds / 60);
+        const s = Math.floor(seconds % 60)
+            .toString()
+            .padStart(2, "0");
+        return `${m}:${s}`;
     }
 }
 
