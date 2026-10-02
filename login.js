@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('loginBtn');
     const googleLoginBtn = document.getElementById('googleLogin');
     const rememberCheckbox = document.getElementById('remember');
+    const forgotPasswordLink = document.getElementById('forgotPasswordLink');
 
     // Check if user is already logged in
     const auth = window.firebaseAuth || firebase.auth();
@@ -15,6 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Firebase Auth not available');
         return;
     }
+
+    forgotPasswordLink?.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const email = emailInput?.value.trim();
+        if (!email) {
+            emailInput?.focus();
+            showAlert('Enter your email address first and we will send you a reset link.', 'error');
+            return;
+        }
+        try {
+            await auth.sendPasswordResetEmail(email);
+            showAlert('Password reset email sent. Check your inbox.', 'success');
+        } catch (error) {
+            console.error('Password reset error:', error);
+            showAlert(error.code === 'auth/invalid-email' ? 'Enter a valid email address.' : 'We could not send a reset email. Check the address and try again.', 'error');
+        }
+    });
 
     auth.onAuthStateChanged((user) => {
         if (user) {

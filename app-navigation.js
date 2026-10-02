@@ -19,6 +19,7 @@
     if (playlistButton) playlistButton.innerHTML = '<i class="fas fa-list-ul"></i> My Playlists';
 
     document.getElementById('dropdownMenu')?.classList.remove('show');
+    document.getElementById('profileToggle')?.setAttribute('aria-expanded', 'false');
     document.getElementById('bigPlayer')?.classList.remove('active');
     document.getElementById('playerActionMenu')?.classList.remove('open');
     document.getElementById('bigPlayerActionMenu')?.classList.remove('open');

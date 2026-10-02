@@ -13,6 +13,7 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="auth-pages.css?v=20261003-auth-redesign">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-app-compat.js"></script>
@@ -21,8 +22,16 @@
   <!-- Removed firebase-storage-compat.js since it's not needed for login -->
 </head>
 
-<body>
-  <div class="login-container">
+<body class="auth-page auth-login">
+  <a class="auth-return" href="index.html"><i class="fas fa-arrow-left"></i><span>Back to player</span></a>
+  <div class="auth-layout">
+    <aside class="auth-brand" aria-label="Touhou Music Player">
+      <a class="auth-wordmark" href="index.html"><span class="auth-wordmark-icon"><i class="fas fa-music"></i></span><span>Touhou <strong>Music Player</strong></span></a>
+      <div class="auth-brand-copy"><span class="auth-kicker">Your soundtrack awaits</span><h2>Pick up where<br><em>the music</em> left off.</h2><p>Sign in to keep your playlists, liked songs, and listening history close wherever you play.</p></div>
+      <div class="auth-brand-art" aria-hidden="true"><span class="auth-disc auth-disc-one"></span><span class="auth-disc auth-disc-two"></span><span class="auth-disc auth-disc-three"><i class="fas fa-music"></i></span></div>
+      <span class="auth-brand-foot"><i class="fas fa-headphones"></i> Made for the music you love</span>
+    </aside>
+  <main class="login-container">
     <div class="login-card">
       <!-- Logo & Title -->
       <div class="logo-section">
@@ -37,13 +46,13 @@
         <!-- Email -->
         <div class="mb-3">
           <label for="email" class="form-label">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+          <input type="email" id="email" class="form-control" placeholder="you@example.com" autocomplete="email" required>
         </div>
 
         <!-- Password -->
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+          <div class="auth-password-field"><input type="password" id="password" class="form-control" placeholder="Enter your password" autocomplete="current-password" required><button class="auth-password-toggle" type="button" data-password-target="password" aria-label="Show password" aria-pressed="false"><i class="far fa-eye"></i></button></div>
         </div>
         
         <!-- Remember + Forgot -->
@@ -54,7 +63,7 @@
               Remember me
             </label>
           </div>
-          <a href="ForgotPassword.html" class="forgot-password">
+          <a href="#" id="forgotPasswordLink" class="forgot-password">
             Forgot password?
           </a>
         </div>
@@ -75,6 +84,7 @@
         </div>
       </form>
     </div>
+  </main>
   </div>
 
   <!-- Bootstrap JS -->
@@ -84,6 +94,7 @@
   <script src="firebase-config.js"></script>
   
   <!-- Login Script -->
+  <script src="auth-ui.js?v=20261003-auth-redesign"></script>
   <script src="login.js"></script>
 </body>
 </html>

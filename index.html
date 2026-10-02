@@ -13,9 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="music.css?v=20261003-comment-count">
+  <link rel="stylesheet" href="music.css?v=20261003-guest-menu">
   <link rel="stylesheet" href="fixed-header.css?v=20261003-desktop-filters">
-  <link rel="stylesheet" href="playlist-spotify.css?v=20261002-guest-responsive">
+  <link rel="stylesheet" href="playlist-spotify.css?v=20261003-playlist-back">
   <link rel="stylesheet" href="profile.css?v=20261003-download-refresh">
   
   <!-- Firebase COMPAT Version -->
@@ -35,6 +35,7 @@
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="dropdown-content" id="dropdownMenu">
+        <div class="dropdown-guest-note" id="guestMenuHint" hidden><i class="fas fa-headphones-simple"></i><span>Listening as a guest</span></div>
         <button id="downloadsBtn" type="button">
           <i class="fas fa-download"></i>
           Download App
@@ -122,10 +123,12 @@
   </main>
 
   <section id="playlistsView" class="playlist-view" aria-label="My playlists">
-    <header class="playlist-hero"><div class="container playlist-hero-inner"><div class="playlist-hero-text">
-      <span class="playlist-hero-eyebrow">Your Library</span><h1 class="playlist-hero-title">My Playlists</h1>
-      <p class="playlist-hero-sub">Curate, play, and download your favourite Touhou tracks.</p>
-    </div></div></header>
+    <header class="playlist-hero"><div class="container playlist-hero-inner">
+      <div class="playlist-hero-top"><button id="backToPlayerFromPlaylists" class="playlist-back-btn" type="button"><i class="fas fa-arrow-left"></i><span>Back to Player</span></button><span class="playlist-hero-note"><i class="fas fa-cloud"></i> Your music, your way</span></div>
+      <div class="playlist-hero-text"><span class="playlist-hero-eyebrow">Your Library</span><h1 class="playlist-hero-title">My Playlists</h1>
+        <p class="playlist-hero-sub">Collect your favourite tracks, make a mood, and press play.</p>
+      </div>
+    </div></header>
     <main class="playlist-main container">
       <div class="playlist-grid" id="playlistsGrid"></div>
       <div id="playlistsContainer" class="row" style="display:none"></div><div id="noPlaylists" style="display:none"></div>
@@ -385,7 +388,7 @@
   
   <!-- User Authentication -->
   <script src="app-navigation.js?v=20261003-integrated-views"></script>
-  <script src="user-auth.js?v=20261002-guest-responsive"></script>
+  <script src="user-auth.js?v=20261003-guest-menu"></script>
 
   <!-- Media URL Helper (must load before music.js) -->
   <script src="media-url-helper.js"></script>

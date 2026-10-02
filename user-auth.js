@@ -4,10 +4,6 @@ window.setPlaylistView = (show) => {
         window.setAppPage?.('player', { updateHash: false });
     }
     document.body.classList.toggle('show-playlists', show);
-    const menuButton = document.getElementById('myPlaylistsBtn');
-    if (menuButton) menuButton.innerHTML = show
-        ? '<i class="fas fa-home"></i> Back to Player'
-        : '<i class="fas fa-list-ul"></i> My Playlists';
     if (show) {
         history.replaceState(null, '', '#playlists');
         window.spotifyEnhancer?.refreshPlaylists?.();
@@ -67,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         container.style.display = 'block';
         const name = document.getElementById('userFirstName');
         if (name) name.textContent = 'Guest';
+        document.getElementById('guestMenuHint')?.removeAttribute('hidden');
+        document.getElementById('downloadsBtn')?.style.removeProperty('display');
+        document.getElementById('myPlaylistsBtn')?.style.removeProperty('display');
         document.getElementById('profileSettings')?.style.setProperty('display', 'none');
         document.getElementById('signOutBtn')?.style.setProperty('display', 'none');
         document.getElementById('signInBtn')?.style.removeProperty('display');
@@ -87,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('❌ Profile container not found');
         }
         document.getElementById('profileSettings')?.style.removeProperty('display');
+        document.getElementById('guestMenuHint')?.setAttribute('hidden', '');
         document.getElementById('signOutBtn')?.style.removeProperty('display');
         document.getElementById('signInBtn')?.style.setProperty('display', 'none');
         document.getElementById('registerBtn')?.style.setProperty('display', 'none');
@@ -173,10 +173,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle dropdown
         if (profileToggle.dataset.dropdownInitialized === 'true') return;
         profileToggle.dataset.dropdownInitialized = 'true';
+        profileToggle.setAttribute('aria-haspopup', 'menu');
+        profileToggle.setAttribute('aria-controls', 'dropdownMenu');
+        profileToggle.setAttribute('aria-expanded', 'false');
         profileToggle.addEventListener('click', function(e) {
             e.stopPropagation();
             e.preventDefault();
-            dropdownMenu.classList.toggle('show');
+            const isOpen = dropdownMenu.classList.toggle('show');
+            profileToggle.setAttribute('aria-expanded', String(isOpen));
             console.log('Dropdown toggled');
         });
         
@@ -186,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 !dropdownMenu.contains(e.target) && 
                 !profileToggle.contains(e.target)) {
                 dropdownMenu.classList.remove('show');
+                profileToggle.setAttribute('aria-expanded', 'false');
                 console.log('Dropdown closed');
             }
         });
@@ -201,20 +206,21 @@ document.addEventListener('DOMContentLoaded', function() {
             myPlaylistsBtn.dataset.authBound = 'true';
             myPlaylistsBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                const isPlaylistView = document.body.classList.contains('show-playlists');
-                const showPlaylists = !isPlaylistView;
-                if (window.setPlaylistView) window.setPlaylistView(showPlaylists);
+                if (window.setPlaylistView) window.setPlaylistView(true);
                 else {
-                    document.body.classList.toggle('show-playlists', showPlaylists);
-                    this.innerHTML = showPlaylists
-                        ? '<i class="fas fa-home"></i> Back to Player'
-                        : '<i class="fas fa-list-ul"></i> My Playlists';
-                    if (showPlaylists) window.spotifyEnhancer?.refreshPlaylists?.();
-                    else window.returnToLibrary?.();
-                    history.replaceState(null, '', showPlaylists ? '#playlists' : location.pathname);
+                    document.body.classList.add('show-playlists');
+                    window.spotifyEnhancer?.refreshPlaylists?.();
+                    history.replaceState(null, '', '#playlists');
                 }
                 document.getElementById('dropdownMenu')?.classList.remove('show');
+                document.getElementById('profileToggle')?.setAttribute('aria-expanded', 'false');
             });
+        }
+
+        const backToPlayerBtn = document.getElementById('backToPlayerFromPlaylists');
+        if (backToPlayerBtn && backToPlayerBtn.dataset.authBound !== 'true') {
+            backToPlayerBtn.dataset.authBound = 'true';
+            backToPlayerBtn.addEventListener('click', () => window.setPlaylistView?.(false));
         }
         
         // Sign out button
@@ -245,5 +251,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Start the initialization process
+    // Keep a usable guest menu visible while Firebase initializes. Auth state
+    // replaces these guest actions as soon as Firebase reports a signed-in user.
+    setupGuestProfile();
     waitForFirebase();
 });
