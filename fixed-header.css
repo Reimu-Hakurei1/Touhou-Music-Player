@@ -55,7 +55,7 @@
 
 /* Content spacer to prevent content from being hidden behind fixed header */
 .content-spacer {
-    height: 280px; /* Adjust based on your header height */
+    height: 350px; /* Safe fallback; fixed-header.js measures the live header. */
 }
 
 /* Adjust profile container position for fixed header */
@@ -81,7 +81,7 @@
         margin: 8px 0;
     }
     
-    .content-spacer { height: 220px; }
+    .content-spacer { height: 330px; }
     
     .profile-container {
         top: 15px;
@@ -130,7 +130,7 @@
 }
 
 @media (max-width: 480px) {
-    .content-spacer { height: 205px; }
+    .content-spacer { height: 300px; }
     
     .fixed-header .page-title {
         font-size: 1.2rem;

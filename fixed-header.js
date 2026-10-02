@@ -5,12 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!fixedHeader) return;
     
-    // Calculate initial header height for spacer
+    // Keep the first track below the fixed header as fonts, filters, and the
+    // responsive layout change its actual height.
     function updateContentSpacer() {
         if (contentSpacer) {
-            const headerHeight = fixedHeader.offsetHeight;
-            contentSpacer.style.height = headerHeight + 20 + 'px'; // Add some extra space
+            const headerHeight = Math.ceil(fixedHeader.getBoundingClientRect().height);
+            contentSpacer.style.height = headerHeight + 32 + 'px';
         }
+    }
+
+    let spacerFrame = 0;
+    function scheduleSpacerUpdate() {
+        cancelAnimationFrame(spacerFrame);
+        spacerFrame = requestAnimationFrame(updateContentSpacer);
     }
     
     const filterDisclosures = fixedHeader.querySelectorAll('.mobile-filter-disclosure');
@@ -20,18 +27,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Keep filters expanded on desktops, but start compact on phones.
     filterDisclosures.forEach(function(disclosure) {
         disclosure.open = !isMobile;
-        disclosure.addEventListener('toggle', updateContentSpacer);
+        disclosure.addEventListener('toggle', scheduleSpacerUpdate);
     });
 
-    updateContentSpacer();
+    scheduleSpacerUpdate();
+    if ('ResizeObserver' in window) {
+        const headerObserver = new ResizeObserver(scheduleSpacerUpdate);
+        headerObserver.observe(fixedHeader);
+    }
+    window.addEventListener('load', scheduleSpacerUpdate, { once: true });
+    if (document.fonts?.ready) document.fonts.ready.then(scheduleSpacerUpdate);
     window.addEventListener('resize', function() {
-        updateContentSpacer();
+        scheduleSpacerUpdate();
         if (mobileFilters.matches !== isMobile) {
             isMobile = mobileFilters.matches;
             filterDisclosures.forEach(function(disclosure) {
                 disclosure.open = !isMobile;
             });
-            updateContentSpacer();
+            scheduleSpacerUpdate();
         }
     });
     
