@@ -157,8 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (myPlaylistsBtn) {
             myPlaylistsBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log('Navigating to playlists page');
-                window.location.href = "playlist.html";
+                const isPlaylistView = document.body.classList.contains('show-playlists');
+                if (window.setPlaylistView) window.setPlaylistView(!isPlaylistView);
+                else document.body.classList.toggle('show-playlists', !isPlaylistView);
+                document.getElementById('dropdownMenu')?.classList.remove('show');
             });
         }
         

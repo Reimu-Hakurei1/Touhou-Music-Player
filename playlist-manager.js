@@ -69,7 +69,6 @@ class PlaylistManagerFixed {
     bind("deletePlaylistBtn", () => this.deleteCurrentPlaylist());
     bind("profileSettings", (e) => { e.preventDefault(); window.location.href = "ProfileSettings.html"; });
     bind("signOutBtn", (e) => { e.preventDefault(); this.handleSignOut(); });
-    bind("backToPlayer", (e) => { e.preventDefault(); window.location.href = "index.html"; });
     bind("createPlaylistModalBtn", () => this.createPlaylistFromModal());
     bind("newPlaylistNameModal", () => this.createPlaylistFromModal(), "keypress");
   }
@@ -196,10 +195,13 @@ class PlaylistManagerFixed {
       const out = [];
       snap.forEach((doc) => {
         const data = doc.data();
+        const tracks = Array.isArray(data.tracks) ? data.tracks : [];
         out.push({
           id: doc.id,
-          name: data.name,
-          hasTrack: (data.tracks || []).some((t) => t.file === track.file),
+          name: data.name || "Untitled",
+          count: tracks.length,
+          cover: tracks.length ? (tracks[0].cover || "") : "",
+          hasTrack: tracks.some((t) => t.file === track.file),
         });
       });
       return out;

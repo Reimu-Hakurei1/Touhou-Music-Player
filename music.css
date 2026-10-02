@@ -198,6 +198,20 @@ main.music-section {
   transform: translateY(-4px);
   background: #222;
 }
+.track.card > .flex-grow-1 {
+  min-width: 0;
+  overflow: hidden;
+}
+.track.card .track-title,
+.track.card .track-artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.track.card .track-actions {
+  flex-shrink: 0;
+  opacity: 1;
+}
 .track.playing {
   background: rgba(29,185,84,0.12);
   border-color: rgba(29,185,84,0.6);

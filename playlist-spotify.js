@@ -81,6 +81,11 @@ class SpotifyPlaylistEnhancer {
     }
   }
 
+  async refreshPlaylists() {
+    await this.tryLoadPlaylists();
+    this.renderPlaylists();
+  }
+
   // ---------- events ----------
   setupEventListeners() {
     const bind = (id, fn) => {
@@ -96,6 +101,7 @@ class SpotifyPlaylistEnhancer {
     bind("deleteFullscreenPlaylist", () => this.deleteFullscreenPlaylist());
 
     // Player bar controls (so the page is self-contained)
+    if (window.playPlaylistTrackAt) return this.setupPlaylistViewOnlyEvents(bind);
     bind("play", () => this.togglePlayPause());
     bind("prev", () => this.playPrevious());
     bind("next", () => this.playNext());
@@ -116,6 +122,10 @@ class SpotifyPlaylistEnhancer {
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") this.closeFullscreen();
     });
+  }
+
+  setupPlaylistViewOnlyEvents(bind) {
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") this.closeFullscreen(); });
   }
 
   listenForPlaylistUpdates() {
@@ -142,6 +152,9 @@ class SpotifyPlaylistEnhancer {
   initializeAudioElement() {
     this.audioElement = document.getElementById("audioEl") || new Audio();
     this.audioElement.preload = "metadata";
+    // index.html owns playback on the combined library page; attaching another
+    // ended handler here would skip every other playlist track.
+    if (window.playPlaylistTrackAt) return;
     this.audioElement.addEventListener("loadedmetadata", () => this.updateDuration());
     this.audioElement.addEventListener("timeupdate", () => this.updateProgress());
     this.audioElement.addEventListener("ended", () => this.playNext());
@@ -324,6 +337,7 @@ class SpotifyPlaylistEnhancer {
     }
 
     this.renderFullscreenTracks(this.currentPlaylistTracks);
+    this.fillMissingDurations(playlist, this.currentPlaylistTracks);
 
     const fs = document.getElementById("playlistFullscreen");
     if (fs) {
@@ -388,6 +402,18 @@ class SpotifyPlaylistEnhancer {
     this.markActive();
   }
 
+  fillMissingDurations(playlist, tracks) {
+    if (!window.TrackMedia?.getDuration) return;
+    tracks.forEach(async (track, index) => {
+      let duration = window.TrackMedia.known?.(track) || Number(track.duration) || 0;
+      if (!duration) duration = await window.TrackMedia.getDuration(track, 5000);
+      if (!duration || this.currentPlaylist?.id !== playlist.id) return;
+      track.duration = duration;
+      const cell = document.querySelector(`#fullscreenTracks .playlist-track[data-index="${index}"] .track-duration`);
+      if (cell) cell.textContent = this.formatTime(duration);
+    });
+  }
+
   markActive() {
     document.querySelectorAll(".playlist-track").forEach((el, i) =>
       el.classList.toggle("active", i === this.currentTrackIndex)
@@ -398,6 +424,13 @@ class SpotifyPlaylistEnhancer {
   playPlaylist(playlist) {
     if (!playlist?.tracks?.length) {
       this.showNotification("No tracks in this playlist", "error");
+      return;
+    }
+    if (window.loadPlaylist) {
+      window.loadPlaylist(playlist.id, playlist.name);
+      this.currentPlaylist = playlist;
+      this.currentPlaylistTracks = playlist.tracks;
+      this.currentTrackIndex = 0;
       return;
     }
     this.currentPlaylist = playlist;
@@ -413,6 +446,11 @@ class SpotifyPlaylistEnhancer {
       this.showNotification("No tracks to play", "error");
       return;
     }
+    if (window.loadPlaylist && this.currentPlaylist?.id) {
+      window.loadPlaylist(this.currentPlaylist.id, this.currentPlaylist.name);
+      this.currentTrackIndex = 0;
+      return;
+    }
     this.currentTrackIndex = 0;
     this.loadTrack(this.currentPlaylistTracks[0]);
     this.play();
@@ -422,6 +460,11 @@ class SpotifyPlaylistEnhancer {
   playTrackFromFullscreen(i) {
     if (!this.currentPlaylistTracks?.[i]) return;
     this.currentTrackIndex = i;
+    if (window.playPlaylistTrackAt) {
+      window.playPlaylistTrackAt(i);
+      this.markActive();
+      return;
+    }
     this.loadTrack(this.currentPlaylistTracks[i]);
     this.play();
     this.markActive();

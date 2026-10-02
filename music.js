@@ -3041,6 +3041,13 @@ window.loadPlaylist = async function (playlistId, playlistName) {
   }
 };
 
+window.playPlaylistTrackAt = function (index) {
+  const tracks = getTracks();
+  if (!tracks.length || index < 0 || index >= tracks.length) return;
+  loadTrack(index);
+  playTrack();
+};
+
 function updatePlaylistModeUI(playlistName) {
   const pageTitle = document.querySelector('.page-title');
   if (pageTitle) pageTitle.textContent = `Playlist: ${playlistName}`;

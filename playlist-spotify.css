@@ -424,14 +424,14 @@
   font-variant-numeric: tabular-nums;
 }
 .track-info { min-width: 0; }
-.track-title {
+.playlist-track .track-title {
   font-weight: 600;
   font-size: 0.96rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.track-artist {
+.playlist-track .track-artist {
   font-size: 0.84rem;
   color: var(--pl-mute);
   white-space: nowrap;
@@ -443,7 +443,7 @@
   color: var(--pl-mute);
   font-variant-numeric: tabular-nums;
 }
-.track-actions {
+.playlist-track .track-actions {
   display: flex;
   gap: 6px;
   opacity: 0;
@@ -565,3 +565,9 @@
 /* ---------- Legacy resets (hide old markup) ---------- */
 #playlistsContainer,
 .playlist-card { display: none !important; }
+/* The playlist library also runs as a view inside index.html. */
+.playlist-view { display: none; min-height: 100vh; padding-bottom: 120px; }
+body.show-playlists .fixed-header,
+body.show-playlists .music-section { display: none !important; }
+body.show-playlists .playlist-view { display: block; }
+body.show-playlists .profile-container { z-index: 1200; }

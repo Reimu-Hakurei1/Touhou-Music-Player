@@ -15,6 +15,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="music.css">
   <link rel="stylesheet" href="fixed-header.css">
+  <link rel="stylesheet" href="playlist-spotify.css">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
@@ -34,7 +35,7 @@
       </button>
       <div class="dropdown-content" id="dropdownMenu">
         <button id="myPlaylistsBtn">
-          <i class="fas fa-list-music"></i>
+          <i class="fas fa-list-ul"></i>
           My Playlists
         </button>
         <button id="profileSettings">
@@ -103,6 +104,41 @@
 
     <div id="trackList" class="row"></div>
   </main>
+
+  <section id="playlistsView" class="playlist-view" aria-label="My playlists">
+    <header class="playlist-hero"><div class="container playlist-hero-inner"><div class="playlist-hero-text">
+      <span class="playlist-hero-eyebrow">Your Library</span><h1 class="playlist-hero-title">My Playlists</h1>
+      <p class="playlist-hero-sub">Curate, play, and download your favourite Touhou tracks.</p>
+    </div></div></header>
+    <main class="playlist-main container">
+      <div class="playlist-grid" id="playlistsGrid"></div>
+      <div id="playlistsContainer" class="row" style="display:none"></div><div id="noPlaylists" style="display:none"></div>
+      <section id="currentPlaylistSection" class="current-playlist-section" style="display:none">
+        <div class="current-playlist-head"><h3 id="currentPlaylistTitle">Playlist Tracks</h3><button id="backToPlaylists" class="btn-ghost">Back</button></div>
+        <div id="currentPlaylistTracks" class="row"></div>
+      </section>
+    </main>
+  </section>
+  <div class="playlist-fullscreen" id="playlistFullscreen" aria-hidden="true">
+    <button class="close-fullscreen" id="closeFullscreen" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div class="playlist-fullscreen-scroll"><div class="playlist-header">
+      <div class="playlist-cover-wrap"><img class="playlist-cover-large" id="fullscreenCover" src="" alt=""><span class="playlist-cover-glow"></span></div>
+      <div class="playlist-header-info"><span class="playlist-header-eyebrow">Playlist</span><h1 class="playlist-title-large" id="fullscreenTitle">Playlist Name</h1>
+        <div class="playlist-stats" id="fullscreenStats">0 tracks</div><div class="playlist-header-actions">
+          <button class="header-action-btn play" id="playFullscreenPlaylist"><i class="fas fa-play"></i> Play</button>
+          <button class="header-action-btn secondary" id="downloadFullscreenPlaylist"><i class="fas fa-download"></i> Download</button>
+          <button class="header-action-btn secondary" id="renameFullscreenPlaylist"><i class="fas fa-edit"></i> Rename</button>
+          <button class="header-action-btn secondary danger" id="deleteFullscreenPlaylist"><i class="fas fa-trash"></i> Delete</button>
+        </div>
+      </div></div><div class="playlist-tracks-container" id="fullscreenTracks"></div></div>
+  </div>
+  <div class="modal fade create-playlist-modal" id="createPlaylistModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Create New Playlist</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><label for="newPlaylistNameModal" class="form-label">Playlist Name</label><input type="text" class="form-control" id="newPlaylistNameModal" placeholder="e.g. Scarlet Devil Mansion" maxlength="50" autocomplete="off"></div>
+      <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button><button type="button" class="btn btn-primary" id="createPlaylistModalBtn">Create</button></div>
+    </div></div>
+  </div>
 
   <!-- Player Bar -->
   <div class="player-bar" role="region" aria-label="Music player">
@@ -218,11 +254,34 @@
 
   <!-- Media URL Helper (must load before music.js) -->
   <script src="media-url-helper.js"></script>
+  <script src="playlist-manager.js"></script>
 
   <!-- Music Player -->
   <script src="music.js"></script>
+  <script src="playlist-spotify.js"></script>
   
   <!-- Fixed Header Script -->
   <script src="fixed-header.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.setPlaylistView = (show) => {
+        document.body.classList.toggle('show-playlists', show);
+        const menuButton = document.getElementById('myPlaylistsBtn');
+        if (menuButton) menuButton.innerHTML = show
+          ? '<i class="fas fa-home"></i> Back to Player'
+          : '<i class="fas fa-list-ul"></i> My Playlists';
+        if (show) {
+          history.replaceState(null, '', '#playlists');
+          window.spotifyEnhancer?.refreshPlaylists?.();
+        }
+        else {
+          window.returnToLibrary?.();
+          history.replaceState(null, '', location.pathname);
+        }
+      };
+      window.setPlaylistView(location.hash === '#playlists');
+      document.getElementById('heroCreateBtn')?.addEventListener('click', () => window.spotifyEnhancer?.showCreatePlaylistModal?.());
+    });
+  </script>
 </body>
 </html>
