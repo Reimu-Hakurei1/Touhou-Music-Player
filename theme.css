@@ -1,0 +1,221 @@
+:root {
+  color-scheme: dark;
+  --app-bg: #100d17;
+  --app-surface: #1b1723;
+  --app-raised: #25202e;
+  --app-text: #f6f0f5;
+  --app-muted: #b7aebe;
+  --app-border: rgba(242, 222, 237, .13);
+  --app-accent: #c74360;
+  --app-accent-hover: #e45a73;
+  --app-gold: #d5ad68;
+  --app-on-accent: #fff8f8;
+  --primary: var(--app-accent);
+  --secondary: var(--app-gold);
+  --bg: var(--app-bg);
+  --card: var(--app-surface);
+  --muted: var(--app-muted);
+  --pl-bg: var(--app-bg);
+  --pl-surface: rgba(34, 28, 42, .84);
+  --pl-surface-hi: rgba(51, 40, 59, .94);
+  --pl-line: var(--app-border);
+  --pl-text: var(--app-text);
+  --pl-mute: var(--app-muted);
+  --pl-accent: var(--app-accent);
+  --pl-on-accent: var(--app-on-accent);
+  --auth-green: var(--app-accent);
+  --accent-color: var(--app-accent);
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --app-bg: #f6f0e8;
+  --app-surface: #fffdf9;
+  --app-raised: #f1e8df;
+  --app-text: #332538;
+  --app-muted: #776b7c;
+  --app-border: rgba(78, 47, 70, .16);
+  --app-accent: #a92d4c;
+  --app-accent-hover: #86213d;
+  --app-gold: #896126;
+  --app-on-accent: #fffaf7;
+  --pl-surface: rgba(255, 253, 249, .91);
+  --pl-surface-hi: #f1e8df;
+  color: var(--app-text);
+}
+
+html, body { background-color: var(--app-bg); color: var(--app-text); }
+body { background-image: radial-gradient(ellipse at 12% 4%, color-mix(in srgb, var(--app-accent) 13%, transparent), transparent 36%), radial-gradient(ellipse at 90% 14%, color-mix(in srgb, var(--app-gold) 10%, transparent), transparent 33%); }
+a { color: var(--app-accent); }
+a:hover { color: var(--app-accent-hover); }
+::selection { color: var(--app-on-accent); background: var(--app-accent); }
+
+/* Shrine-inspired player, library, and floating controls */
+.bg-animation { background: radial-gradient(ellipse at 15% 0%, color-mix(in srgb, var(--app-accent) 12%, transparent), transparent 42%), radial-gradient(ellipse at 82% 18%, color-mix(in srgb, var(--app-gold) 8%, transparent), transparent 38%); }
+#fixedHeader, .fixed-header, .player-bar, .big-player, .queue-panel, .comments-panel,
+.modal-content, .dropdown-content, .profile-dropdown .dropdown-content,
+.track.card, .track-list .track, .track-card, .song-card, .music-card, .library-card, .playlist-card,
+.download-platform-card, .downloads-header, #profileSettingsView .profile-card {
+  border-color: var(--app-border);
+}
+#fixedHeader, .fixed-header { background-color: color-mix(in srgb, var(--app-bg) 90%, transparent); }
+#fixedHeader .page-title, .fixed-header .page-title, #fixedHeader .filter-label { color: var(--app-text); }
+#fixedHeader .library-shortcut { color: var(--app-muted); border-color: var(--app-border); background: var(--app-raised); }
+#fixedHeader .library-shortcut:hover { color: var(--app-accent); border-color: var(--app-accent); }
+#fixedHeader .library-shortcut.active { color: var(--app-on-accent); border-color: var(--app-accent); background: var(--app-accent); }
+.dropdown-content, .profile-dropdown .dropdown-content, .queue-panel, .comments-panel,
+.modal-content, .big-player, .player-bar { background-color: var(--app-surface); color: var(--app-text); }
+.track.card, .track-list .track, .track-card, .song-card, .music-card, .library-card, .playlist-card,
+.download-platform-card { background-color: var(--app-surface); color: var(--app-text); }
+.track.card:hover, .track-list .track:hover { background: var(--app-raised); }
+.track.playing { border-color: color-mix(in srgb, var(--app-accent) 62%, transparent); background: color-mix(in srgb, var(--app-accent) 12%, var(--app-surface)); }
+.track.card .track-title, .track.card .track-artist, .track-list .track, .player-bar, .player-bar .song-meta { color: var(--app-text); }
+.track-like-count, .track-comment-count, .track.card .track-artist { color: var(--app-muted); }
+.track.card .track-actions-menu, .player-action-menu, .playlist-menu-container { color: var(--app-text); border-color: var(--app-border); background: var(--app-surface); }
+.track.card .track-actions .track-actions-menu > .track-menu-item:hover,
+.track.card .track-actions .track-actions-menu > .track-menu-item:focus-visible { color: var(--app-accent); background: var(--app-raised); }
+.player-action-menu, .track-actions-menu, .playlist-menu-container, .comments-card, .queue-panel { color: var(--app-text); border-color: var(--app-border); background: var(--app-surface); }
+.comments-header p, .comments-empty, .queue-panel-head span, .queue-section-label { color: var(--app-muted); }
+.comments-header button, .queue-panel button { color: var(--app-text); background: var(--app-raised); }
+.song-comment strong { color: var(--app-text); }
+.comment-edit-form textarea, .comment-form textarea { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+.comment-form-footer a, .song-comment-actions button:hover { color: var(--app-accent); }
+.comment-form-footer button { color: var(--app-on-accent); background: var(--app-accent); }
+.player-action-item:focus-visible, .player-action-item[aria-pressed="true"] { color: var(--app-accent); background: var(--app-raised); }
+input, select, textarea, .form-control, .form-select, .search-input, .filter-select {
+  color: var(--app-text);
+  border-color: var(--app-border);
+  background-color: var(--app-raised);
+}
+input::placeholder, textarea::placeholder { color: var(--app-muted); opacity: .8; }
+input:focus, select:focus, textarea:focus, .form-control:focus, .form-select:focus {
+  color: var(--app-text);
+  border-color: var(--app-accent);
+  background-color: var(--app-raised);
+  box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--app-accent) 22%, transparent);
+}
+button.primary, .btn-primary, .download-platform-link:not(.secondary):not(.unavailable),
+#profileSettingsView .profile-action-link.primary {
+  color: var(--app-on-accent);
+  border-color: var(--app-accent);
+  background: var(--app-accent);
+}
+button.primary:hover, .btn-primary:hover, .download-platform-link:not(.secondary):not(.unavailable):hover,
+#profileSettingsView .profile-action-link.primary:hover { color: var(--app-on-accent); background: var(--app-accent-hover); }
+.library-shortcut:hover, .library-shortcut.active, .player-action-item:hover, .player-action-item:focus,
+.downloads-release-link:hover { color: var(--app-gold); }
+.download-platform-icon { color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 12%, transparent); }
+.downloads-eyebrow, .settings-kicker, .settings-label { color: var(--app-gold); }
+
+/* Profile settings */
+.settings-layout { display: grid; grid-template-columns: minmax(230px, .72fr) minmax(0, 1.55fr); align-items: start; gap: clamp(20px, 4vw, 48px); }
+.settings-intro { position: sticky; top: 30px; min-height: 390px; overflow: hidden; padding: 22px 4px; }
+.settings-intro::after { position: absolute; z-index: 0; right: -30px; bottom: -10px; width: 260px; height: 260px; border: 1px solid color-mix(in srgb, var(--app-accent) 28%, transparent); border-radius: 50%; content: ""; pointer-events: none; box-shadow: 0 0 0 20px color-mix(in srgb, var(--app-accent) 4%, transparent), 0 0 0 48px color-mix(in srgb, var(--app-gold) 4%, transparent); }
+.settings-intro > * { position: relative; z-index: 1; }
+#profileSettingsView .back-btn, .downloads-back { color: var(--app-muted); }
+#profileSettingsView .back-btn:hover, .downloads-back:hover { color: var(--app-accent); }
+.settings-kicker { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 12px; font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
+#profileSettingsView .page-title { max-width: 440px; color: var(--app-text); font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.05; letter-spacing: -.04em; }
+#profileSettingsView .page-subtitle { max-width: 360px; color: var(--app-muted); line-height: 1.65; }
+.settings-decoration { position: relative; width: 180px; height: 180px; margin: 38px 0 0 22px; }
+.settings-orb { position: absolute; inset: 14px; border: 1px solid color-mix(in srgb, var(--app-accent) 55%, transparent); border-radius: 50%; }
+.settings-orb-two { inset: 0; border-color: color-mix(in srgb, var(--app-gold) 45%, transparent); transform: rotate(-32deg) scaleX(.7); }
+.settings-orb-center { display: grid; inset: 52px; place-items: center; border: 0; color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 11%, var(--app-surface)); font-size: 1.7rem; box-shadow: 0 0 42px color-mix(in srgb, var(--app-accent) 18%, transparent); }
+#profileSettingsView .profile-card { max-width: none; padding: clamp(20px, 3vw, 34px); background: linear-gradient(150deg, var(--app-surface), color-mix(in srgb, var(--app-surface) 72%, var(--app-bg))); }
+.settings-account-summary { display: flex; align-items: center; gap: 15px; padding: 0 0 22px; border-bottom: 1px solid var(--app-border); }
+.settings-avatar { display: grid; width: 58px; height: 58px; flex: 0 0 auto; place-items: center; border: 1px solid color-mix(in srgb, var(--app-gold) 42%, transparent); border-radius: 18px; color: var(--app-gold); background: color-mix(in srgb, var(--app-accent) 14%, var(--app-surface)); font-size: 1.35rem; font-weight: 800; }
+.settings-account-copy { min-width: 0; flex: 1; }
+.settings-account-copy h2 { overflow: hidden; margin: 4px 0; color: var(--app-text); font-size: 1.12rem; text-overflow: ellipsis; }
+.settings-account-copy p { overflow: hidden; margin: 0; color: var(--app-muted); font-size: .88rem; text-overflow: ellipsis; }
+.settings-label { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .13em; }
+.settings-account-badge { color: var(--app-muted); font-size: .76rem; white-space: nowrap; }
+.settings-account-badge i { margin-right: 4px; color: #5caa76; font-size: .55rem; }
+.settings-preference-block { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 13px; margin: 22px 0 28px; padding: 16px; border: 1px solid var(--app-border); border-radius: 16px; background: color-mix(in srgb, var(--app-raised) 67%, transparent); }
+.settings-preference-icon, .profile-guest-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 13px; color: var(--app-gold); background: color-mix(in srgb, var(--app-gold) 12%, transparent); }
+.settings-preference-copy h2, .profile-guest-copy h2 { margin: 0 0 4px; color: var(--app-text); font-size: 1rem; }
+.settings-preference-copy p, .profile-guest-copy p { margin: 0; color: var(--app-muted); font-size: .82rem; line-height: 1.45; }
+.theme-switch { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 13px; border: 1px solid var(--app-border); border-radius: 12px; color: var(--app-text); background: var(--app-surface); font: inherit; font-size: .84rem; font-weight: 700; white-space: nowrap; cursor: pointer; }
+.theme-switch:hover { border-color: var(--app-accent); color: var(--app-accent); }
+.settings-section-heading { margin-bottom: 14px; }
+.settings-section-heading h2 { margin: 5px 0; color: var(--app-text); font-size: 1.28rem; }
+.settings-section-heading p { margin: 0; color: var(--app-muted); font-size: .88rem; }
+.settings-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+#profileSettingsView .form-label { color: var(--app-text); }
+#profileSettingsView .form-control { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+#profileSettingsView .form-control:read-only { color: var(--app-muted); background: color-mix(in srgb, var(--app-raised) 55%, var(--app-bg)); }
+#profileSettingsView .form-text { color: var(--app-muted); }
+#profileSettingsView .action-section { display: flex; align-items: center; gap: 14px; }
+#profileSettingsView .profile-action-link { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+#profileSettingsView .settings-save-hint { color: var(--app-muted); font-size: .78rem; }
+#profileSettingsView .profile-guest-prompt { display: grid; grid-template-columns: 44px minmax(0,1fr); gap: 12px; padding: 18px; border-color: var(--app-border); background: color-mix(in srgb, var(--app-raised) 60%, transparent); }
+#profileSettingsView .profile-guest-actions { grid-column: 2; }
+#profileSettingsView .danger-zone { display: flex; align-items: center; justify-content: space-between; gap: 18px; border-color: color-mix(in srgb, #d95454 30%, transparent); background: color-mix(in srgb, #d95454 6%, transparent); }
+#profileSettingsView .danger-zone p { margin: 0; color: var(--app-muted); font-size: .84rem; }
+#profileSettingsView .danger-title { margin-bottom: 6px; }
+#profileSettingsView .profile-action-link.warning { color: var(--app-gold); }
+.custom-alert { color: var(--app-on-accent); background: var(--app-accent); }
+.downloads-header { background: radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--app-accent) 18%, transparent), transparent 43%), linear-gradient(130deg, var(--app-surface), var(--app-bg) 75%); }
+.downloads-header h1, .downloads-section-heading h2, .download-platform-card h2 { color: var(--app-text); }
+.downloads-header > p, .download-platform-card p, .downloads-section-heading span { color: var(--app-muted); }
+.playlist-card-spotify, .create-playlist-card { border-color: var(--app-border); background: var(--app-surface); }
+.playlist-info, .playlist-card-spotify h2, .playlist-card-spotify h3 { color: var(--app-text); }
+.playlist-hero-title { color: var(--app-text); }
+.download-platform-link.secondary { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+.download-platform-note, .downloads-release-status { color: var(--app-muted); }
+
+/* Auth pages share the selected palette and provide a quick switch. */
+.auth-page { color: var(--app-text); background: var(--app-bg); }
+.auth-page .auth-return, .auth-page .btn-google { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+.auth-page .auth-return:hover, .auth-page .btn-google:hover { color: var(--app-text); border-color: var(--app-accent); }
+.auth-page .title { color: var(--app-text); }
+.auth-page .subtitle, .auth-page .form-label, .auth-page .register-link, .auth-page .login-link, .auth-page .form-check-label { color: var(--app-muted); }
+.auth-page .forgot-password, .auth-page .register-link a, .auth-page .login-link a { color: var(--app-accent); }
+.auth-page .btn-primary { color: var(--app-on-accent); background: var(--app-accent); box-shadow: 0 9px 24px color-mix(in srgb, var(--app-accent) 18%, transparent); }
+.auth-page .btn-primary:hover { color: var(--app-on-accent); background: var(--app-accent-hover); }
+.auth-page .form-control { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+.auth-page .form-control:focus { border-color: var(--app-accent); background: var(--app-raised); box-shadow: 0 0 0 3px color-mix(in srgb, var(--app-accent) 17%, transparent); }
+.auth-page .form-control::placeholder { color: var(--app-muted); }
+.auth-page .form-check-input:checked { border-color: var(--app-accent); background-color: var(--app-accent); }
+.auth-page .logo { border-color: color-mix(in srgb, var(--app-accent) 28%, transparent); color: var(--app-accent); background: color-mix(in srgb, var(--app-accent) 10%, transparent); }
+.auth-page .auth-wordmark-icon { color: var(--app-on-accent); background: var(--app-accent); }
+.auth-layout { background: transparent; }
+.auth-brand { background: radial-gradient(ellipse at 78% 22%, color-mix(in srgb, var(--app-gold) 15%, transparent), transparent 34%), linear-gradient(145deg, color-mix(in srgb, var(--app-accent) 24%, var(--app-bg)), var(--app-bg) 72%); }
+.auth-brand-copy p, .auth-brand-foot { color: var(--app-muted); }
+.login-card, .register-card { color: var(--app-text); border-color: var(--app-border); background: var(--app-surface); }
+.login-card h1, .register-card h1, .login-card h2, .register-card h2 { color: var(--app-text); }
+.login-card input, .register-card input { color: var(--app-text); border-color: var(--app-border); background: var(--app-raised); }
+.auth-theme-toggle { position: fixed; z-index: 20; top: 18px; right: 18px; }
+
+html[data-theme="light"] .track.card, html[data-theme="light"] .track-list .track, html[data-theme="light"] .track-card, html[data-theme="light"] .song-card,
+html[data-theme="light"] .music-card, html[data-theme="light"] .playlist-card,
+html[data-theme="light"] .download-platform-card, html[data-theme="light"] .profile-dropdown .dropdown-content,
+html[data-theme="light"] .dropdown-content, html[data-theme="light"] .player-bar,
+html[data-theme="light"] .big-player, html[data-theme="light"] .queue-panel,
+html[data-theme="light"] .comments-panel, html[data-theme="light"] .modal-content,
+html[data-theme="light"] .login-card, html[data-theme="light"] .register-card { box-shadow: 0 14px 38px rgba(63, 40, 57, .09); }
+html[data-theme="light"] #fixedHeader, html[data-theme="light"] .fixed-header { box-shadow: 0 6px 24px rgba(63, 40, 57, .07); }
+html[data-theme="light"] .auth-page .auth-disc-one { background: repeating-radial-gradient(circle, #e7ddd4 0 2px, #f5eee6 3px 5px); }
+html[data-theme="light"] .auth-page .auth-disc-two { background: repeating-radial-gradient(circle, #daccc1 0 1px, #eee5dc 2px 4px); }
+html[data-theme="light"] .auth-page .auth-disc-three { border-color: #e6d9cd; color: var(--app-on-accent); }
+
+@media (max-width: 760px) {
+  .settings-layout { grid-template-columns: 1fr; gap: 12px; }
+  .settings-intro { position: relative; top: auto; min-height: 0; padding: 8px 2px 12px; }
+  .settings-intro::after, .settings-decoration { display: none; }
+  .settings-kicker { margin-top: 6px; }
+  #profileSettingsView .page-title { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+}
+@media (max-width: 520px) {
+  .settings-preference-block { grid-template-columns: 40px minmax(0,1fr); }
+  .settings-preference-icon { width: 38px; height: 38px; }
+  .theme-switch { grid-column: 2; justify-self: start; }
+  .settings-form-grid { grid-template-columns: 1fr; gap: 4px; }
+  #profileSettingsView .action-section, #profileSettingsView .danger-zone { align-items: stretch; flex-direction: column; }
+  #profileSettingsView .settings-save-hint { text-align: center; }
+  #profileSettingsView .profile-guest-prompt { grid-template-columns: 38px minmax(0,1fr); padding: 14px; }
+  #profileSettingsView .profile-guest-actions { grid-column: 1 / -1; }
+  #profileSettingsView .profile-guest-actions .profile-action-link { flex: 1; }
+  .settings-account-badge { display: none; }
+  .auth-theme-toggle { top: 10px; right: 10px; }
+}

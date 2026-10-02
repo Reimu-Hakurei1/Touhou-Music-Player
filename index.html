@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>(() => { try { const saved = localStorage.getItem('touhou-player-theme'); document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark'; } catch (_) { document.documentElement.dataset.theme = 'dark'; } })();</script>
   <title>Touhou Music Player</title>
   <link rel="icon" href="TH Reimu NOBG.ico" sizes="128x128" type="image/x-icon">
   
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="fixed-header.css?v=20261003-header-spacing">
   <link rel="stylesheet" href="playlist-spotify.css?v=20261003-playlist-back">
   <link rel="stylesheet" href="profile.css?v=20261003-download-refresh">
+  <link rel="stylesheet" href="theme.css?v=20261003-touhou-modes">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
@@ -40,6 +42,7 @@
           <i class="fas fa-download"></i>
           Download App
         </button>
+        <button type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false"><i class="fas fa-sun" aria-hidden="true"></i><span>Light Mode</span></button>
         <button id="myPlaylistsBtn">
           <i class="fas fa-list-ul"></i>
           My Playlists
@@ -141,44 +144,65 @@
 
   <section id="profileSettingsView" class="app-secondary-page profile-settings-page" aria-labelledby="profileSettingsTitle" aria-hidden="true" hidden>
     <main class="profile-settings-shell">
-      <div class="profile-card">
-        <header class="header-section">
+      <div class="settings-layout">
+        <header class="settings-intro">
           <button id="backToPlayerFromSettings" class="back-btn" type="button"><i class="fas fa-arrow-left"></i> Back to Player</button>
-          <h1 id="profileSettingsTitle" class="page-title">Profile Settings</h1>
-          <p class="page-subtitle">Manage your account information</p>
+          <span class="settings-kicker"><i class="fas fa-torii-gate"></i> PLAYER SHRINE</span>
+          <h1 id="profileSettingsTitle" class="page-title">Your listening space</h1>
+          <p class="page-subtitle">Tune your account and shape the player to feel like home.</p>
+          <div class="settings-decoration" aria-hidden="true"><span class="settings-orb settings-orb-one"></span><span class="settings-orb settings-orb-two"></span><span class="settings-orb settings-orb-center"><i class="fas fa-music"></i></span></div>
         </header>
 
-        <div id="profileGuestPrompt" class="profile-guest-prompt" hidden>
-          <p>Sign in to view and update your profile settings.</p>
-          <div class="profile-guest-actions">
-            <a class="profile-action-link primary" href="Login.html">Sign In</a>
-            <a class="profile-action-link" href="Register.html">Create Account</a>
+        <div class="profile-card">
+          <section class="settings-account-summary" id="settingsAccountSummary" hidden>
+            <div class="settings-avatar" id="settingsAvatar" aria-hidden="true">東</div>
+            <div class="settings-account-copy"><span class="settings-label">LISTENER PROFILE</span><h2 id="settingsDisplayName">Your profile</h2><p id="settingsEmailSummary"></p></div>
+            <span class="settings-account-badge"><i class="fas fa-circle"></i> Account</span>
+          </section>
+
+          <section class="settings-preference-block" aria-labelledby="appearanceTitle">
+            <div class="settings-preference-icon"><i class="fas fa-moon"></i></div>
+            <div class="settings-preference-copy"><h2 id="appearanceTitle">Appearance</h2><p>Choose the look that feels right for your listening sessions.</p></div>
+            <button class="theme-switch" id="settingsThemeToggle" type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false"><i class="fas fa-sun" aria-hidden="true"></i><span>Light Mode</span></button>
+          </section>
+
+          <div id="profileGuestPrompt" class="profile-guest-prompt" hidden>
+            <div class="profile-guest-icon"><i class="fas fa-user-astronaut"></i></div>
+            <div class="profile-guest-copy"><h2>Make this space yours</h2><p>Sign in to update your profile, save playlists, and keep your listening in sync.</p></div>
+            <div class="profile-guest-actions">
+              <a class="profile-action-link primary" href="Login.html">Sign In</a>
+              <a class="profile-action-link" href="Register.html">Create Account</a>
+            </div>
           </div>
+
+          <form id="profileForm" hidden>
+            <div class="settings-section-heading"><span class="settings-label">YOUR DETAILS</span><h2>Account information</h2><p>Your username is how you appear to other listeners.</p></div>
+            <div class="settings-form-grid">
+              <div class="form-section">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-control" placeholder="Enter your username" autocomplete="nickname" minlength="3" maxlength="20" required>
+                <div class="form-text">3–20 letters, numbers, or underscores.</div>
+              </div>
+              <div class="form-section">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" readonly>
+                <div class="form-text">Your sign-in email cannot be changed here.</div>
+              </div>
+            </div>
+            <div class="action-section">
+              <button id="saveBtn" type="submit" class="profile-action-link primary"><i class="fas fa-check"></i> Save Profile</button>
+              <span class="settings-save-hint"><i class="fas fa-lock"></i> Your profile is private to your account.</span>
+            </div>
+          </form>
+
+          <section id="profileDangerZone" class="danger-zone" hidden>
+            <div><span class="settings-label">ACCOUNT ACCESS</span><h2 class="danger-title">Account actions</h2><p>Sign out on this device or permanently remove your account.</p></div>
+            <div class="danger-actions">
+              <button id="profileSignOutBtn" class="profile-action-link warning" type="button"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+              <button id="deleteAccountBtn" class="profile-action-link danger" type="button"><i class="fas fa-trash"></i> Delete Account</button>
+            </div>
+          </section>
         </div>
-
-        <form id="profileForm" hidden>
-          <div class="form-section">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
-            <div class="form-text">This is the display name shown throughout the app.</div>
-          </div>
-          <div class="form-section">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" class="form-control" readonly>
-            <div class="form-text">Email cannot be changed here.</div>
-          </div>
-          <div class="action-section">
-            <button id="saveBtn" type="submit" class="profile-action-link primary"><i class="fas fa-save"></i> Save Changes</button>
-          </div>
-        </form>
-
-        <section id="profileDangerZone" class="danger-zone" hidden>
-          <h2 class="danger-title"><i class="fas fa-triangle-exclamation"></i> Danger Zone</h2>
-          <div class="danger-actions">
-            <button id="profileSignOutBtn" class="profile-action-link warning" type="button"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
-            <button id="deleteAccountBtn" class="profile-action-link danger" type="button"><i class="fas fa-trash"></i> Delete Account</button>
-          </div>
-        </section>
       </div>
     </main>
   </section>
@@ -402,5 +426,6 @@
   <script src="fixed-header.js?v=20261003-header-spacing"></script>
   <script src="profile.js?v=20261003-integrated-settings"></script>
   <script src="downloads.js?v=20261003-android-downloads"></script>
+  <script src="theme.js?v=20261003-touhou-modes"></script>
 </body>
 </html>

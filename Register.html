@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(() => { try { document.documentElement.dataset.theme = localStorage.getItem('touhou-player-theme') === 'light' ? 'light' : 'dark'; } catch (_) { document.documentElement.dataset.theme = 'dark'; } })();</script>
   <title>Register - Touhou Music</title>
   <link rel="icon" href="TH Reimu NOBG.ico" sizes="128x128" type="image/x-icon">
   
@@ -14,6 +15,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="register.css">
   <link rel="stylesheet" href="auth-pages.css?v=20261003-auth-redesign">
+  <link rel="stylesheet" href="theme.css?v=20261003-touhou-modes">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.2.1/firebase-app-compat.js"></script>
@@ -22,6 +24,7 @@
 </head>
 
 <body class="auth-page auth-register">
+  <button class="theme-switch auth-theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" aria-pressed="false"><i class="fas fa-sun" aria-hidden="true"></i><span>Light Mode</span></button>
   <a class="auth-return" href="index.html"><i class="fas fa-arrow-left"></i><span>Back to player</span></a>
   <div class="auth-layout">
     <aside class="auth-brand" aria-label="Touhou Music Player">
@@ -111,5 +114,6 @@
   <!-- Register Script -->
   <script src="auth-ui.js?v=20261003-auth-redesign"></script>
   <script src="register.js"></script>
+  <script src="theme.js?v=20261003-touhou-modes"></script>
 </body>
 </html>

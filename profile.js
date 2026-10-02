@@ -25,6 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const deleteAccountBtn = document.getElementById('deleteAccountBtn');
         const guestPrompt = document.getElementById('profileGuestPrompt');
         const dangerZone = document.getElementById('profileDangerZone');
+        const accountSummary = document.getElementById('settingsAccountSummary');
+        const summaryName = document.getElementById('settingsDisplayName');
+        const summaryEmail = document.getElementById('settingsEmailSummary');
+        const summaryAvatar = document.getElementById('settingsAvatar');
+
+        function updateSettingsSummary(name, email) {
+            const displayName = (name || email?.split('@')[0] || 'Touhou Listener').trim();
+            if (summaryName) summaryName.textContent = displayName;
+            if (summaryEmail) summaryEmail.textContent = email || '';
+            if (summaryAvatar) summaryAvatar.textContent = [...displayName][0]?.toUpperCase() || '東';
+        }
+
+        usernameInput?.addEventListener('input', () => updateSettingsSummary(usernameInput.value, emailInput.value));
         
         // Check if form elements exist
         if (!profileForm) {
@@ -90,13 +103,16 @@ document.addEventListener('DOMContentLoaded', function() {
             auth.onAuthStateChanged((user) => {
                 if (user) {
                     profileForm.hidden = false;
+                    if (accountSummary) accountSummary.hidden = false;
                     if (dangerZone) dangerZone.hidden = false;
                     if (guestPrompt) guestPrompt.hidden = true;
+                    updateSettingsSummary(user.displayName, user.email);
                     console.log('✅ User authenticated:', user.email);
                     loadUserProfile(user);
                     setupFormHandlers(user);
                 } else {
                     profileForm.hidden = true;
+                    if (accountSummary) accountSummary.hidden = true;
                     if (dangerZone) dangerZone.hidden = true;
                     if (guestPrompt) guestPrompt.hidden = false;
                     console.log('No user authenticated; showing the sign-in prompt');
@@ -134,15 +150,18 @@ document.addEventListener('DOMContentLoaded', function() {
                             // Use displayName from auth or email username
                             usernameInput.value = user.displayName || user.email?.split('@')[0] || '';
                         }
+                        updateSettingsSummary(usernameInput.value, emailInput.value);
                     })
                     .catch((error) => {
                         console.warn('⚠️ Could not load user data from Firestore:', error);
                         // Fallback to auth data
                         usernameInput.value = user.displayName || user.email?.split('@')[0] || '';
+                        updateSettingsSummary(usernameInput.value, emailInput.value);
                     });
             } else {
                 // Fallback to auth data
                 usernameInput.value = user.displayName || user.email?.split('@')[0] || '';
+                updateSettingsSummary(usernameInput.value, emailInput.value);
             }
             
             console.log('✅ User profile loaded');
