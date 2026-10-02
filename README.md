@@ -27,29 +27,26 @@ This is a static HTML, CSS, and JavaScript website; it does not require a build 
 
 Song and cover media are served from Cloudflare R2; their base URL is configured in `media-url-helper.js`.
 
-## Windows desktop app
+## Desktop app (Tauri v2)
 
-The Electron desktop app opens the live player in a dedicated app window. It includes a Windows system-tray menu and desktop playback controls. An internet connection is required because the player website, Firebase services, and music media are hosted online.
+The Tauri desktop app opens the live player in a dedicated native window. Its system-tray menu includes open, play/pause, previous, and next controls. The app requires an internet connection because the website, Firebase services, and music media are hosted online.
 
 ```powershell
 npm install
 npm run desktop
 ```
 
-Build the Windows installer and portable app with:
+Install the Tauri v2 prerequisites for your operating system (including Rust; Linux also needs WebKitGTK development packages) before running the desktop app. Build a local package with:
 
 ```powershell
 npm run dist:win
-npm run dist:win:portable
+npm run dist:linux
+npm run dist:mac
 ```
 
-The Windows installer is created in `dist/`.
+Windows builds create an NSIS installer, Linux builds create an AppImage and Debian/Ubuntu `.deb`, and macOS builds create a universal `.dmg` for Intel and Apple Silicon Macs. Packages are created under `src-tauri/target/`.
 
-## Linux and macOS desktop builds
-
-Linux builds are packaged as an AppImage and a Debian/Ubuntu `.deb`. macOS builds are packaged as a universal `.dmg` and `.zip` for Intel and Apple Silicon Macs. The macOS packages are unsigned; macOS may require you to approve the app before opening it.
-
-GitHub Actions builds Windows, Linux, and macOS packages when desktop app files are pushed to `main`. Build artifacts are available from the repository's [Actions page](https://github.com/Reimu-Hakurei1/Touhou-Music-Player/actions) for 30 days. You can also start a build manually from the **Build desktop apps** workflow.
+GitHub Actions builds Windows, Linux, and universal macOS packages when desktop app files are pushed to `main`. Build artifacts are available from the repository's [Actions page](https://github.com/Reimu-Hakurei1/Touhou-Music-Player/actions) for 30 days. You can also start a build manually from the **Build desktop apps** workflow. The macOS packages are unsigned; macOS may require approval before opening them.
 
 ## Built with
 

@@ -58,8 +58,10 @@
       <h1 class="page-title">Touhou Music Player</h1>
     </div>
 
-    <!-- Filters -->
-    <div class="container filter-section">
+    <!-- Filters stay compact on phones; desktop keeps them visible. -->
+    <details class="container mobile-filter-disclosure">
+      <summary><i class="fas fa-sliders"></i><span>Filters</span><i class="fas fa-chevron-down filter-chevron"></i></summary>
+      <div class="filter-section">
       <div class="row g-3">
         <div class="col-md-4">
           <div class="filter-label">Music Type</div>
@@ -87,7 +89,8 @@
           </select>
         </div>
       </div>
-    </div>
+      </div>
+    </details>
 
     <!-- Search Bar -->
     <div class="container">

@@ -34,6 +34,20 @@
     padding: 6px;
 }
 
+/* Keep the three library filters available on desktop and collapsible on phones. */
+.mobile-filter-disclosure {
+    max-width: 1100px;
+    margin: 5px auto;
+}
+
+.mobile-filter-disclosure > summary {
+    display: none;
+}
+
+.mobile-filter-disclosure:not([open]) > .filter-section {
+    display: block;
+}
+
 .fixed-header .search-container {
     margin: 8px auto 12px;
     max-width: 760px;
@@ -67,9 +81,7 @@
         margin: 8px 0;
     }
     
-    .content-spacer {
-        height: 320px; /* More space on mobile */
-    }
+    .content-spacer { height: 220px; }
     
     .profile-container {
         top: 15px;
@@ -77,8 +89,40 @@
     }
     
     .fixed-header .filter-section {
-        padding: 6px;
+        margin: 8px auto 2px;
+        padding: 10px;
     }
+
+    .mobile-filter-disclosure { margin: 4px auto; padding: 0 12px; }
+    .mobile-filter-disclosure > summary {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        min-height: 38px;
+        padding: 7px 12px;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 10px;
+        color: #eee;
+        background: rgba(255,255,255,.045);
+        font-size: .88rem;
+        font-weight: 600;
+        list-style: none;
+        cursor: pointer;
+    }
+    .mobile-filter-disclosure > summary::-webkit-details-marker { display: none; }
+    .mobile-filter-disclosure > summary .filter-chevron { margin-left: auto; transition: transform .2s ease; }
+    .mobile-filter-disclosure[open] > summary .filter-chevron { transform: rotate(180deg); }
+    .mobile-filter-disclosure:not([open]) > .filter-section { display: none; }
+    .mobile-filter-disclosure .filter-section { max-width: none; }
+    .mobile-filter-disclosure .filter-section .row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin: 0;
+    }
+    .mobile-filter-disclosure .filter-section .row > * { width: auto; padding: 0; }
+    .mobile-filter-disclosure .filter-label { margin-bottom: 3px; font-size: .75rem; }
+    .mobile-filter-disclosure .form-select { min-height: 40px; padding-top: 6px; padding-bottom: 6px; font-size: .85rem; }
     
     .fixed-header .search-container {
         margin: 6px auto 10px;
@@ -86,9 +130,7 @@
 }
 
 @media (max-width: 480px) {
-    .content-spacer {
-        height: 350px; /* Even more space on very small screens */
-    }
+    .content-spacer { height: 205px; }
     
     .fixed-header .page-title {
         font-size: 1.2rem;

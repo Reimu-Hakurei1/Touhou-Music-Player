@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update spacer on load and resize
     updateContentSpacer();
     window.addEventListener('resize', updateContentSpacer);
+    fixedHeader.querySelectorAll('.mobile-filter-disclosure').forEach(function(disclosure) {
+        disclosure.addEventListener('toggle', updateContentSpacer);
+    });
     
     // Scroll event listener for header effects
     window.addEventListener('scroll', function() {
