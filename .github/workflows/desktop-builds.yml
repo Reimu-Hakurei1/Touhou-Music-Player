@@ -122,7 +122,7 @@ jobs:
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android
+          targets: aarch64-linux-android
 
       - name: Install dependencies
         run: npm install
@@ -202,7 +202,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          apk_source="$(find incoming -type f -iname '*universal*debug*.apk' -print -quit)"
+          apk_source="$(find incoming -type f -iname '*debug*.apk' -print -quit)"
           if [[ -z "$apk_source" ]]; then
             echo "No Android APK was found in the downloaded artifact." >&2
             exit 1
