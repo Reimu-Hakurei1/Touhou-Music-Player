@@ -1,4 +1,26 @@
 // User Authentication and Profile Management
+window.setPlaylistView = (show) => {
+    document.body.classList.toggle('show-playlists', show);
+    const menuButton = document.getElementById('myPlaylistsBtn');
+    if (menuButton) menuButton.innerHTML = show
+        ? '<i class="fas fa-home"></i> Back to Player'
+        : '<i class="fas fa-list-ul"></i> My Playlists';
+    if (show) {
+        history.replaceState(null, '', '#playlists');
+        window.spotifyEnhancer?.refreshPlaylists?.();
+    } else {
+        window.returnToLibrary?.();
+        history.replaceState(null, '', location.pathname);
+    }
+};
+
+const initializePlaylistView = () => window.setPlaylistView(location.hash === '#playlists');
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePlaylistView, { once: true });
+} else {
+    initializePlaylistView();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('User auth script loaded');
     
@@ -29,12 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
             if (user) {
                 setupUserProfile(user, db);
             } else {
-                console.log('No user found, redirecting to login page');
-                setTimeout(() => {
-                    window.location.href = "Login.html";
-                }, 500);
+                setupGuestProfile();
             }
         });
+    }
+
+    function setupGuestProfile() {
+        const container = document.getElementById('profileContainer');
+        if (!container) return;
+        container.style.display = 'block';
+        const name = document.getElementById('userFirstName');
+        if (name) name.textContent = 'Guest';
+        document.getElementById('profileSettings')?.style.setProperty('display', 'none');
+        document.getElementById('signOutBtn')?.style.setProperty('display', 'none');
+        document.getElementById('signInBtn')?.style.removeProperty('display');
+        document.getElementById('registerBtn')?.style.removeProperty('display');
+        setupDropdown();
+        setupEventListeners(null);
     }
 
     function setupUserProfile(user, db) {
@@ -48,6 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.error('❌ Profile container not found');
         }
+        document.getElementById('profileSettings')?.style.removeProperty('display');
+        document.getElementById('signOutBtn')?.style.removeProperty('display');
+        document.getElementById('signInBtn')?.style.setProperty('display', 'none');
+        document.getElementById('registerBtn')?.style.setProperty('display', 'none');
         
         // Load and display user data
         loadAndDisplayUserData(user, db);
@@ -129,6 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Toggle dropdown
+        if (profileToggle.dataset.dropdownInitialized === 'true') return;
+        profileToggle.dataset.dropdownInitialized = 'true';
         profileToggle.addEventListener('click', function(e) {
             e.stopPropagation();
             e.preventDefault();
@@ -154,18 +193,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const auth = window.firebaseAuth;
         
         // My Playlists button
-        if (myPlaylistsBtn) {
+        if (myPlaylistsBtn && myPlaylistsBtn.dataset.authBound !== 'true') {
+            myPlaylistsBtn.dataset.authBound = 'true';
             myPlaylistsBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const isPlaylistView = document.body.classList.contains('show-playlists');
-                if (window.setPlaylistView) window.setPlaylistView(!isPlaylistView);
-                else document.body.classList.toggle('show-playlists', !isPlaylistView);
+                const showPlaylists = !isPlaylistView;
+                if (window.setPlaylistView) window.setPlaylistView(showPlaylists);
+                else {
+                    document.body.classList.toggle('show-playlists', showPlaylists);
+                    this.innerHTML = showPlaylists
+                        ? '<i class="fas fa-home"></i> Back to Player'
+                        : '<i class="fas fa-list-ul"></i> My Playlists';
+                    if (showPlaylists) window.spotifyEnhancer?.refreshPlaylists?.();
+                    else window.returnToLibrary?.();
+                    history.replaceState(null, '', showPlaylists ? '#playlists' : location.pathname);
+                }
                 document.getElementById('dropdownMenu')?.classList.remove('show');
             });
         }
         
         // Profile settings button
-        if (profileSettingsBtn) {
+        if (profileSettingsBtn && profileSettingsBtn.dataset.authBound !== 'true') {
+            profileSettingsBtn.dataset.authBound = 'true';
             profileSettingsBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 console.log('Navigating to profile settings');
@@ -174,18 +224,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Sign out button
-        if (signOutBtn) {
+        if (signOutBtn && signOutBtn.dataset.authBound !== 'true') {
+            signOutBtn.dataset.authBound = 'true';
             signOutBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 console.log('Signing out user...');
                 auth.signOut().then(() => {
                     console.log('User signed out successfully');
-                    window.location.href = "Login.html";
                 }).catch((error) => {
                     console.error('Sign out error:', error);
                     alert('Error signing out: ' + error.message);
                 });
             });
+        }
+
+        const signInBtn = document.getElementById('signInBtn');
+        if (signInBtn && signInBtn.dataset.authBound !== 'true') {
+            signInBtn.dataset.authBound = 'true';
+            signInBtn.addEventListener('click', () => { window.location.href = 'Login.html'; });
+        }
+        const registerBtn = document.getElementById('registerBtn');
+        if (registerBtn && registerBtn.dataset.authBound !== 'true') {
+            registerBtn.dataset.authBound = 'true';
+            registerBtn.addEventListener('click', () => { window.location.href = 'Register.html'; });
         }
     }
     

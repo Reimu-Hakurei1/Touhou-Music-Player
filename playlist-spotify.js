@@ -185,11 +185,15 @@ class SpotifyPlaylistEnhancer {
     // Not logged in
     if (!this.isAuthed()) {
       container.innerHTML = `
-        <div class="empty-state-container">
+        <div class="empty-state-container guest-playlists-state">
           <div class="empty-state-content">
-            <i class="fas fa-user-lock fa-3x text-muted mb-2"></i>
-            <h4>Please log in</h4>
-            <p>Sign in to see and create playlists.</p>
+            <i class="fas fa-music fa-3x text-muted mb-2"></i>
+            <h4>Make it your library</h4>
+            <p>You can browse and play music as a guest. Sign in or create a free account to make playlists.</p>
+            <div class="guest-playlist-actions">
+              <a class="header-action-btn play" href="Login.html">Sign In</a>
+              <a class="header-action-btn secondary" href="Register.html">Create Account</a>
+            </div>
           </div>
         </div>`;
       return;
@@ -687,6 +691,7 @@ class SpotifyPlaylistEnhancer {
 
   // ---------- create playlist ----------
   showCreatePlaylistModal() {
+    if (!this.isAuthed()) return this.promptForAccount();
     const modalEl = document.getElementById("createPlaylistModal");
     if (!modalEl) return alert("Create playlist modal not found");
     const modal = new bootstrap.Modal(modalEl);
@@ -710,7 +715,7 @@ class SpotifyPlaylistEnhancer {
     const name = input?.value.trim();
     if (!name) return alert("Please enter a playlist name");
     if (name.length > 50) return alert("Playlist name must be 50 characters or less");
-    if (!this.isAuthed()) return alert("Please log in to create playlists");
+    if (!this.isAuthed()) return this.promptForAccount();
     if (this.getPlaylists().some((p) => p.name.toLowerCase() === name.toLowerCase())) {
       return alert("A playlist with this name already exists");
     }
@@ -731,6 +736,22 @@ class SpotifyPlaylistEnhancer {
       console.error(err);
       this.showNotification("Could not create playlist", "error");
     }
+  }
+
+  promptForAccount() {
+    if (!window.MusicUI?.modal) {
+      alert("Sign in or create an account to make playlists.");
+      return;
+    }
+    window.MusicUI.modal({
+      title: "Create a playlist",
+      subtitle: "You can browse and play music as a guest. Sign in or create an account to save playlists.",
+      actions: [
+        { label: "Maybe later", value: null },
+        { label: "Sign In", kind: "ghost", run: () => { window.location.href = "Login.html"; } },
+        { label: "Create Account", kind: "primary", run: () => { window.location.href = "Register.html"; } }
+      ]
+    });
   }
 
   // ---------- utilities ----------

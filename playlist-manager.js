@@ -44,7 +44,6 @@ class PlaylistManagerFixed {
         this.currentUser = null;
         this.initialized = true;
         console.log("PlaylistManager: signed out");
-        setTimeout(() => { window.location.href = "Login.html"; }, 500);
       }
     });
 
@@ -233,7 +232,6 @@ class PlaylistManagerFixed {
   async handleSignOut() {
     try {
       await window.firebaseAuth.signOut();
-      window.location.href = "Login.html";
     } catch (err) {
       this.showNotification("Sign out failed", "error");
     }

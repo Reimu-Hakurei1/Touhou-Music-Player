@@ -13,9 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="music.css">
-  <link rel="stylesheet" href="fixed-header.css">
-  <link rel="stylesheet" href="playlist-spotify.css">
+  <link rel="stylesheet" href="music.css?v=20261002-comment-edit-delete">
+  <link rel="stylesheet" href="fixed-header.css?v=20261002-guest-responsive">
+  <link rel="stylesheet" href="playlist-spotify.css?v=20261002-guest-responsive">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
@@ -46,6 +46,8 @@
           <i class="fas fa-sign-out-alt"></i>
           Sign Out
         </button>
+        <button id="signInBtn" style="display:none"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+        <button id="registerBtn" style="display:none"><i class="fas fa-user-plus"></i> Create Account</button>
       </div>
     </div>
   </div>
@@ -93,6 +95,12 @@
         <i class="fa fa-search search-icon"></i>
         <input id="searchBar" class="search-bar" placeholder="Search songs, artists...">
       </div>
+    </div>
+
+    <div class="container library-shortcuts" role="group" aria-label="Music library views">
+      <button type="button" class="library-shortcut active" data-library-mode="all">All Music</button>
+      <button type="button" class="library-shortcut" data-library-mode="liked"><i class="fas fa-heart"></i> Liked Songs</button>
+      <button type="button" class="library-shortcut" data-library-mode="recent"><i class="fas fa-clock"></i> Recently Played</button>
     </div>
   </div>
 
@@ -159,12 +167,17 @@
         <button id="play" class="control-btn" title="Play">▶</button>
         <button id="next" class="control-btn" title="Next">⏭</button>
         <button id="loop" class="control-btn" title="Loop">🔁</button>
-        <button id="downloadBtn" title="Download" style="display:none;" class="control-btn">
-          <span class="material-symbols-outlined">download</span>
-        </button>
-        <button class="playlist-btn control-btn" title="Add to playlist">
-          <i class="fas fa-plus"></i>
-        </button>
+        <div class="player-more-wrap">
+          <button id="playerMoreBtn" class="control-btn player-more-btn" type="button" title="More player actions" aria-label="More player actions" aria-haspopup="menu" aria-expanded="false"><i class="fas fa-ellipsis"></i></button>
+          <div id="playerActionMenu" class="player-action-menu" role="menu" aria-label="Player actions">
+            <button id="playerLikeBtn" class="player-action-item" type="button" role="menuitem" aria-pressed="false"><i class="far fa-heart"></i><span>Like song</span></button>
+            <button id="playerCommentsBtn" class="player-action-item" type="button" role="menuitem"><i class="far fa-comment"></i><span>Comments</span></button>
+            <button id="playerShareBtn" class="player-action-item" type="button" role="menuitem"><i class="fas fa-share-nodes"></i><span>Share song</span></button>
+            <button id="downloadBtn" class="player-action-item" type="button" role="menuitem" style="display:none"><i class="fas fa-download"></i><span>Download</span></button>
+            <button class="playlist-btn player-action-item" type="button" role="menuitem"><i class="fas fa-plus"></i><span>Add to playlist</span></button>
+            <button id="queueToggle" class="player-action-item" type="button" role="menuitem" aria-expanded="false"><i class="fas fa-list-ul"></i><span>Play queue</span></button>
+          </div>
+        </div>
         <div class="volume-container">
           <button id="muteBtn" title="Mute / Unmute" class="control-btn">
             <i class="fa fa-volume-up"></i>
@@ -189,6 +202,30 @@
     </div>
   </div>
 
+  <section id="commentsDialog" class="comments-dialog" role="dialog" aria-modal="true" aria-labelledby="commentsTitle" aria-hidden="true">
+    <div class="comments-card">
+      <header class="comments-header">
+        <div><h2 id="commentsTitle">Comments</h2><p id="commentsTrackTitle"></p></div>
+        <button id="closeComments" type="button" aria-label="Close comments"><i class="fas fa-times"></i></button>
+      </header>
+      <div id="commentsList" class="comments-list" aria-live="polite"><p class="comments-empty">Loading comments…</p></div>
+      <form id="commentForm" class="comment-form">
+        <label class="visually-hidden" for="commentInput">Write a comment</label>
+        <textarea id="commentInput" maxlength="1000" rows="3" placeholder="Write a comment…" required></textarea>
+        <div class="comment-form-footer"><span id="commentSignInHint">Sign in to join the conversation.</span><button id="postCommentBtn" type="submit">Post comment</button></div>
+      </form>
+    </div>
+  </section>
+
+  <aside id="queuePanel" class="queue-panel" aria-label="Play queue" aria-hidden="true">
+    <div class="queue-panel-head">
+      <div><strong>Play Queue</strong><span id="queueCount">0 queued</span></div>
+      <div class="queue-panel-actions"><button id="clearQueue" type="button">Clear</button><button id="closeQueue" type="button" aria-label="Close queue">×</button></div>
+    </div>
+    <div class="queue-now-playing"><span class="queue-section-label">Now Playing</span><div id="queueCurrentTrack" class="queue-current-track">Nothing is playing</div></div>
+    <div class="queue-up-next"><span class="queue-section-label">Up Next</span><div id="queueItems" class="queue-items"></div></div>
+  </aside>
+
   <!-- Big Player Overlay -->
   <div id="bigPlayer" class="big-player-overlay" aria-hidden="true">
     <button id="closeBigPlayer" class="big-close-btn" title="Close">✕</button>
@@ -208,13 +245,17 @@
         <button id="bigNext" class="control-btn" title="Next">⏭</button>
         <button id="bigLoop" class="control-btn" title="Loop">🔁</button>
 
-        <button id="bigDownloadBtn" title="Download" style="display:none;" class="control-btn">
-          <span class="material-symbols-outlined">download</span>
-        </button>
-
-        <button class="big-playlist-btn control-btn" title="Add to playlist">
-          <i class="fas fa-plus"></i>
-        </button>
+        <div class="player-more-wrap">
+          <button id="bigPlayerMoreBtn" class="control-btn player-more-btn" type="button" title="More player actions" aria-label="More player actions" aria-haspopup="menu" aria-expanded="false"><i class="fas fa-ellipsis"></i></button>
+          <div id="bigPlayerActionMenu" class="player-action-menu" role="menu" aria-label="Player actions">
+            <button id="bigPlayerLikeBtn" class="player-action-item" type="button" role="menuitem" aria-pressed="false"><i class="far fa-heart"></i><span>Like song</span></button>
+            <button id="bigPlayerCommentsBtn" class="player-action-item" type="button" role="menuitem"><i class="far fa-comment"></i><span>Comments</span></button>
+            <button id="bigPlayerShareBtn" class="player-action-item" type="button" role="menuitem"><i class="fas fa-share-nodes"></i><span>Share song</span></button>
+            <button id="bigDownloadBtn" class="player-action-item" type="button" role="menuitem" style="display:none"><i class="fas fa-download"></i><span>Download</span></button>
+            <button class="big-playlist-btn player-action-item" type="button" role="menuitem"><i class="fas fa-plus"></i><span>Add to playlist</span></button>
+            <button id="bigQueueToggle" class="player-action-item" type="button" role="menuitem" aria-expanded="false"><i class="fas fa-list-ul"></i><span>Play queue</span></button>
+          </div>
+        </div>
 
         <div class="volume-container">
           <button id="bigMuteBtn" title="Mute / Unmute" class="control-btn">
@@ -250,38 +291,17 @@
   <script src="firebase-config.js"></script>
   
   <!-- User Authentication -->
-  <script src="user-auth.js"></script>
+  <script src="user-auth.js?v=20261002-guest-responsive"></script>
 
   <!-- Media URL Helper (must load before music.js) -->
   <script src="media-url-helper.js"></script>
-  <script src="playlist-manager.js"></script>
+  <script src="playlist-manager.js?v=20261002-guest-responsive"></script>
 
   <!-- Music Player -->
-  <script src="music.js"></script>
-  <script src="playlist-spotify.js"></script>
+  <script src="music.js?v=20261002-comment-edit-delete"></script>
+  <script src="playlist-spotify.js?v=20261002-guest-responsive"></script>
   
   <!-- Fixed Header Script -->
   <script src="fixed-header.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.setPlaylistView = (show) => {
-        document.body.classList.toggle('show-playlists', show);
-        const menuButton = document.getElementById('myPlaylistsBtn');
-        if (menuButton) menuButton.innerHTML = show
-          ? '<i class="fas fa-home"></i> Back to Player'
-          : '<i class="fas fa-list-ul"></i> My Playlists';
-        if (show) {
-          history.replaceState(null, '', '#playlists');
-          window.spotifyEnhancer?.refreshPlaylists?.();
-        }
-        else {
-          window.returnToLibrary?.();
-          history.replaceState(null, '', location.pathname);
-        }
-      };
-      window.setPlaylistView(location.hash === '#playlists');
-      document.getElementById('heroCreateBtn')?.addEventListener('click', () => window.spotifyEnhancer?.showCreatePlaylistModal?.());
-    });
-  </script>
 </body>
 </html>
