@@ -723,7 +723,6 @@ const playlists = {
 },
 "Touhou 15.5": {
   "Original": [
-    // Disc 1
     {title:"Seeds of the Incident", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 1/1.1 - 異変の種子.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"Being Things Eye To Eye", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 1/1.2 - 憑依投合.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"The Ground's Color is Yellow ~ Primrose", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 1/1.3 - 地の色は黄色 ～ Primrose.opus", cover:"covers/Touhou 15.5.jpg"},
@@ -743,8 +742,6 @@ const playlists = {
     {title:"Yorimashi Between Dreams and Reality ~ Necro-Fantasia", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 1/1.17 - 憑坐は夢と現の間に ～ Necro-Fantasia.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"Floating with the Tide", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 1/1.18 - 行雲流水.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"Possession Flowers Yet to Bud", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 1/1.19 - 未だ蕾む憑依華.opus", cover:"covers/Touhou 15.5.jpg"},
-
-    // Disc 2
     {title:"Branches Reaching to the Truth", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 2/2.1 - 真相へ繋がる枝葉.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"Immortal Red Soul", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 2/2.2 - 不滅のレッドソウル.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"Corridor Stretching to Eternity", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 2/2.3 - 永遠に続く回廊.opus", cover:"covers/Touhou 15.5.jpg"},
@@ -763,7 +760,6 @@ const playlists = {
     {title:"Blizzard of Scattering Possession Flowers", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 2/2.16 - 舞い散る憑依華吹雪.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"The Eternal Steam Engine", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 2/2.17 - 悠久の蒸気機関.opus", cover:"covers/Touhou 15.5.jpg"}
   ],
-  // Disc 3
   "Arrange": [
     {title:"Blooms of Spirit Possession (Arrange Version)", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 3/3.1 - 憑依華.opus", cover:"covers/Touhou 15.5.jpg"},
     {title:"Last Occultism ~ Esotericist of the Present World (Arrange Version)", artist:"ZUN / U2 Akiyama", file:"songs/Touhou 15.5/Disc 3/3.2 - ラストオカルティズム ～ 現し世の秘術師.opus", cover:"covers/Touhou 15.5.jpg"},
@@ -825,7 +821,7 @@ const playlists = {
     {title:"Joutoujin of Ceramics", artist:"ZUN", file:"songs/Touhou 17/11 - セラミックスの杖刀人.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Electric Heritage", artist:"ZUN", file:"songs/Touhou 17/12 - エレクトリックヘリテージ.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Entrust this World to Idols ~ Idolatrize World", artist:"ZUN", file:"songs/Touhou 17/13 - 偶像に世界を委ねて　～ Idoratrize World.opus", cover:"covers/Touhou 17.jpg"},
-    {title:"The Shining Law of the Strong Eating the Weak", artist:"ZUN", file:"songs/Touhou 17/14 - 輝かちき弱肉強食の掟.opus", cover:"covers/Touhou 17.jpg"},
+    {title:"The Shining Law of the Strong Eating the Weak", artist:"ZUN", file:"songs/Touhou 17/14 - 輝かしき弱肉強食の掟.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Prince Shoutoku's Pegasus ~ Dark Pegasus", artist:"ZUN", file:"songs/Touhou 17/15 - 聖徳太子のペガサス　～ Dark Pegasus.opus", cover:"covers/Touhou 17.jpg"},
     {title:"The Animals' Rest", artist:"ZUN", file:"songs/Touhou 17/16 - 畜生達の休息.opus", cover:"covers/Touhou 17.jpg"},
     {title:"Returning Home from the Underground", artist:"ZUN", file:"songs/Touhou 17/17 - 地下からの帰還.opus", cover:"covers/Touhou 17.jpg"},
@@ -941,7 +937,6 @@ const playlists = {
  "Akyuu's Untouched Score": {
   "Vol 1": {
     "Original": [
-      // Disc A
       {title:"Gensokyo ~ Lotus Land Story", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc A/Gensokyo ~ Lotus Land Story.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
       {title:"Witching Dream", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc A/Witching Dream.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
       {title:"Selene's light", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc A/Selene's light.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
@@ -957,8 +952,6 @@ const playlists = {
       {title:"Sleeping Terror", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc A/Sleeping Terror.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
       {title:"Dream Land", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc A/Dream Land.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
       {title:"Faint Dream ~ Inanimate Dream", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc A/Faint Dream ~ Inanimate Dream.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
-
-      // Disc B
       {title:"The Inevitably Forbidden Game", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc B/The Inevitably Forbidden Game.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
       {title:"Illusion of a Maid ~ Icemilk Magic", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc B/Illusion of a Maid ~ Icemilk Magic.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
       {title:"Cute Devil ~ Innocence", artist:"ZUN", file:"songs/Akyuu's Untouched Score/Vol 1/Disc B/Cute Devil ~ Innocence.opus", cover:"covers/Akyuu's Untouched Score.jpg"},
@@ -1093,7 +1086,7 @@ const playlists = {
   "Original": [
         {title:"Passing On through the Dendera Fields in the Night", artist:"ZUN", file:"songs/Ghostly Field Club/Passing On through the Dendera Fields in the Night.flac", cover:"covers/ghostly.jpg"},
         {title:"Girls' Sealing Club", artist:"ZUN", file:"songs/Ghostly Field Club/Girls' Sealing Club.flac", cover:"covers/ghostly.jpg"},
-        {title:"Eastern Mystical Dream ~ Ancient Temple", artist:"ZUN", file:"songs/Eastern Mystical Dream ~ Ancient Temple.flac", cover:"covers/ghostly.jpg"},
+        {title:"Eastern Mystical Dream ~ Ancient Temple", artist:"ZUN", file:"songs/Ghostly Field Club/Eastern Mystical Dream ~ Ancient Temple.flac", cover:"covers/ghostly.jpg"},
         {title:"Ancient Temple of the Netherworld", artist:"ZUN", file:"songs/Ghostly Field Club/Ancient Temple of the Netherworld.flac", cover:"covers/ghostly.jpg"},
         {title:"Illusionary Night ~ Ghostly Eyes", artist:"ZUN", file:"songs/Ghostly Field Club/Illusionary Night ~ Ghostly Eyes.flac", cover:"covers/ghostly.jpg"},
         {title:"Merry the Magician", artist:"ZUN", file:"songs/Ghostly Field Club/Merry the Magician.flac", cover:"covers/ghostly.jpg"},
@@ -1113,7 +1106,7 @@ const playlists = {
         {title:"Boys and Girls of Science Era", artist:"ZUN", file:"songs/Changeability of Strange Dream/05 - 科学世紀の少年少女.flac", cover:"covers/dolls3.jpg"},
         {title:"Retribution for the Eternal Night ~ Imperishable Night", artist:"ZUN", file:"songs/Changeability of Strange Dream/06 - 永夜の報い ～ Imperishable Night.flac", cover:"covers/dolls3.jpg"},
         {title:"Night Falls ~ Evening Star", artist:"ZUN", file:"songs/Changeability of Strange Dream/07 - 夜が降りてくる ～ Evening Star.flac", cover:"covers/dolls3.jpg"},
-        {title:"Doll Judgement ~ The Girl who Played with People's Shapes", artist:"ZUN", file:"songs/08 - 人形裁判 ～ 人の形弄びし少女.flac", cover:"covers/dolls3.jpg"},
+        {title:"Doll Judgement ~ The Girl who Played with People's Shapes", artist:"ZUN", file:"songs/Changeability of Strange Dream/08 - 人形裁判 ～ 人の形弄びし少女.flac", cover:"covers/dolls3.jpg"},
         {title:"Border Between Dream and Reality", artist:"ZUN", file:"songs/Changeability of Strange Dream/09 - 夢と現の境界.flac", cover:"covers/dolls3.jpg"},
         {title:"Phantasm Machine ~ Phantom Factory", artist:"ZUN", file:"songs/Changeability of Strange Dream/10 - 幻想機械 ～ Phantom Factory.flac", cover:"covers/dolls3.jpg"},
         {title:"Mystic Maple ~ Eternal Dream", artist:"ZUN", file:"songs/Changeability of Strange Dream/11 - 幽玄の槭樹 ～ Eternal Dream.flac", cover:"covers/dolls3.jpg"}
@@ -1123,7 +1116,7 @@ const playlists = {
   "Original": [
         {title:"Hiroshige No 36 ~ Neo Super Express", artist:"ZUN", file:"songs/Retrospective 53 Minutes/01 - ヒロシゲ36号 ～ Neo Super-Express.flac", cover:"covers/Retrospective53minutes.jpg"},
         {title:"Blue Sea Of 53 Minutes", artist:"ZUN", file:"songs/Retrospective 53 Minutes/02 - 53 ミニッツの青い海.flac", cover:"covers/Retrospective53minutes.jpg"},
-        {title:"Flight Of The Bamboo Cutter ~ Lunatic Princess", artist:"ZUN", file:"songs/03 - 竹取飛翔 ～ Lunatic Princess.flac", cover:"covers/Retrospective53minutes.jpg"},
+        {title:"Flight Of The Bamboo Cutter ~ Lunatic Princess", artist:"ZUN", file:"songs/Retrospective 53 Minutes/03 - 竹取飛翔 ～ Lunatic Princess.flac", cover:"covers/Retrospective53minutes.jpg"},
         {title:"Higan Retour ~ Riverside View", artist:"ZUN", file:"songs/Retrospective 53 Minutes/04 - 彼岸帰航 ～ Riverside View.flac", cover:"covers/Retrospective53minutes.jpg"},
         {title:"Legend Of Aokigahara", artist:"ZUN", file:"songs/Retrospective 53 Minutes/05 - 青木ヶ原の伝説.flac", cover:"covers/Retrospective53minutes.jpg"},
         {title:"White Flag Of Usa Shrine", artist:"ZUN", file:"songs/Retrospective 53 Minutes/06 - お宇佐さまの素い幡.flac", cover:"covers/Retrospective53minutes.jpg"},
@@ -1277,9 +1270,9 @@ const playlists = {
    },
    "Perfect Memento in Strict Sense": {
   "Original": [
-    {title:"Japanese Saga", artist:"ZUN", file:"songs/Perfect Memento in Strict Sense/Japanese Saga.mp3", cover:"covers/Perfect Memento in Strict Sense.png"},
-    {title:"Child of Are", artist:"ZUN", file:"songs/Perfect Memento in Strict Sense/Child of Are.mp3", cover:"covers/Perfect Memento in Strict Sense.png"},
-    {title:"Fly above Hatoyama at Night - Power MIX", artist:"ZUN", file:"songs/Perfect Memento in Strict Sense/Fly above Hatoyama at Night - Power MIX.mp3", cover:"covers/Perfect Memento in Strict Sense.png"}
+    {title:"Japanese Saga", artist:"ZUN", file:"songs/Perfect Memento in Strict Sense/1 - ジャパニーズサーガ.opus", cover:"covers/Perfect Memento in Strict Sense.png"},
+    {title:"Child of Are", artist:"ZUN", file:"songs/Perfect Memento in Strict Sense/2 - 阿礼の子供.opus", cover:"covers/Perfect Memento in Strict Sense.png"},
+    {title:"Fly above Hatoyama at Night - Power MIX", artist:"ZUN", file:"songs/Perfect Memento in Strict Sense/3 - 夜の鳩山を飛ぶ.opus", cover:"covers/Perfect Memento in Strict Sense.png"}
     ] 
    },
   "Silent Sinner in Blue": {
@@ -1291,40 +1284,40 @@ const playlists = {
    },
    "The Grimoire of Marisa": {
   "Original": [
-    {title:"Magician's Melancholy", artist:"ZUN", file:"songs/The Grimoire of Marisa/Magician's Melancholy.mp3", cover:"covers/The Grimoire of Marisa.JPG"},
-    {title:"Illusionary Sputnik Night", artist:"ZUN", file:"songs/The Grimoire of Marisa/Illusionary Sputnik Night.mp3", cover:"covers/The Grimoire of Marisa.JPG"}
+    {title:"Magician's Melancholy", artist:"ZUN", file:"songs/The Grimoire of Marisa/1 - 魔法使いの憂鬱.opus", cover:"covers/The Grimoire of Marisa.JPG"},
+    {title:"Illusionary Sputnik Night", artist:"ZUN", file:"songs/The Grimoire of Marisa/2 - スプートニク幻夜.opus", cover:"covers/The Grimoire of Marisa.JPG"}
     ] 
    },
    "Strange and Bright Nature Deity": {
   "Original": [
-        {title:"Sunny Milk's Scarlet Mist Incident", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/Sunny Milk's Scarlet Mist Incident.mp3", cover:"covers/Strange and Bright Nature Deity1.jpg"},
-        {title:"A Land Resplendent With Nature's Beauty", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/A Land Resplendent With Nature's Beauty.mp3", cover:"covers/Strange and Bright Nature Deity1.jpg"},
-        {title:"Star Voyage 2008", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/Star Voyage 2008.mp3", cover:"covers/Strange and Bright Nature Deity1.jpg"},
-        {title:"The Refrain of the Lovely Great War", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/The Refrain of the Lovely Great War.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
-        {title:"Sunny Rutile Flection", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/Sunny Rutile Flection.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
-        {title:"Sleepless Due to the Night", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/Sleepless Due to the Night.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
-        {title:"In Regards to Fairy Brilliance", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/In Regards to Fairy Brilliance.mp3", cover:"covers/Strange and Bright Nature Deity2.jpg"},
+        {title:"Sunny Milk's Scarlet Mist Incident", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/1 - サニーミルクの紅霧異変.opus", cover:"covers/Strange and Bright Nature Deity1.jpg"},
+        {title:"A Land Resplendent With Nature's Beauty", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/2 - 雪月桜花の国.opus", cover:"covers/Strange and Bright Nature Deity1.jpg"},
+        {title:"Star Voyage 2008", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/3 - スターヴォヤージュ2008.opus", cover:"covers/Strange and Bright Nature Deity1.jpg"},
+        {title:"The Refrain of the Lovely Great War", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/1 - 可愛い大戦争のリフレーン.opus", cover:"covers/Strange and Bright Nature Deity2.jpg"},
+        {title:"Sunny Rutile Flection", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/2 - サニールチルフレクション.opus", cover:"covers/Strange and Bright Nature Deity2.jpg"},
+        {title:"Sleepless Due to the Night", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/3 - 夜だから眠れない.opus", cover:"covers/Strange and Bright Nature Deity2.jpg"},
+        {title:"In Regards to Fairy Brilliance", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/4 - 妖精燦々として.opus", cover:"covers/Strange and Bright Nature Deity2.jpg"},
         {title:"The Fairy's Adventurous Tale", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/1 - フェアリーの冒険譚.opus", cover:"covers/Strange and Bright Nature Deity3.jpg"},
         {title:"Two Worlds", artist:"ZUN", file:"songs/Strange and Bright Nature Deity/2 - 二つの世界.opus", cover:"covers/Strange and Bright Nature Deity3.jpg"}
     ]
    },
   "Oriental Sacred Place": {
   "Original": [
-    {title:"The Hide-and-Seek Lifestyle at the Shrine", artist:"ZUN", file:"songs/Oriental Sacred Place/The Hide-and-Seek Lifestyle at the Shrine.mp3", cover:"covers/Oriental Sacred Place1.JPG"},
-    {title:"Youkai Modern Colony", artist:"ZUN", file:"songs/Oriental Sacred Place/Youkai Modern Colony.mp3", cover:"covers/Oriental Sacred Place1.JPG"},
-    {title:"Year-Round Absorbed Curiosity", artist:"ZUN", file:"songs/Oriental Sacred Place/Year-Round Absorbed Curiosity.mp3", cover:"covers/Oriental Sacred Place2.jpg"},
-    {title:"A Midnight Fairy Dance", artist:"ZUN", file:"songs/Oriental Sacred Place/A Midnight Fairy Dance.mp3", cover:"covers/Oriental Sacred Place2.jpg"},
-    {title:"Great Fairy Wars ~ Fairy Wars", artist:"ZUN", file:"songs/Oriental Sacred Place/Great Fairy Wars ~ Fairy Wars.mp3", cover:"covers/Oriental Sacred Place2.jpg"},
-    {title:"Magus Night", artist:"ZUN", file:"songs/Oriental Sacred Place/Magus Night.mp3", cover:"covers/Oriental Sacred Place3.jpg"},
-    {title:"Staking Your Life on a Prank", artist:"ZUN", file:"songs/Oriental Sacred Place/Staking Your Life on a Prank.mp3", cover:"covers/Oriental Sacred Place3.jpg"},
-    {title:"Old Yuanxian", artist:"ZUN", file:"songs/Oriental Sacred Place/Old Yuanxian.mp3", cover:"covers/Oriental Sacred Place3.jpg"}
+    {title:"The Hide-and-Seek Lifestyle at the Shrine", artist:"ZUN", file:"songs/Oriental Sacred Place/1 - 神域のかくれんぼ暮らし.opus", cover:"covers/Oriental Sacred Place1.JPG"},
+    {title:"Youkai Modern Colony", artist:"ZUN", file:"songs/Oriental Sacred Place/2 - 妖怪モダンコロニー.opus", cover:"covers/Oriental Sacred Place1.JPG"},
+    {title:"Year-Round Absorbed Curiosity", artist:"ZUN", file:"songs/Oriental Sacred Place/01 - 年中夢中の好奇心.opus", cover:"covers/Oriental Sacred Place2.jpg"},
+    {title:"A Midnight Fairy Dance", artist:"ZUN", file:"songs/Oriental Sacred Place/02 - 真夜中のフェアリーダンス.opus", cover:"covers/Oriental Sacred Place2.jpg"},
+    {title:"Great Fairy Wars ~ Fairy Wars", artist:"ZUN", file:"songs/Oriental Sacred Place/03 - 妖精大戦争　～ Fairy Wars.opus", cover:"covers/Oriental Sacred Place2.jpg"},
+    {title:"Magus Night", artist:"ZUN", file:"songs/Oriental Sacred Place/1 - メイガスナイト.opus", cover:"covers/Oriental Sacred Place3.jpg"},
+    {title:"Staking Your Life on a Prank", artist:"ZUN", file:"songs/Oriental Sacred Place/2 - いたずらに命をかけて.opus", cover:"covers/Oriental Sacred Place3.jpg"},
+    {title:"Old Yuanxian", artist:"ZUN", file:"songs/Oriental Sacred Place/3 - 古きユアンシェン.opus", cover:"covers/Oriental Sacred Place3.jpg"}
     ] 
    },
   "Eastern and Little Nature Deity": {
   "Original": [
-    {title:"Sunny Rutile Flection", artist:"ZUN", file:"songs/Eastern and Little Nature Deity/Sunny Rutile Flection.mp3", cover:"covers/Eastern and Little Nature Deity.jpg"},
-    {title:"Can't Sleep Because It's Nighttime", artist:"ZUN", file:"songs/Eastern and Little Nature Deity/Can't Sleep Because It's Nighttime.mp3", cover:"covers/Eastern and Little Nature Deity.jpg"},
-    {title:"Like the Brilliance of Faries", artist:"ZUN", file:"songs/Eastern and Little Nature Deity/Like the Brilliance of Faries.mp3", cover:"covers/Eastern and Little Nature Deity.jpg"}
+    {title:"Sunny Rutile Flection", artist:"ZUN", file:"songs/Eastern and Little Nature Deity/1 - サニールチルフレクション.opus", cover:"covers/Eastern and Little Nature Deity.jpg"},
+    {title:"Can't Sleep Because It's Nighttime", artist:"ZUN", file:"songs/Eastern and Little Nature Deity/2 - 夜だから眠れない.opus", cover:"covers/Eastern and Little Nature Deity.jpg"},
+    {title:"Like the Brilliance of Faries", artist:"ZUN", file:"songs/Eastern and Little Nature Deity/3 - 妖精燦々として.opus", cover:"covers/Eastern and Little Nature Deity.jpg"}
     ] 
    },
   "Forbidden Scrollery": {
@@ -1347,9 +1340,8 @@ const playlists = {
   }
  };
 
-// ================== MEDIA URL FALLBACK ==================
-// media-url-helper.js normally provides resolveMediaUrl(). This only runs if it is missing.
-if (typeof window.resolveMediaUrl !== "function" && typeof resolveMediaUrl === "undefined") {
+// ================== MEDIA URL RESOLVER ==================
+if (typeof window.resolveMediaUrl !== "function") {
   window.resolveMediaUrl = function (path) {
     if (!path) return "";
     if (/^(https?:|blob:|data:)/i.test(path)) return path;
@@ -1477,7 +1469,6 @@ const MusicUI = (() => {
   style.textContent = CSS;
   document.head.appendChild(style);
 
-  // ---------- toast ----------
   let toastEl = null, toastTimer = null;
   function toast(message, type = "info", opt = {}) {
     clearTimeout(toastTimer);
@@ -1503,7 +1494,6 @@ const MusicUI = (() => {
     toastTimer = setTimeout(dismiss, opt.duration || (opt.action ? 6500 : 3200));
   }
 
-  // ---------- modal ----------
   const KEEP = Symbol("keep-open");
   function modal(o) {
     const prevFocus = document.activeElement;
@@ -1595,7 +1585,7 @@ const MusicUI = (() => {
 })();
 window.MusicUI = MusicUI;
 
-// ================== TRACK MEDIA: durations, download, MP3 conversion ==================
+// ================== TRACK MEDIA ==================
 const TrackMedia = (() => {
   const resolveUrl = (p) => resolveMediaUrl(p);
   const extOf = (f) => ((String(f || "").split("?")[0].split(".").pop()) || "").toLowerCase();
@@ -1614,7 +1604,6 @@ const TrackMedia = (() => {
     return mins >= 60 ? `${Math.floor(mins / 60)} hr ${mins % 60} min` : `${mins} min`;
   };
 
-  // ---- script loader (lazy: MP3 encoder and JSZip are only fetched when needed) ----
   const scripts = {};
   const loadScript = (url) => scripts[url] || (scripts[url] = new Promise((res, rej) => {
     const s = document.createElement("script");
@@ -1645,7 +1634,7 @@ const TrackMedia = (() => {
         delete scripts[url];
         await loadScript(url);
         if (window.lamejs && lameWorks()) return;
-      } catch (_) { /* try next source */ }
+      } catch (_) {}
     }
     lamePromise = null;
     throw new Error("The MP3 encoder could not be loaded. Check your connection and try again.");
@@ -1656,7 +1645,6 @@ const TrackMedia = (() => {
     if (!window.JSZip) throw new Error("ZIP support could not be loaded.");
   };
 
-  // ---- durations ----
   const DUR_KEY = "tm_durations_v1";
   let durations = {};
   try { durations = JSON.parse(localStorage.getItem(DUR_KEY) || "{}") || {}; } catch (_) { durations = {}; }
@@ -1691,7 +1679,6 @@ const TrackMedia = (() => {
     a.preload = "metadata";
     a.onloadedmetadata = () => {
       check();
-      // Some streams report Infinity until the end is reached
       if (!done && a.duration === Infinity) { try { a.currentTime = 1e7; } catch (_) {} }
     };
     a.ondurationchange = check;
@@ -1706,7 +1693,6 @@ const TrackMedia = (() => {
   const failed = new Set();
   const pump = () => { while (active < MAX_PROBES && waiting.length) waiting.shift()(); };
 
-  // Resolves with the duration in seconds, or 0 if it could not be read.
   const getDuration = (track, timeout = 8000) => {
     if (!track || !track.file) return Promise.resolve(0);
     const k = known(track);
@@ -1734,18 +1720,31 @@ const TrackMedia = (() => {
   const saveBlob = (blob, name) => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url; a.download = name; a.style.display = "none";
-    document.body.appendChild(a); a.click(); a.remove();
+    a.href = url;
+    a.download = name;
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    // Give the browser a moment to pick up the download before revoking.
     setTimeout(() => URL.revokeObjectURL(url), 60000);
   };
+
   const fetchBlob = async (url, signal) => {
     let res;
-    try { res = await fetch(url, { mode: "cors", signal }); }
-    catch (e) {
+    try {
+      res = await fetch(url, { mode: "cors", signal, credentials: "omit" });
+    } catch (e) {
       if (e && e.name === "AbortError") throw e;
-      const err = new Error("The file host blocked the download."); err.code = "FETCH"; throw err;
+      const err = new Error("The file host blocked the request. Add this site's origin to the bucket's CORS settings.");
+      err.code = "FETCH";
+      throw err;
     }
-    if (!res.ok) { const err = new Error("Download failed (" + res.status + ")."); err.code = "HTTP"; throw err; }
+    if (!res.ok) {
+      const err = new Error("Download failed (" + res.status + ").");
+      err.code = "HTTP";
+      throw err;
+    }
     return res.blob();
   };
 
@@ -1762,7 +1761,8 @@ const TrackMedia = (() => {
       });
     } catch (_) {
       const err = new Error("This browser can't convert this file type. Download the original instead.");
-      err.code = "DECODE"; throw err;
+      err.code = "DECODE";
+      throw err;
     } finally { try { ctx.close(); } catch (_) {} }
   };
 
@@ -1770,7 +1770,7 @@ const TrackMedia = (() => {
     const frame = (id, text) => {
       const t = String(text);
       const body = new Uint8Array(3 + t.length * 2 + 2);
-      body[0] = 1; body[1] = 0xFF; body[2] = 0xFE; // UTF-16 LE with BOM
+      body[0] = 1; body[1] = 0xFF; body[2] = 0xFE;
       for (let i = 0; i < t.length; i++) { const c = t.charCodeAt(i); body[3 + i * 2] = c & 255; body[4 + i * 2] = c >> 8; }
       const out = new Uint8Array(10 + body.length), n = body.length;
       out.set([id.charCodeAt(0), id.charCodeAt(1), id.charCodeAt(2), id.charCodeAt(3), (n >>> 24) & 255, (n >>> 16) & 255, (n >>> 8) & 255, n & 255, 0, 0], 0);
@@ -1823,7 +1823,6 @@ const TrackMedia = (() => {
     return new Blob(parts, { type: "audio/mpeg" });
   };
 
-  // Fetches one track and returns { blob, name }, converting to MP3 when asked and needed.
   const prepare = async (track, { mode, kbps, signal, onProgress }) => {
     const base = baseName(track.file);
     const wantMp3 = mode === "mp3" && !isMp3(track);
@@ -1898,7 +1897,7 @@ const TrackMedia = (() => {
     }).result;
   };
 
-  // ---- run a download (single file or ZIP) ----
+  // ---- run a download (single file or ZIP). Always uses fetch + saveBlob so it stays on the page. ----
   const run = async (tracks, choice, { zip, name }) => {
     const ctrl = new AbortController();
     const converting = choice.mode === "mp3" && tracks.some((t) => !isMp3(t));
@@ -1919,9 +1918,10 @@ const TrackMedia = (() => {
       if (text) label.textContent = text;
     };
     const single = tracks[0];
+
     try {
       if (!zip) {
-        if (!ui) MusicUI.toast("Starting download…", "info", { duration: 1800 });
+        if (!ui) MusicUI.toast("Starting download…", "info", { duration: 1500 });
         const out = await prepare(single, {
           ...choice, signal: ctrl.signal,
           onProgress: (f) => setP(f, `Converting “${single.title}”…`)
@@ -1931,7 +1931,8 @@ const TrackMedia = (() => {
       } else {
         await loadZip();
         const zipFile = new window.JSZip();
-        const n = tracks.length, failedTitles = [];
+        const n = tracks.length;
+        const failedTitles = [];
         let added = 0;
         for (let i = 0; i < n; i++) {
           const t = tracks[i];
@@ -1948,21 +1949,23 @@ const TrackMedia = (() => {
             failedTitles.push(t.title);
           }
         }
-        if (!added) throw new Error("None of the songs could be downloaded. The file host may be blocking downloads from this site.");
+        if (!added) throw new Error("None of the songs could be downloaded. Check the bucket's CORS settings.");
         setP(0.97, "Building ZIP…");
         const blob = await zipFile.generateAsync({ type: "blob", compression: "STORE" }, (m) => setP(0.97 + (m.percent / 100) * 0.03));
         saveBlob(blob, safeName(name || "playlist") + ".zip");
-        MusicUI.toast(failedTitles.length ? `Downloaded ${added} songs. ${failedTitles.length} could not be fetched.` : "Download started", failedTitles.length ? "error" : "success");
+        MusicUI.toast(
+          failedTitles.length
+            ? `Downloaded ${added} songs. ${failedTitles.length} could not be fetched.`
+            : "Download started",
+          failedTitles.length ? "error" : "success"
+        );
       }
     } catch (e) {
       if (e && e.name === "AbortError") { MusicUI.toast("Download cancelled", "info"); }
-      else if (e && e.code === "FETCH" && !zip && choice.mode === "original") {
-        window.open(resolveUrl(single.file), "_blank", "noopener");
-        MusicUI.toast("Opened the file in a new tab. Use your browser's Save option there.", "info", { duration: 5000 });
-      } else {
+      else {
         console.error("Download error:", e);
         const hint = e && e.code === "FETCH"
-          ? "The file host blocked the request. Allow this site's origin in the bucket's CORS settings to enable downloads and conversion."
+          ? "The file host blocked the request. Add this site's origin to the bucket's CORS settings to enable downloads and conversion."
           : (e && e.message) || "Download failed.";
         MusicUI.toast(hint, "error", { duration: 6000 });
       }
@@ -1971,7 +1974,6 @@ const TrackMedia = (() => {
     }
   };
 
-  // Public entry point. `input` is a track or an array of tracks.
   const download = async (input, opts = {}) => {
     const list = (Array.isArray(input) ? input : [input]).filter((t) => t && t.file);
     if (!list.length) { MusicUI.toast("Nothing to download", "error"); return; }
@@ -2001,15 +2003,14 @@ let isShuffle = false;
 let isLoop = false;
 let lastVolume = 1.0;
 let playlistManager = null;
-let queue = null;            // explicit play queue (set by the playlist page)
+let queue = null;
 let queueMeta = { id: null, name: "" };
-let altSrc = null;           // fallback source if the preferred one fails
+let altSrc = null;
 let altTried = false;
 
 const audio = document.getElementById('audioEl');
 if (audio) audio.preload = "metadata";
 
-// refs
 const miniCover = document.getElementById('miniCover');
 const songTitleInner = document.getElementById('songTitleInner');
 const songArtist = document.getElementById('songArtist');
@@ -2052,14 +2053,11 @@ const bigLoopBtn = document.getElementById("bigLoop");
 const volumeSlider = document.getElementById('volumeSlider');
 const bigVolumeSlider = document.getElementById('bigVolumeSlider');
 
-if (!audio) {
-  console.error("Essential player elements missing from DOM.");
-}
+if (!audio) console.error("Essential player elements missing from DOM.");
 
 const emitPlayer = (name, detail) => window.dispatchEvent(new CustomEvent(name, { detail }));
 
 // ================== PLAYLIST MANAGER (fallback) ==================
-// Used only on pages that do not load playlist-manager.js (for example the main player page).
 class PlaylistManager {
   constructor() {
     this.db = null;
@@ -2250,7 +2248,6 @@ function getTracks() {
   if (currentVersion === "Original") return album.Original || [];
   if (currentVersion === "Arrange" || currentVersion === "New Classic") {
     const picked = album[currentVersion] || [];
-    // Fall back to every version when this album has none of the requested kind
     return picked.length === 0 && album.Original && album.Original.length > 0 ? allOf(album) : picked;
   }
   return allOf(album);
@@ -2333,7 +2330,7 @@ function playTrack() {
   const p = audio.play();
   if (p && p.catch) {
     p.catch((error) => {
-      if (error && error.name === "AbortError") return; // a newer load interrupted this one
+      if (error && error.name === "AbortError") return;
       console.error("Playback failed:", error);
       isPlaying = false;
       updatePlayButtons();
@@ -2343,9 +2340,7 @@ function playTrack() {
   updateTrackHighlighting(true);
 }
 
-function pauseTrack() {
-  audio.pause();
-}
+function pauseTrack() { audio.pause(); }
 
 function updatePlayButtons() {
   if (playBtn) playBtn.textContent = isPlaying ? '❚❚' : '▶';
@@ -2389,12 +2384,8 @@ function adjustSmallTitleScrolling() {
   const container = document.querySelector('.song-title-container');
   const title = document.getElementById('songTitleInner');
   if (container && title) {
-    if (title.scrollWidth > container.offsetWidth) {
-      title.style.animation = 'scroll-title 12s linear infinite';
-    } else {
-      title.style.animation = 'none';
-      title.style.transform = 'none';
-    }
+    if (title.scrollWidth > container.offsetWidth) title.style.animation = 'scroll-title 12s linear infinite';
+    else { title.style.animation = 'none'; title.style.transform = 'none'; }
   }
 }
 
@@ -2480,7 +2471,7 @@ function initializeControlStates() {
   initializeVolumeControls();
 }
 
-// ================== MEDIA SESSION (lock screen / media keys) ==================
+// ================== MEDIA SESSION ==================
 function updateMediaSession(track) {
   if (!("mediaSession" in navigator) || !track) return;
   try {
@@ -2503,7 +2494,6 @@ function initMediaSession() {
 function isInputElement(el) {
   if (!el || !el.tagName) return false;
   const tag = el.tagName.toLowerCase();
-  // Buttons, links and sliders keep their own Space behaviour
   return ['input', 'textarea', 'select', 'button', 'a', 'summary'].includes(tag) ||
     el.isContentEditable || el.getAttribute('role') === 'slider' || el.getAttribute('role') === 'button';
 }
@@ -2537,7 +2527,7 @@ if (bigShuffleBtn) bigShuffleBtn.addEventListener("click", shuffleTracks);
 if (loopBtn) loopBtn.addEventListener("click", toggleLoop);
 if (bigLoopBtn) bigLoopBtn.addEventListener("click", toggleLoop);
 
-// ================== AUDIO EVENTS: progress / end ==================
+// ================== AUDIO EVENTS ==================
 function paintDuration() {
   const d = isFinite(audio.duration) && audio.duration > 0 ? formatTime(audio.duration) : "0:00";
   if (durTime) durTime.textContent = d;
@@ -2558,7 +2548,6 @@ audio.addEventListener('timeupdate', () => {
 
 audio.addEventListener('loadedmetadata', () => {
   paintDuration();
-  // Remember the real length so playlists can show it
   if (currentTrack && isFinite(audio.duration)) TrackMedia.setDuration(currentTrack.file, audio.duration);
 });
 audio.addEventListener('play', () => { isPlaying = true; updatePlayButtons(); });
@@ -2589,9 +2578,8 @@ function seekFromClick(e, barEl) {
 if (progress) progress.addEventListener('click', (e) => seekFromClick(e, progress));
 if (bigProgress) bigProgress.addEventListener('click', (e) => seekFromClick(e, bigProgress));
 
-// ================== PUBLIC PLAYER API (used by the playlist page) ==================
+// ================== PUBLIC PLAYER API ==================
 window.MusicPlayer = {
-  // Plays `tracks` (an array) starting at `index`. opt: { id, name, shuffle }
   playQueue(tracks, index = 0, opt = {}) {
     if (!Array.isArray(tracks) || !tracks.length) return false;
     queue = tracks.slice();
@@ -2666,7 +2654,6 @@ const AddToPlaylist = (() => {
     const panel = root.querySelector(".atp-panel");
     const body = root.querySelector(".atp-body");
 
-    // ----- positioning (desktop popover; mobile uses a bottom sheet via CSS) -----
     const place = () => {
       if (mobile) return;
       const r = anchor.getBoundingClientRect();
@@ -2684,7 +2671,6 @@ const AddToPlaylist = (() => {
     };
     place();
 
-    // ----- listeners -----
     const onKey = (e) => {
       if (e.key === "Escape") { e.preventDefault(); closeMenu(true); return; }
       if (e.key !== "Tab") return;
@@ -2713,7 +2699,6 @@ const AddToPlaylist = (() => {
     root.querySelector(".atp-x").addEventListener("click", () => closeMenu(true));
     requestAnimationFrame(() => root.classList.add("open"));
 
-    // ----- data -----
     const mgr = playlistManager;
     if (!mgr) { body.innerHTML = `<div class="atp-msg">Playlists are still loading. Try again in a moment.</div>`; return; }
     await Promise.race([mgr.ready, new Promise((r) => setTimeout(r, 4000))]);
@@ -2797,7 +2782,6 @@ const AddToPlaylist = (() => {
     }
     renderList();
 
-    // ----- create a new playlist and add the song in one step -----
     const showNewButton = () => {
       foot.innerHTML = `<button type="button" class="atp-new"><span class="atp-thumb">${svg(ICONS.plus, 18, 2.4)}</span>New playlist</button>`;
       foot.querySelector(".atp-new").addEventListener("click", showForm);
@@ -3092,7 +3076,6 @@ document.addEventListener('DOMContentLoaded', function () {
   updatePlaylistOptions();
   buildTrackList();
 
-  // Player bar "add to playlist" buttons
   [document.querySelector('.playlist-btn'), document.querySelector('.big-playlist-btn')].forEach((btn) => {
     if (!btn) return;
     btn.addEventListener('click', (e) => {
