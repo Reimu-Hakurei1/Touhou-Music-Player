@@ -1372,7 +1372,7 @@ const MusicUI = (() => {
 .mu-toast-success{border-color:color-mix(in srgb,var(--mu-accent) 55%,transparent)}
 .mu-toast-error{border-color:color-mix(in srgb,var(--mu-danger) 60%,transparent)}
 .mu-toast-act{background:none;border:0;color:var(--mu-accent);font:inherit;font-weight:700;cursor:pointer;padding:2px 4px}
-.mu-dlg{padding:0;border:1px solid var(--mu-line);border-radius:18px;background:var(--mu-bg);color:var(--mu-text);width:min(440px,calc(100vw - 28px));max-height:calc(100dvh - 28px);box-shadow:0 30px 80px rgba(0,0,0,.6);font-family:Inter,system-ui,sans-serif;overflow:hidden}
+.mu-dlg{position:fixed;inset:0;margin:auto;padding:0;border:1px solid var(--mu-line);border-radius:20px;background:var(--mu-bg);color:var(--mu-text);width:min(460px,calc(100vw - 28px));max-height:calc(100dvh - 28px);box-shadow:0 30px 80px rgba(0,0,0,.6);font-family:Inter,system-ui,sans-serif;overflow:hidden}
 .mu-dlg[open]{display:flex;flex-direction:column;animation:mu-pop .18s ease-out}
 .mu-dlg::backdrop{background:rgba(5,6,10,.62);backdrop-filter:blur(3px)}
 .mu-dlg-head{padding:22px 24px 6px}
@@ -1397,6 +1397,7 @@ const MusicUI = (() => {
 .mu-choice input{position:absolute;opacity:0;pointer-events:none}
 .mu-choice-box{display:block;padding:14px 16px;border-radius:14px;border:1px solid var(--mu-line);background:var(--mu-raise);transition:border-color .15s,background .15s}
 .mu-choice input:checked+.mu-choice-box{border-color:var(--mu-accent);background:color-mix(in srgb,var(--mu-accent) 10%,var(--mu-raise))}
+.mu-choice:hover .mu-choice-box{border-color:color-mix(in srgb,var(--mu-accent) 55%,var(--mu-line));transform:translateY(-1px)}
 .mu-choice input:focus-visible+.mu-choice-box{outline:2px solid var(--mu-accent);outline-offset:2px}
 .mu-choice-title{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:650;font-size:.95rem}
 .mu-choice-tag{font-size:.74rem;font-weight:700;color:var(--mu-accent)}
@@ -1405,6 +1406,15 @@ const MusicUI = (() => {
 .mu-kbps[hidden]{display:none}
 .mu-kbps button{flex:1;padding:7px 0;border-radius:10px;border:1px solid var(--mu-line);background:transparent;color:var(--mu-text);font:600 .8rem Inter,system-ui,sans-serif;cursor:pointer}
 .mu-kbps button[aria-pressed=true]{background:var(--mu-accent);border-color:var(--mu-accent);color:var(--mu-on)}
+.mu-download-dialog{background:radial-gradient(ellipse at 100% 0%,color-mix(in srgb,var(--mu-accent) 13%,var(--mu-bg)),var(--mu-bg) 55%)}
+.mu-download-dialog .mu-dlg-head{padding:24px 26px 16px;border-bottom:1px solid var(--mu-line)}
+.mu-download-dialog .mu-dlg-title{font-size:1.3rem;letter-spacing:-.025em}
+.mu-download-dialog .mu-dlg-sub{max-width:44ch}
+.mu-download-dialog .mu-dlg-body{padding:18px 20px 6px}
+.mu-download-dialog .mu-choice-box{padding:16px;border-radius:15px;box-shadow:0 5px 16px rgba(0,0,0,.12)}
+.mu-download-dialog .mu-choice-tag{padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--mu-accent) 14%,transparent);white-space:nowrap}
+.mu-download-dialog .mu-dlg-actions{padding:12px 20px 20px}
+.mu-download-dialog .mu-btn{min-width:104px}
 .mu-progress{height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin:14px 0 8px}
 .mu-progress>i{display:block;height:100%;width:0;background:var(--mu-accent);border-radius:inherit;transition:width .15s}
 .mu-progress-label{color:var(--mu-mute);font-size:.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-bottom:6px}
@@ -1499,7 +1509,7 @@ const MusicUI = (() => {
   function modal(o) {
     const prevFocus = document.activeElement;
     const dlg = document.createElement("dialog");
-    dlg.className = "mu-dlg";
+    dlg.className = "mu-dlg" + (o.className ? " " + o.className : "");
     dlg.innerHTML =
       `<div class="mu-dlg-head"><h3 class="mu-dlg-title">${esc(o.title)}</h3>` +
       (o.subtitle ? `<p class="mu-dlg-sub">${esc(o.subtitle)}</p>` : "") + `</div>` +
@@ -1865,6 +1875,7 @@ const TrackMedia = (() => {
     return MusicUI.modal({
       title: one ? "Download song" : "Download playlist",
       subtitle: sub,
+      className: "mu-download-dialog",
       body,
       actions: [
         { label: "Cancel", value: null },
