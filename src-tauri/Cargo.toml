@@ -5,6 +5,10 @@ description = "Touhou Music Player desktop app"
 authors = ["Touhou Music Player contributors"]
 edition = "2021"
 
+[lib]
+name = "touhou_music_player_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
 
