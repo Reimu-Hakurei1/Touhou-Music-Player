@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    tags: ['v*']
     paths:
       - 'src-tauri/**'
       - 'assets/**'
@@ -12,7 +13,7 @@ on:
       - '.github/workflows/desktop-builds.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -70,3 +71,46 @@ jobs:
           path: ${{ matrix.artifacts }}
           if-no-files-found: error
           retention-days: 30
+
+  publish-release:
+    name: Publish desktop release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download platform packages
+        uses: actions/download-artifact@v4
+        with:
+          pattern: Touhou-Music-Player-*
+          path: incoming
+          merge-multiple: true
+
+      - name: Prepare stable download names
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p release
+          copy_first() {
+            local pattern="$1"
+            local destination="$2"
+            local source
+            source="$(find incoming -type f -iname "$pattern" -print -quit)"
+            if [[ -z "$source" ]]; then
+              echo "No package found matching $pattern" >&2
+              exit 1
+            fi
+            cp "$source" "release/$destination"
+          }
+          copy_first '*.exe' 'Touhou-Music-Player-Windows-x64.exe'
+          copy_first '*.dmg' 'Touhou-Music-Player-macOS-universal.dmg'
+          copy_first '*.AppImage' 'Touhou-Music-Player-Linux-x64.AppImage'
+          copy_first '*.deb' 'Touhou-Music-Player-Linux-x64.deb'
+
+      - name: Create or update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release create "$GITHUB_REF_NAME" --title "Touhou Music Player $GITHUB_REF_NAME" --notes "Desktop installers for Windows, macOS, and Linux."
+          fi
+          gh release upload "$GITHUB_REF_NAME" release/* --clobber

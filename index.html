@@ -13,9 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="music.css?v=20261003-mobile-player">
+  <link rel="stylesheet" href="music.css?v=20261003-big-player-row">
   <link rel="stylesheet" href="fixed-header.css?v=20261003-desktop-filters">
   <link rel="stylesheet" href="playlist-spotify.css?v=20261002-guest-responsive">
+  <link rel="stylesheet" href="profile.css?v=20261003-integrated-settings">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
@@ -34,6 +35,10 @@
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="dropdown-content" id="dropdownMenu">
+        <button id="downloadsBtn" type="button">
+          <i class="fas fa-download"></i>
+          Download App
+        </button>
         <button id="myPlaylistsBtn">
           <i class="fas fa-list-ul"></i>
           My Playlists
@@ -130,6 +135,84 @@
       </section>
     </main>
   </section>
+
+  <section id="profileSettingsView" class="app-secondary-page profile-settings-page" aria-labelledby="profileSettingsTitle" aria-hidden="true" hidden>
+    <main class="profile-settings-shell">
+      <div class="profile-card">
+        <header class="header-section">
+          <button id="backToPlayerFromSettings" class="back-btn" type="button"><i class="fas fa-arrow-left"></i> Back to Player</button>
+          <h1 id="profileSettingsTitle" class="page-title">Profile Settings</h1>
+          <p class="page-subtitle">Manage your account information</p>
+        </header>
+
+        <div id="profileGuestPrompt" class="profile-guest-prompt" hidden>
+          <p>Sign in to view and update your profile settings.</p>
+          <div class="profile-guest-actions">
+            <a class="profile-action-link primary" href="Login.html">Sign In</a>
+            <a class="profile-action-link" href="Register.html">Create Account</a>
+          </div>
+        </div>
+
+        <form id="profileForm" hidden>
+          <div class="form-section">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter your username" required>
+            <div class="form-text">This is the display name shown throughout the app.</div>
+          </div>
+          <div class="form-section">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" readonly>
+            <div class="form-text">Email cannot be changed here.</div>
+          </div>
+          <div class="action-section">
+            <button id="saveBtn" type="submit" class="profile-action-link primary"><i class="fas fa-save"></i> Save Changes</button>
+          </div>
+        </form>
+
+        <section id="profileDangerZone" class="danger-zone" hidden>
+          <h2 class="danger-title"><i class="fas fa-triangle-exclamation"></i> Danger Zone</h2>
+          <div class="danger-actions">
+            <button id="profileSignOutBtn" class="profile-action-link warning" type="button"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+            <button id="deleteAccountBtn" class="profile-action-link danger" type="button"><i class="fas fa-trash"></i> Delete Account</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </section>
+
+  <section id="downloadsView" class="app-secondary-page downloads-page" aria-labelledby="downloadsTitle" aria-hidden="true" hidden>
+    <main class="downloads-shell">
+      <header class="downloads-header">
+        <button id="backToPlayerFromDownloads" class="downloads-back" type="button"><i class="fas fa-arrow-left"></i> Back to Player</button>
+        <span class="downloads-eyebrow">Touhou Music Player</span>
+        <h1 id="downloadsTitle">Take your music player with you</h1>
+        <p>Choose a desktop app for your computer. The app opens the same music library and keeps playback controls close at hand.</p>
+      </header>
+      <div id="desktopDownloads" class="download-platform-grid" aria-live="polite">
+        <article class="download-platform-card">
+          <span class="download-platform-icon"><i class="fab fa-windows"></i></span>
+          <div><h2>Windows</h2><p>Windows 10 or later · 64-bit</p></div>
+          <a class="download-platform-link" data-download-asset="Touhou-Music-Player-Windows-x64.exe" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Windows-x64.exe"><i class="fas fa-download"></i> Download installer</a>
+        </article>
+        <article class="download-platform-card">
+          <span class="download-platform-icon"><i class="fab fa-apple"></i></span>
+          <div><h2>macOS</h2><p>Universal app for Intel and Apple silicon</p></div>
+          <a class="download-platform-link" data-download-asset="Touhou-Music-Player-macOS-universal.dmg" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-macOS-universal.dmg"><i class="fas fa-download"></i> Download disk image</a>
+        </article>
+        <article class="download-platform-card">
+          <span class="download-platform-icon"><i class="fab fa-linux"></i></span>
+          <div><h2>Linux</h2><p>Choose the package that fits your system.</p></div>
+          <div class="linux-download-links">
+            <a class="download-platform-link" data-download-asset="Touhou-Music-Player-Linux-x64.AppImage" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Linux-x64.AppImage"><i class="fas fa-download"></i> AppImage</a>
+            <a class="download-platform-link secondary" data-download-asset="Touhou-Music-Player-Linux-x64.deb" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Linux-x64.deb"><i class="fas fa-download"></i> Debian / Ubuntu</a>
+          </div>
+        </article>
+      </div>
+      <p id="downloadsReleaseStatus" class="downloads-release-status">Desktop installers are published with app releases.</p>
+      <a class="downloads-release-link" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases" target="_blank" rel="noopener noreferrer">View all releases <i class="fas fa-arrow-up-right-from-square"></i></a>
+    </main>
+  </section>
+
   <div class="playlist-fullscreen" id="playlistFullscreen" aria-hidden="true">
     <button class="close-fullscreen" id="closeFullscreen" aria-label="Close"><i class="fas fa-times"></i></button>
     <div class="playlist-fullscreen-scroll"><div class="playlist-header">
@@ -294,6 +377,7 @@
   <script src="firebase-config.js"></script>
   
   <!-- User Authentication -->
+  <script src="app-navigation.js?v=20261003-integrated-views"></script>
   <script src="user-auth.js?v=20261002-guest-responsive"></script>
 
   <!-- Media URL Helper (must load before music.js) -->
@@ -306,5 +390,7 @@
   
   <!-- Fixed Header Script -->
   <script src="fixed-header.js"></script>
+  <script src="profile.js?v=20261003-integrated-settings"></script>
+  <script src="downloads.js?v=20261003-desktop-downloads"></script>
 </body>
 </html>

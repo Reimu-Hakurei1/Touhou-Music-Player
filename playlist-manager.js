@@ -66,7 +66,6 @@ class PlaylistManagerFixed {
     bind("newPlaylistName", () => this.createPlaylist(), "keypress");
     bind("backToPlaylists", () => this.showPlaylistList());
     bind("deletePlaylistBtn", () => this.deleteCurrentPlaylist());
-    bind("profileSettings", (e) => { e.preventDefault(); window.location.href = "ProfileSettings.html"; });
     bind("signOutBtn", (e) => { e.preventDefault(); this.handleSignOut(); });
     bind("createPlaylistModalBtn", () => this.createPlaylistFromModal());
     bind("newPlaylistNameModal", () => this.createPlaylistFromModal(), "keypress");

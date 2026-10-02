@@ -1,5 +1,8 @@
 // User Authentication and Profile Management
 window.setPlaylistView = (show) => {
+    if (document.body.classList.contains('app-secondary-view')) {
+        window.setAppPage?.('player', { updateHash: false });
+    }
     document.body.classList.toggle('show-playlists', show);
     const menuButton = document.getElementById('myPlaylistsBtn');
     if (menuButton) menuButton.innerHTML = show
@@ -14,7 +17,9 @@ window.setPlaylistView = (show) => {
     }
 };
 
-const initializePlaylistView = () => window.setPlaylistView(location.hash === '#playlists');
+const initializePlaylistView = () => {
+    if (location.hash === '#playlists') window.setPlaylistView(true);
+};
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializePlaylistView, { once: true });
 } else {
@@ -188,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setupEventListeners(user) {
         const signOutBtn = document.getElementById('signOutBtn');
-        const profileSettingsBtn = document.getElementById('profileSettings');
         const myPlaylistsBtn = document.getElementById('myPlaylistsBtn');
         const auth = window.firebaseAuth;
         
@@ -210,16 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     history.replaceState(null, '', showPlaylists ? '#playlists' : location.pathname);
                 }
                 document.getElementById('dropdownMenu')?.classList.remove('show');
-            });
-        }
-        
-        // Profile settings button
-        if (profileSettingsBtn && profileSettingsBtn.dataset.authBound !== 'true') {
-            profileSettingsBtn.dataset.authBound = 'true';
-            profileSettingsBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                console.log('Navigating to profile settings');
-                window.location.href = "ProfileSettings.html";
             });
         }
         

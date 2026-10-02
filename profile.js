@@ -3,8 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🔧 Profile script loaded');
     console.log('🏠 Profile page DOM fully loaded');
     
-    // Start initialization immediately
-    initializeProfile();
+    let profileStarted = false;
+    const startProfile = () => {
+        if (profileStarted || !document.getElementById('profileForm')) return;
+        profileStarted = true;
+        initializeProfile();
+    };
+    window.addEventListener('appviewchange', (event) => {
+        if (event.detail?.page === 'settings') startProfile();
+    });
+    if (location.hash === '#settings') startProfile();
     
     function initializeProfile() {
         console.log('🚀 Starting application initialization...');
@@ -13,8 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const usernameInput = document.getElementById('username');
         const emailInput = document.getElementById('email');
         const saveBtn = document.getElementById('saveBtn');
-        const signOutBtn = document.getElementById('signOutBtn');
+        const signOutBtn = document.getElementById('profileSignOutBtn');
         const deleteAccountBtn = document.getElementById('deleteAccountBtn');
+        const guestPrompt = document.getElementById('profileGuestPrompt');
+        const dangerZone = document.getElementById('profileDangerZone');
         
         // Check if form elements exist
         if (!profileForm) {
@@ -79,12 +89,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             auth.onAuthStateChanged((user) => {
                 if (user) {
+                    profileForm.hidden = false;
+                    if (dangerZone) dangerZone.hidden = false;
+                    if (guestPrompt) guestPrompt.hidden = true;
                     console.log('✅ User authenticated:', user.email);
                     loadUserProfile(user);
                     setupFormHandlers(user);
                 } else {
-                    console.log('❌ No user authenticated, redirecting to login');
-                    window.location.href = 'Login.html';
+                    profileForm.hidden = true;
+                    if (dangerZone) dangerZone.hidden = true;
+                    if (guestPrompt) guestPrompt.hidden = false;
+                    console.log('No user authenticated; showing the sign-in prompt');
                 }
             });
         }
@@ -135,11 +150,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         function setupFormHandlers(user) {
             console.log('⚙️ Setting up form handlers');
+            if (profileForm.dataset.handlersInitialized === 'true') return;
+            profileForm.dataset.handlersInitialized = 'true';
             
             // Form submission
             profileForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                await saveProfile(user);
+                const currentUser = window.firebaseAuth?.currentUser;
+                if (!currentUser) {
+                    showError('Please sign in to update your profile.');
+                    return;
+                }
+                await saveProfile(currentUser);
             });
             
             // Sign out button
@@ -147,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 signOutBtn.addEventListener('click', function() {
                     const auth = window.auth || firebase.auth();
                     auth.signOut().then(() => {
-                        window.location.href = 'Login.html';
+                        window.setAppPage?.('player');
                     }).catch((error) => {
                         console.error('Sign out error:', error);
                         showError('Failed to sign out: ' + error.message);
@@ -158,7 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Delete account button
             if (deleteAccountBtn) {
                 deleteAccountBtn.addEventListener('click', function() {
-                    showDeleteAccountConfirmation(user);
+                    const currentUser = window.firebaseAuth?.currentUser;
+                    if (currentUser) showDeleteAccountConfirmation(currentUser);
                 });
             }
             
@@ -198,6 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 await user.updateProfile({
                     displayName: username
                 });
+                const profileName = document.getElementById('userFirstName');
+                if (profileName) profileName.textContent = username;
                 
                 // Update user data in Firestore
                 const db = window.db || firebase.firestore();
@@ -209,13 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, { merge: true });
                 }
                 
-                showSuccess('Profile updated successfully! Redirecting...');
+                showSuccess('Profile updated successfully!');
                 console.log('✅ Profile saved successfully');
-                
-                // Redirect to index.html after 1 second
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 1000);
                 
             } catch (error) {
                 console.error('❌ Error saving profile:', error);

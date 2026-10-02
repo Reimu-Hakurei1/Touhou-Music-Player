@@ -48,6 +48,8 @@ Windows builds create an NSIS installer, Linux builds create an AppImage and Deb
 
 GitHub Actions builds Windows, Linux, and universal macOS packages when desktop app files are pushed to `main`. Build artifacts are available from the repository's [Actions page](https://github.com/Reimu-Hakurei1/Touhou-Music-Player/actions) for 30 days. You can also start a build manually from the **Build desktop apps** workflow. The macOS packages are unsigned; macOS may require approval before opening them.
 
+The **Download App** view in the player links to the latest desktop release. To publish installers, push a version tag such as `v1.0.1`; the desktop workflow attaches Windows, Linux, and macOS packages to that GitHub release.
+
 ## Built with
 
 - HTML, CSS, and vanilla JavaScript

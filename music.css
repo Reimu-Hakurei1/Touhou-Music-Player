@@ -1725,7 +1725,15 @@ main.music-section {
   .big-title { max-width: 100%; font-size: clamp(1.2rem, 6vw, 1.8rem); }
   .big-artist { font-size: .95rem; }
   .big-controls { gap: 11px; }
-  .big-controls > .controls { flex-wrap: nowrap !important; gap: clamp(4px, 2vw, 10px) !important; }
+  .big-controls > .controls {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: clamp(4px, 2vw, 10px) !important;
+  }
   .big-controls .control-btn {
     width: clamp(38px, 11vw, 48px);
     min-width: clamp(38px, 11vw, 48px);

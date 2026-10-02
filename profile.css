@@ -1,358 +1,142 @@
-:root {
-  --primary-color: #667eea;
-  --primary-dark: #5a6fd8;
-  --secondary-color: #764ba2;
-  --accent-color: #f093fb;
-  --text-light: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.7);
-  --card-bg: rgba(255, 255, 255, 0.1);
-  --card-border: rgba(255, 255, 255, 0.2);
-  --danger-color: #ff6b6b;
-  --warning-color: #ffd93d;
-}
+.app-secondary-page[hidden] { display: none !important; }
+.app-secondary-page:not([hidden]) { display: block; }
+body.app-secondary-view #fixedHeader,
+body.app-secondary-view .music-section,
+body.app-secondary-view .playlist-view,
+body.app-secondary-view #playlistFullscreen { display: none !important; }
+body.app-secondary-view .player-bar { z-index: 9999; }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-attachment: fixed;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.profile-settings-shell,
+.downloads-shell {
+  width: min(100% - 32px, 920px);
   min-height: 100vh;
-  padding: 20px;
-}
-
-.profile-container {
-  max-width: 600px;
-  width: 100%;
   margin: 0 auto;
+  padding: clamp(28px, 6vh, 64px) 0 150px;
 }
 
-.profile-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  color: var(--text-light);
+#profileSettingsView { color: #f7f7f7; }
+#profileSettingsView .profile-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: clamp(20px, 5vw, 42px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(31,31,31,.98), rgba(15,15,15,.98));
+  box-shadow: 0 24px 70px rgba(0,0,0,.34);
 }
-
-/* Header Section */
-.header-section {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.back-btn {
+#profileSettingsView .header-section { margin-bottom: 30px; }
+#profileSettingsView .back-btn,
+.downloads-back {
   display: inline-flex;
   align-items: center;
-  color: var(--accent-color);
+  gap: 9px;
+  margin-bottom: 24px;
+  padding: 0;
+  border: 0;
+  color: #bcbcbc;
+  background: transparent;
+  font: inherit;
   text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-  color: var(--text-light);
-  transform: translateX(-5px);
-}
-
-.page-title {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
-
-/* Profile Picture Upload */
-.profile-upload-section {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.profile-preview-large {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  overflow: hidden;
-  border: 3px solid var(--card-border);
   cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
 }
-
-.profile-preview-large:hover {
-  transform: scale(1.05);
-  border-color: var(--accent-color);
+#profileSettingsView .back-btn:hover,
+.downloads-back:hover { color: #1ed760; }
+#profileSettingsView .page-title {
+  margin: 0 0 7px;
+  color: #fff;
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  font-weight: 750;
+  background: none;
+  -webkit-text-fill-color: currentColor;
 }
-
-.profile-preview-large img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#profileSettingsView .page-subtitle,
+#profileSettingsView .form-text { color: #a5a5a5; }
+#profileSettingsView .page-subtitle { margin: 0; }
+#profileSettingsView .form-section { margin: 22px 0; }
+#profileSettingsView .form-label { display: block; margin-bottom: 8px; color: #eee; font-weight: 650; }
+#profileSettingsView .form-control {
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1px solid #3c3c3c;
+  border-radius: 11px;
+  color: #fff;
+  background: #181818;
 }
-
-.profile-placeholder-large {
-  width: 100%;
-  height: 100%;
-  display: flex;
+#profileSettingsView .form-control:focus { border-color: #1ed760; box-shadow: 0 0 0 3px rgba(30,215,96,.16); }
+#profileSettingsView .form-control:read-only { color: #aaa; background: #141414; }
+#profileSettingsView .form-text { margin-top: 7px; font-size: .84rem; }
+#profileSettingsView .action-section { margin: 26px 0 0; }
+#profileSettingsView .danger-zone {
+  margin-top: 32px;
+  padding: 20px;
+  border: 1px solid rgba(255,100,100,.28);
+  border-radius: 15px;
+  background: rgba(255,80,80,.055);
+}
+#profileSettingsView .danger-title { margin: 0 0 15px; color: #ff7777; font-size: 1.05rem; }
+#profileSettingsView .danger-actions,
+#profileSettingsView .profile-guest-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+#profileSettingsView .profile-action-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 3rem;
-}
-
-.upload-section {
-  flex: 1;
-}
-
-.upload-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px dashed var(--card-border);
-  border-radius: 12px;
-  padding: 12px 20px;
-  color: var(--text-light);
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid #454545;
+  border-radius: 11px;
+  color: #f3f3f3;
+  background: #242424;
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 0.5rem;
+}
+#profileSettingsView .profile-action-link:hover { color: #fff; background: #303030; }
+#profileSettingsView .profile-action-link.primary { width: 100%; color: #071108; border-color: #1ed760; background: #1ed760; }
+#profileSettingsView .profile-action-link.primary:hover { color: #071108; background: #47e77f; }
+#profileSettingsView .profile-action-link.warning { color: #ffd36c; border-color: rgba(255,211,108,.4); }
+#profileSettingsView .profile-action-link.danger { color: #ff8989; border-color: rgba(255,100,100,.4); }
+#profileSettingsView .profile-guest-prompt { padding: 18px; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; background: rgba(255,255,255,.035); }
+#profileSettingsView .profile-guest-prompt p { color: #c3c3c3; }
+.custom-alert { position: fixed; z-index: 12000; top: 18px; left: 50%; transform: translateX(-50%); padding: 12px 18px; border-radius: 10px; color: #071108; background: #1ed760; font-weight: 650; box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+.custom-alert.alert-error { color: #fff; background: #d94a4a; }
+
+.downloads-shell { width: min(100% - 32px, 1040px); }
+.downloads-header { max-width: 720px; margin: 0 auto 32px; text-align: center; }
+.downloads-back { display: flex; width: fit-content; margin: 0 0 36px; }
+.downloads-eyebrow { color: #1ed760; font-size: .78rem; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+.downloads-header h1 { margin: 12px 0; color: #fff; font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.08; font-weight: 800; }
+.downloads-header > p { max-width: 600px; margin: 0 auto; color: #aaa; font-size: 1rem; line-height: 1.6; }
+.download-platform-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.download-platform-card { display: grid; grid-template-columns: 48px minmax(0,1fr); align-items: center; gap: 14px; padding: 20px; border: 1px solid rgba(255,255,255,.09); border-radius: 18px; background: linear-gradient(145deg,#1a1a1a,#111); }
+.download-platform-icon { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 14px; color: #1ed760; background: rgba(30,215,96,.1); font-size: 1.3rem; }
+.download-platform-card h2 { margin: 0 0 4px; color: #fff; font-size: 1.08rem; font-weight: 700; }
+.download-platform-card p { margin: 0; color: #999; font-size: .82rem; line-height: 1.45; }
+.download-platform-link,
+.linux-download-links { grid-column: 1 / -1; }
+.download-platform-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 43px; padding: 10px 14px; border: 1px solid rgba(30,215,96,.45); border-radius: 11px; color: #06110a; background: #1ed760; font-weight: 700; text-decoration: none; }
+.download-platform-link:hover { color: #06110a; background: #46e77f; }
+.linux-download-links { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.download-platform-link.secondary { color: #efefef; border-color: #444; background: #262626; }
+.download-platform-link.secondary:hover { color: #fff; background: #353535; }
+.download-platform-link.unavailable,
+.download-platform-link[aria-disabled="true"] { pointer-events: none; color: #888; border-color: #363636; background: #202020; }
+.downloads-release-status { margin: 20px 0 6px; color: #888; font-size: .85rem; text-align: center; }
+.downloads-release-link { display: block; width: fit-content; margin: 0 auto; color: #bbb; font-size: .85rem; text-decoration: none; }
+.downloads-release-link:hover { color: #1ed760; }
+
+@media (max-width: 680px) {
+  .profile-settings-shell, .downloads-shell { width: min(100% - 24px, 560px); padding-top: 18px; }
+  #profileSettingsView .profile-card { padding: 22px 18px; border-radius: 18px; }
+  .download-platform-grid { grid-template-columns: 1fr; gap: 11px; }
+  .download-platform-card { padding: 16px; }
+  .downloads-header { margin-bottom: 24px; text-align: left; }
+  .downloads-header > p { margin-left: 0; }
+  .downloads-back { margin-bottom: 26px; }
 }
 
-.upload-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--accent-color);
-}
-
-.upload-hint {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-}
-
-#profilePicInput {
-  display: none;
-}
-
-/* Form Sections */
-.form-section {
-  margin-bottom: 1.5rem;
-}
-
-.form-label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--text-light);
-  display: block;
-}
-
-.form-control {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  color: var(--text-light);
-  padding: 12px 16px;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.form-control:focus {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
-  color: var(--text-light);
-}
-
-.form-control:read-only {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: var(--text-muted);
-  cursor: not-allowed;
-}
-
-.form-control::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.form-text {
-  color: var(--text-muted) !important;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-/* Action Section */
-.action-section {
-  margin: 2rem 0;
-  padding-top: 2rem;
-  border-top: 1px solid var(--card-border);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  border: none;
-  border-radius: 12px;
-  padding: 12px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Danger Zone */
-.danger-zone {
-  background: rgba(255, 107, 107, 0.1);
-  border: 1px solid rgba(255, 107, 107, 0.3);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-}
-
-.danger-title {
-  color: var(--danger-color);
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.danger-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn-outline-warning {
-  border-color: var(--warning-color);
-  color: var(--warning-color);
-}
-
-.btn-outline-warning:hover {
-  background-color: var(--warning-color);
-  border-color: var(--warning-color);
-  color: #000;
-}
-
-.btn-outline-danger {
-  border-color: var(--danger-color);
-  color: var(--danger-color);
-}
-
-.btn-outline-danger:hover {
-  background-color: var(--danger-color);
-  border-color: var(--danger-color);
-  color: white;
-}
-
-/* Custom Alert Styles */
-.custom-alert {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary-color);
-  color: #000;
-  padding: 12px 20px;
-  border-radius: 8px;
-  z-index: 10000;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  animation: slideDown 0.3s ease;
-}
-
-.custom-alert.alert-error {
-  background: var(--danger-color);
-  color: white;
-}
-
-.custom-alert.alert-success {
-  background: #4CAF50;
-  color: white;
-}
-
-.alert-content {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Animations */
-@keyframes slideDown {
-  from {
-    transform: translateX(-50%) translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-50%) translateY(-100%);
-    opacity: 0;
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .profile-card {
-    padding: 2rem 1.5rem;
-  }
-  
-  .profile-upload-section {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .profile-preview-large {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .profile-placeholder-large {
-    font-size: 2.5rem;
-  }
-  
-  .danger-actions {
-    flex-direction: column;
-  }
-  
-  .page-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  body {
-    padding: 10px;
-  }
-  
-  .profile-card {
-    padding: 1.5rem 1rem;
-  }
+@media (max-width: 380px) {
+  .linux-download-links { grid-template-columns: 1fr; }
+  #profileSettingsView .danger-actions { flex-direction: column; }
 }
