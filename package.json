@@ -5,6 +5,7 @@
   "author": "Touhou Music Player contributors",
   "private": true,
   "scripts": {
+    "tauri": "tauri",
     "desktop": "tauri icon assets/icon.png && tauri dev",
     "desktop:build": "tauri icon assets/icon.png && tauri build",
     "dist:win": "tauri icon assets/icon.png && tauri build --bundles nsis",
