@@ -127,6 +127,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Generate Tauri icons
+        run: npx tauri icon assets/icon.png
+
       - name: Initialize Android project
         run: npx tauri android init
 
@@ -143,8 +146,8 @@ jobs:
 
   publish-release:
     name: Publish desktop release
-    if: always() && startsWith(github.ref, 'refs/tags/v') && needs.build.result == 'success'
-    needs: [build, build-android]
+    if: startsWith(github.ref, 'refs/tags/v') && needs.build.result == 'success'
+    needs: [build]
     runs-on: ubuntu-24.04
     steps:
       - name: Download platform packages
@@ -174,16 +177,35 @@ jobs:
           copy_first '*.dmg' 'Touhou-Music-Player-macOS-universal.dmg'
           copy_first '*.AppImage' 'Touhou-Music-Player-Linux-x64.AppImage'
           copy_first '*.deb' 'Touhou-Music-Player-Linux-x64.deb'
-          apk_source="$(find incoming -type f -iname '*universal*debug*.apk' -print -quit)"
-          if [[ -n "$apk_source" ]]; then
-            cp "$apk_source" 'release/Touhou-Music-Player-Android.apk'
-          fi
-
       - name: Create or update GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
-            gh release create "$GITHUB_REF_NAME" --title "Touhou Music Player $GITHUB_REF_NAME" --notes "Installers for Windows, macOS, and Linux. An Android APK is included when its build succeeds; it is a debug-signed preview build for direct installation."
+            gh release create "$GITHUB_REF_NAME" --title "Touhou Music Player $GITHUB_REF_NAME" --notes "Installers for Windows, macOS, and Linux."
           fi
           gh release upload "$GITHUB_REF_NAME" release/* --clobber
+
+  publish-android-apk:
+    name: Add Android APK to release
+    if: startsWith(github.ref, 'refs/tags/v') && needs.build-android.result == 'success' && needs.publish-release.result == 'success'
+    needs: [build-android, publish-release]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download Android APK
+        uses: actions/download-artifact@v4
+        with:
+          name: Touhou-Music-Player-Android
+          path: incoming
+
+      - name: Upload Android APK to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          apk_source="$(find incoming -type f -iname '*universal*debug*.apk' -print -quit)"
+          if [[ -z "$apk_source" ]]; then
+            echo "No Android APK was found in the downloaded artifact." >&2
+            exit 1
+          fi
+          cp "$apk_source" Touhou-Music-Player-Android.apk
+          gh release upload "$GITHUB_REF_NAME" Touhou-Music-Player-Android.apk --clobber
