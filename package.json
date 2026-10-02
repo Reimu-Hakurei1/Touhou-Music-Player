@@ -9,7 +9,8 @@
     "desktop:build": "tauri icon assets/icon.png && tauri build",
     "dist:win": "tauri icon assets/icon.png && tauri build --bundles nsis",
     "dist:linux": "tauri icon assets/icon.png && tauri build --bundles appimage,deb",
-    "dist:mac": "tauri icon assets/icon.png && tauri build --target universal-apple-darwin --bundles dmg,app"
+    "dist:mac": "tauri icon assets/icon.png && tauri build --target universal-apple-darwin --bundles dmg,app",
+    "dist:android": "tauri android build --apk --debug"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.0.0"

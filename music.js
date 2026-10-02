@@ -2017,6 +2017,7 @@ let likedFiles = new Set();
 let recentlyPlayed = [];
 let songEngagementWatches = new Map();
 let likeCountObserver = null;
+const songCommentCountWatches = new Map();
 let cloudSongLikeCache = new Map();
 // Avoid repeating catalog-wide requests when the deployed Firestore rules deny this feature.
 let songEngagementAccessDenied = false;
@@ -2667,6 +2668,11 @@ function formatLikeCount(count) {
   return `${new Intl.NumberFormat().format(value)} ${value === 1 ? "like" : "likes"}`;
 }
 
+function formatCommentCount(count) {
+  const value = Math.max(0, Number(count) || 0);
+  return `${new Intl.NumberFormat().format(value)} ${value === 1 ? "comment" : "comments"}`;
+}
+
 function updateSongLikeCount(file, count) {
   document.querySelectorAll(`.track[data-file="${CSS.escape(file)}"] .track-like-count`).forEach((element) => {
     element.textContent = formatLikeCount(count);
@@ -2678,6 +2684,44 @@ function clearSongEngagementWatches() {
   if (likeCountObserver) { likeCountObserver.disconnect(); likeCountObserver = null; }
   songEngagementWatches.forEach((watch) => watch.unsubscribe?.());
   songEngagementWatches.clear();
+  songCommentCountWatches.forEach((watch) => watch.unsubscribe?.());
+  songCommentCountWatches.clear();
+}
+
+function watchSongCommentCount(track, countElement) {
+  if (!window.firebaseDb || !countElement) return;
+  let watch = songCommentCountWatches.get(track.file);
+  if (!watch) {
+    watch = { elements: new Set(), unsubscribe: null };
+    songCommentCountWatches.set(track.file, watch);
+    watch.unsubscribe = window.firebaseDb.collection('songComments').doc(songEngagementId(track.file)).collection('comments').onSnapshot((snapshot) => {
+      const count = snapshot.size;
+      watch.elements.forEach((element) => {
+        if (!element.isConnected) return;
+        element.textContent = formatCommentCount(count);
+        element.setAttribute('aria-label', formatCommentCount(count));
+      });
+    }, (error) => {
+      watch.elements.forEach((element) => {
+        if (!element.isConnected) return;
+        element.textContent = 'Comments unavailable';
+        element.setAttribute('aria-label', 'Comment count unavailable');
+      });
+      if (!isSongEngagementPermissionError(error)) console.warn('Could not load public song comment count:', error);
+    });
+  }
+  watch.elements.add(countElement);
+}
+
+function unwatchSongCommentCount(countElement) {
+  const file = countElement.closest('.track')?.dataset.file;
+  const watch = file && songCommentCountWatches.get(file);
+  if (!watch) return;
+  watch.elements.delete(countElement);
+  if (!watch.elements.size) {
+    watch.unsubscribe?.();
+    songCommentCountWatches.delete(file);
+  }
 }
 
 function watchSongEngagement(track, countElement) {
@@ -2737,14 +2781,20 @@ function unwatchSongEngagement(countElement) {
 
 function setupSongEngagementViews() {
   clearSongEngagementWatches();
-  const elements = trackList?.querySelectorAll('.track-like-count') || [];
+  const elements = trackList?.querySelectorAll('.track-engagement-count') || [];
   if ('IntersectionObserver' in window) {
     likeCountObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) { unwatchSongEngagement(entry.target); return; }
+        if (!entry.isIntersecting) {
+          if (entry.target.classList.contains('track-comment-count')) unwatchSongCommentCount(entry.target);
+          else unwatchSongEngagement(entry.target);
+          return;
+        }
         const trackEl = entry.target.closest('.track');
         const track = trackEl && getTracks().find((item) => item.file === trackEl.dataset.file);
-        if (track) watchSongEngagement(track, entry.target);
+        if (!track) return;
+        if (entry.target.classList.contains('track-comment-count')) watchSongCommentCount(track, entry.target);
+        else watchSongEngagement(track, entry.target);
       });
     }, { rootMargin: '250px' });
     elements.forEach((element) => likeCountObserver.observe(element));
@@ -2752,7 +2802,9 @@ function setupSongEngagementViews() {
     elements.forEach((element) => {
       const trackEl = element.closest('.track');
       const track = trackEl && getTracks().find((item) => item.file === trackEl.dataset.file);
-      if (track) watchSongEngagement(track, element);
+      if (!track) return;
+      if (element.classList.contains('track-comment-count')) watchSongCommentCount(track, element);
+      else watchSongEngagement(track, element);
     });
   }
 }
@@ -3641,7 +3693,7 @@ function buildTrackList() {
         <img src="${esc(resolveMediaUrl(t.cover))}" class="track-cover me-3" alt="cover">
         <div class="flex-grow-1 track-details">
           <div class="track-title fw-bold">${esc(t.title)}</div>
-          <div class="track-secondary"><div class="track-artist">${esc(t.artist)}</div><span class="track-like-count" aria-label="Loading like count">— likes</span></div>
+          <div class="track-secondary"><div class="track-artist">${esc(t.artist)}</div><span class="track-like-count track-engagement-count" aria-label="Loading like count">Likes</span><span class="track-comment-count track-engagement-count" aria-label="Loading comment count">Comments</span></div>
         </div>
         <div class="track-actions">
           <button class="track-more-btn" type="button" aria-label="More options for ${esc(t.title)}" title="More options" aria-haspopup="menu" aria-expanded="false">

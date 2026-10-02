@@ -4,8 +4,7 @@
   if (!status || !downloadLinks.length) return;
 
   const repo = 'Reimu-Hakurei1/Touhou-Music-Player';
-  const fallback = 'Desktop downloads are published with app releases.';
-
+  const releasesUrl = `https://github.com/${repo}/releases`;
   fetch(`https://api.github.com/repos/${repo}/releases/latest`, {
     headers: { Accept: 'application/vnd.github+json' }
   }).then(async (response) => {
@@ -23,27 +22,39 @@
         link.href = assetUrl;
         link.removeAttribute('aria-disabled');
         link.classList.remove('unavailable');
+        link.removeAttribute('target');
         available++;
       } else {
-        link.removeAttribute('href');
-        link.setAttribute('aria-disabled', 'true');
-        link.classList.add('unavailable');
+        link.href = release.html_url || releasesUrl;
+        link.removeAttribute('aria-disabled');
+        link.classList.remove('unavailable');
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
       }
     });
     status.textContent = available
-      ? `Latest desktop release: ${release.tag_name}. Choose a package above.`
-      : `Release ${release.tag_name} does not include desktop installers yet.`;
+      ? `Latest release: ${release.tag_name}. Select a package to download it.`
+      : `Release ${release.tag_name} is published, but its installers are not attached yet. The buttons open the release details.`;
   }).catch((error) => {
     if (error.message === 'not-published') {
       downloadLinks.forEach((link) => {
-        link.removeAttribute('href');
-        link.setAttribute('aria-disabled', 'true');
-        link.classList.add('unavailable');
+        link.href = releasesUrl;
+        link.removeAttribute('aria-disabled');
+        link.classList.remove('unavailable');
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
       });
-      status.textContent = 'The first desktop app release has not been published yet.';
+      status.textContent = 'No app release is published yet. Choose a download to view release availability, or check back after the next app release.';
       return;
     }
-    status.textContent = fallback;
+    downloadLinks.forEach((link) => {
+      link.href = releasesUrl;
+      link.removeAttribute('aria-disabled');
+      link.classList.remove('unavailable');
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+    status.textContent = 'Could not check download availability. Open the releases page to see the latest packages.';
     console.warn('Could not check the latest desktop release:', error);
   });
 })();

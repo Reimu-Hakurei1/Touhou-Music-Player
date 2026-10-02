@@ -13,10 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="music.css?v=20261003-big-player-row">
+  <link rel="stylesheet" href="music.css?v=20261003-comment-count">
   <link rel="stylesheet" href="fixed-header.css?v=20261003-desktop-filters">
   <link rel="stylesheet" href="playlist-spotify.css?v=20261002-guest-responsive">
-  <link rel="stylesheet" href="profile.css?v=20261003-integrated-settings">
+  <link rel="stylesheet" href="profile.css?v=20261003-download-refresh">
   
   <!-- Firebase COMPAT Version -->
   <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
@@ -186,12 +186,13 @@
         <button id="backToPlayerFromDownloads" class="downloads-back" type="button"><i class="fas fa-arrow-left"></i> Back to Player</button>
         <span class="downloads-eyebrow">Touhou Music Player</span>
         <h1 id="downloadsTitle">Take your music player with you</h1>
-        <p>Choose a desktop app for your computer. The app opens the same music library and keeps playback controls close at hand.</p>
+        <p>Bring your Touhou library along. Pick your device to download the player and keep your music one tap away.</p>
       </header>
+      <div class="downloads-section-heading"><h2>Choose your platform</h2><span>Free / Always in sync with the web player</span></div>
       <div id="desktopDownloads" class="download-platform-grid" aria-live="polite">
         <article class="download-platform-card">
           <span class="download-platform-icon"><i class="fab fa-windows"></i></span>
-          <div><h2>Windows</h2><p>Windows 10 or later · 64-bit</p></div>
+          <div><h2>Windows</h2><p>Windows 10 or later / 64-bit</p></div>
           <a class="download-platform-link" data-download-asset="Touhou-Music-Player-Windows-x64.exe" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Windows-x64.exe"><i class="fas fa-download"></i> Download installer</a>
         </article>
         <article class="download-platform-card">
@@ -206,6 +207,12 @@
             <a class="download-platform-link" data-download-asset="Touhou-Music-Player-Linux-x64.AppImage" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Linux-x64.AppImage"><i class="fas fa-download"></i> AppImage</a>
             <a class="download-platform-link secondary" data-download-asset="Touhou-Music-Player-Linux-x64.deb" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Linux-x64.deb"><i class="fas fa-download"></i> Debian / Ubuntu</a>
           </div>
+        </article>
+        <article class="download-platform-card android-download-card">
+          <span class="download-platform-icon"><i class="fab fa-android"></i></span>
+          <div><h2>Android</h2><p>Android 7.0 or newer / ARM phones and tablets</p></div>
+          <a class="download-platform-link" data-download-asset="Touhou-Music-Player-Android.apk" href="https://github.com/Reimu-Hakurei1/Touhou-Music-Player/releases/latest/download/Touhou-Music-Player-Android.apk"><i class="fas fa-download"></i> Download APK</a>
+          <small class="download-platform-note">Install the APK file on your Android device. This preview build is not on Google Play.</small>
         </article>
       </div>
       <p id="downloadsReleaseStatus" class="downloads-release-status">Desktop installers are published with app releases.</p>
@@ -385,12 +392,12 @@
   <script src="playlist-manager.js?v=20261002-guest-responsive"></script>
 
   <!-- Music Player -->
-  <script src="music.js?v=20261002-comment-edit-delete"></script>
+  <script src="music.js?v=20261003-comment-count"></script>
   <script src="playlist-spotify.js?v=20261002-guest-responsive"></script>
   
   <!-- Fixed Header Script -->
   <script src="fixed-header.js"></script>
   <script src="profile.js?v=20261003-integrated-settings"></script>
-  <script src="downloads.js?v=20261003-desktop-downloads"></script>
+  <script src="downloads.js?v=20261003-android-downloads"></script>
 </body>
 </html>

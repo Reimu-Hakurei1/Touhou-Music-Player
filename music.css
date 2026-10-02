@@ -212,6 +212,8 @@ main.music-section {
 .track.card .track-secondary { display: flex; align-items: center; gap: 9px; min-width: 0; }
 .track.card .track-secondary .track-artist { min-width: 0; }
 .track-like-count { flex: 0 0 auto; color: #a7a7a7; font-size: .72rem; font-weight: 500; }
+.track-comment-count { flex: 0 0 auto; color: #a7a7a7; font-size: .72rem; font-weight: 500; }
+.track-comment-count::before { content: '·'; margin-right: 8px; color: #666; }
 .track.card .track-actions {
   flex-shrink: 0;
   opacity: 1;

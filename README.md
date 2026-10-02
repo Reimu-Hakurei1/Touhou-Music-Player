@@ -46,9 +46,9 @@ npm run dist:mac
 
 Windows builds create an NSIS installer, Linux builds create an AppImage and Debian/Ubuntu `.deb`, and macOS builds create a universal `.dmg` for Intel and Apple Silicon Macs. Packages are created under `src-tauri/target/`.
 
-GitHub Actions builds Windows, Linux, and universal macOS packages when desktop app files are pushed to `main`. Build artifacts are available from the repository's [Actions page](https://github.com/Reimu-Hakurei1/Touhou-Music-Player/actions) for 30 days. You can also start a build manually from the **Build desktop apps** workflow. The macOS packages are unsigned; macOS may require approval before opening them.
+GitHub Actions builds Windows, Linux, universal macOS, and Android APK packages when app files are pushed to `main`. Build artifacts are available from the repository's [Actions page](https://github.com/Reimu-Hakurei1/Touhou-Music-Player/actions) for 30 days. You can also start a build manually from the **Build desktop apps** workflow. The Android APK is a debug-signed preview for direct installation and is not a Google Play release. The macOS packages are unsigned; macOS may require approval before opening them.
 
-The **Download App** view in the player links to the latest desktop release. To publish installers, push a version tag such as `v1.0.1`; the desktop workflow attaches Windows, Linux, and macOS packages to that GitHub release.
+The **Download App** view in the player links to the latest app release. To publish installers, push a version tag such as `v1.0.1`; the workflow attaches Windows, Linux, macOS, and Android APK packages to that GitHub release.
 
 ## Built with
 
